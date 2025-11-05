@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brightwyn - Your Digital Journey Takes Flight</title>
+    <link rel="stylesheet" href="assets/css/style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> -->
+
+</head>
+<body>
+  <div class="hero-bg"></div>
+  <!-- <div class="hero-overlay"></div> -->
+
+  <header class="menu-header">
+    <button class="menu-btn" aria-label="Open menu" id="menuBtn">
+      <span class="menu-icon" id="menuIconSvg">
+        <svg id="burgerSvg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+          <!-- Hamburger group -->
+          <g id="hamburger">
+            <rect x="9" y="12" width="25" height="2" rx="1.5" fill="#252525"/>
+            <rect x="9" y="23" width="25" height="2" rx="1.5" fill="#252525"/>
+            <rect x="9" y="33" width="25" height="2" rx="1.5" fill="#252525"/>
+          </g>
+          <!-- Paper plane group, initially hidden -->
+          <g id="paperplane" opacity="0">
+            <polygon id="planeBody" points="12,32 33,22 20,19 18,27" fill="#252525"/>
+            <polygon id="planeFin" points="18,27 20,19 24,26" fill="#e6715d"/>
+          </g>
+        </svg>
+      </span>
+    </button>
+    <span class="menu-label">MENU</span>
+  </header>
+  <!-- Menu Overlay (hidden until animation triggers) -->
+  <nav class="airport-menu" id="airportMenu">
+    <div class="menu-bg" id="menuBg"></div>
+    <button class="menu-x" id="menuX" aria-label="Close menu">&times;</button>
+    <div class="menu-center">
+      <ul class="menu-items">
+        <li>About</li>
+        <li>Solutions</li>
+        <li>Portfolio</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="hero-content">
+    <section class="left-content">
+      <div class="icon-round">
+        <!-- Suitcase SVG icon -->
+        <!-- <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" fill="none"><circle cx="16" cy="16" r="16" fill="#e6715d"/><path d="M10 21.5v-6.6A2.9 2.9 0 0112.9 12h6.2A2.9 2.9 0 0122 14.9v6.6M12 12V9a4 4 0 018 0v3" stroke="#252525" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> -->
+      </div>
+      <h1 class="hero-heading">Your Digital Journey<br>Takes Flight Here</h1>
+      <div class="subquote">
+        <span>“From terminal to takeoff — <em>we build software that flies</em>”</span>
+        <hr>
+      </div>
+      <p class="hero-description">
+        We build runway-ready software and flight-control systems for digital products —
+        reliable, scalable, and built to guide your business to takeoff.
+      </p>
+      <button class="see-more-btn"> 
+        <span class="arrow-icon">
+          <!-- Arrow SVG -->
+          <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" fill="none">
+            <circle cx="11" cy="11" r="10.5" stroke="#252525"/>
+            <path d="M10 14l3-3-3-3" stroke="#252525" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Explore Solutions
+      </button>
+    </section>
+    <!-- <aside class="right-icons">
+      <a href="#" class="social-icon" aria-label="Twitter">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none"><path stroke="#252525" stroke-width="2" d="M22 5.87a8.57 8.57 0 01-2.47.68 4.3 4.3 0 001.89-2.37 8.62 8.62 0 01-2.73 1.04 4.3 4.3 0 00-7.33 3.92A12.19 12.19 0 013 4.59 4.3 4.3 0 004.39 10.19a4.27 4.27 0 01-1.94-.54v.06a4.3 4.3 0 003.44 4.22c-.5.14-1.03.18-1.58.07a4.31 4.31 0 004.01 2.98A8.62 8.62 0 012 19.13c.59.04 1.19.07 1.79.07a12.18 12.18 0 006.59-1.93A12.22 12.22 0 0022 5.87z"/></svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="LinkedIn">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" stroke="#252525" stroke-width="2"/><path stroke="#252525" stroke-width="2" stroke-linecap="round" d="M7.5 17V10.5"/><circle cx="7.5" cy="8" r="1" fill="#252525"/><path stroke="#252525" stroke-width="2" d="M11.5 13.5V17m0-3.5a2.5 2.5 0 115 0V17"/></svg>
+      </a>
+      <a href="#" class="social-icon" aria-label="Instagram">
+        <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" fill="none"><rect x="2" y="2" width="20" height="20" rx="6" stroke="#252525" stroke-width="2"/><circle cx="12" cy="12" r="5" stroke="#252525" stroke-width="2"/><circle cx="17" cy="7" r="1.2" fill="#252525"/></svg>
+      </a>
+    </aside> -->
+    
+  </main>
+  
+
+  <!-- Service Section Display -->
+  <section>
+    <div class="airport-container">
+      <img src="assets/img/service.png" alt="Airport Background" class="bg-image">
+
+      
+      <div class="overlay-mask"></div>
+
+      <!-- Custom tilted animated departure board -->
+      <div class="departure-board">
+        <div class="board-header">DEPARTURES - OUR SERVICES</div>
+        <div class="board">
+          <div class="row"><span>Web Development</span><span>ON TIME</span></div>
+          <div class="row"><span>Mobile App Development</span><span>BOARDING</span></div>
+          <div class="row"><span>UI/UX design</span><span>GATE A1</span></div>
+          <div class="row"><span>Custom Software</span><span>FINAL CALL</span></div>
+          <div class="row"><span>Cloud Solutions</span><span>DEPARTED</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  
+
+  
+
+
+
+
+
+
+
+  <script>
+    const services = [
+      "Web Development",
+      "App Design",
+      "UI/UX Consulting",
+      "SEO Optimization",
+      "Cloud Solutions",
+      "AI Integration",
+      "E-Commerce Systems"
+    ];
+
+    const board = document.querySelector('.board');
+    const rows = board.querySelectorAll('.row span:first-child');
+    let index = 0;
+
+    setInterval(() => {
+        rows.forEach((row, i) => {
+        const nextService = services[(index + i) % services.length];
+        row.textContent = nextService;
+        });
+        index++;
+    }, 4000);
+  </script>
+
+     <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+    <script src="assets/js/menu-animate.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

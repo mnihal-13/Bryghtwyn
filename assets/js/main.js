@@ -3,6 +3,38 @@
 // ===================================
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
+// Initialize Lenis for smooth scrolling
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+    smoothTouch: false,
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    mouseMultiplier: 1,
+    touchMultiplier: 2,
+});
+
+// Lenis scroll event handler
+lenis.on('scroll', (e) => {
+    ScrollTrigger.update();
+});
+
+// Integrate Lenis with GSAP ScrollTrigger
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
+// Animation frame loop
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
 // ===================================
 // NAVBAR ANIMATIONS
 // ===================================
@@ -155,41 +187,42 @@ gsap.from('.runway-lights .light', {
 });
 
 // Smooth scroll buttons
-document.querySelectorAll('[data-scroll-to]').forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = button.getAttribute('data-scroll-to');
-        const section = document.getElementById(target);
+// document.querySelectorAll('[data-scroll-to]').forEach(button => {
+//     button.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         const target = button.getAttribute('data-scroll-to');
+//         const section = document.getElementById(target);
         
-        gsap.to(window, {
-            duration: 1.5,
-            scrollTo: {
-                y: section,
-                offsetY: 80
-            },
-            ease: 'power3.inOut'
-        });
-    });
-});
+//         gsap.to(window, {
+//             duration: 1.5,
+//             scrollTo: {
+//                 y: section,
+//                 offsetY: 80
+//             },
+//             ease: 'power3.inOut'
+//         });
+//     });
+// });
 
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+// // Smooth scroll for nav links
+// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+//     anchor.addEventListener('click', function (e) {
+//         e.preventDefault();
+//         const target = document.querySelector(this.getAttribute('href'));
         
-        if (target) {
-            gsap.to(window, {
-                duration: 1.5,
-                scrollTo: {
-                    y: target,
-                    offsetY: 80
-                },
-                ease: 'power3.inOut'
-            });
-        }
-    });
-});
+//         if (target) {
+//             gsap.to(window, {
+//                 duration: 1.5,
+//                 scrollTo: {
+//                     y: target,
+//                     offsetY: 80
+//                 },
+//                 ease: 'power3.inOut'
+//             });
+//         }
+//     });
+// });
+
 
 // ===================================
 // ABOUT SECTION ANIMATIONS
@@ -660,3 +693,65 @@ document.querySelectorAll('.footer-center a').forEach(link => {
 
 console.log('✈️ SkyCode Studios - Website Loaded & Ready for Takeoff!');
 
+
+// ========================================
+// 1. PRELOADER ANIMATION
+// ========================================
+// const preloaderTimeline = gsap.timeline();
+
+// preloaderTimeline
+//     .to(".preloader-plane", {
+//         x: "100vw",
+//         duration: 2.5,
+//         ease: "power2.inOut"
+//     })
+//     .to(".loading-text", {
+//         opacity: 0,
+//         duration: 0.5
+//     }, "-=0.5")
+//     .to(".preloader", {
+//         opacity: 0,
+//         duration: 1,
+//         onComplete: () => {
+//             document.querySelector(".preloader").style.display = "none";
+//         }
+//     });
+
+// // ========================================
+// // 13. LOADING TEXT PULSE (PRELOADER)
+// // ========================================
+
+// gsap.fromTo(".loading-text",
+//     { opacity: 0.5 },
+//     {
+//         opacity: 1,
+//         duration: 1,
+//         yoyo: true,
+//         repeat: -1,
+//         ease: "sine.inOut"
+//     }
+// );
+
+
+// Service Screen text change animation
+const services = [
+      "Web Development",
+      "App Design",
+      "UI/UX Consulting",
+      "SEO Optimization",
+      "Cloud Solutions",
+      "AI Integration",
+      "E-Commerce Systems"
+    ];
+
+const board = document.querySelector('.board');
+const rows = board.querySelectorAll('.row span:first-child');
+let index = 0;
+
+setInterval(() => {
+    rows.forEach((row, i) => {
+    const nextService = services[(index + i) % services.length];
+    row.textContent = nextService;
+    });
+    index++;
+}, 4000);
