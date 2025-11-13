@@ -12,7 +12,7 @@
 
 </head>
 <body>
-  <div class="hero-bg"></div>
+  <!-- <div class="hero-bg"></div> -->
   <!-- <div class="hero-overlay"></div> -->
 
   <header class="menu-header">
@@ -33,7 +33,7 @@
         </svg>
       </span>
     </button>
-    <span class="menu-label">MENU</span>
+    <!-- <span class="menu-label">MENU</span> -->
   </header>
   <!-- Menu Overlay (hidden until animation triggers) -->
   <nav class="airport-menu" id="airportMenu">
@@ -49,13 +49,16 @@
     </div>
   </nav>
 
-  <main class="hero-content">
+  <main class="hero-content hero-bg">
     <section class="left-content">
       <div class="icon-round">
         <!-- Suitcase SVG icon -->
         <!-- <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" fill="none"><circle cx="16" cy="16" r="16" fill="#e6715d"/><path d="M10 21.5v-6.6A2.9 2.9 0 0112.9 12h6.2A2.9 2.9 0 0122 14.9v6.6M12 12V9a4 4 0 018 0v3" stroke="#252525" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> -->
       </div>
-      <h1 class="hero-heading">Your Digital Journey<br>Takes Flight Here</h1>
+      <h1 class="hero-heading hero-title">
+        Your Digital Journey<br>
+        Takes Flight Here
+      </h1>
       <div class="subquote">
         <span>“From terminal to takeoff — <em>we build software that flies</em>”</span>
         <hr>
@@ -114,6 +117,133 @@
   
 
 
+  <!-- Interactive Flight Chat Section -->
+  <section class="flight-chat-section">
+    <div class="chat-container">
+      <!-- Background illustration -->
+      <div class="tower-illustration">
+        <!-- <img src="/" alt="Control Tower" class="tower-bg"> -->
+        
+        <!-- Animated signal waves from tower -->
+        <div class="signal-waves-from-tower">
+          <svg class="signal-wave" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle class="wave-ring wave-ring-1" cx="100" cy="100" r="20" fill="none" stroke="#FF6B6B" stroke-width="2" opacity="0"/>
+            <circle class="wave-ring wave-ring-2" cx="100" cy="100" r="20" fill="none" stroke="#FF6B6B" stroke-width="2" opacity="0"/>
+            <circle class="wave-ring wave-ring-3" cx="100" cy="100" r="20" fill="none" stroke="#FF6B6B" stroke-width="2" opacity="0"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Transmitting indicator -->
+      <div class="transmitting-indicator">
+        <span class="signal-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="2" fill="#252525"/>
+            <path d="M8 12C8 9.79 9.79 8 12 8M16 12C16 14.21 14.21 16 12 16" stroke="#252525" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5 12C5 8.13 8.13 5 12 5M19 12C19 15.87 15.87 19 12 19" stroke="#252525" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <path d="M2 12C2 6.48 6.48 2 12 2M22 12C22 17.52 17.52 22 12 22" stroke="#252525" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+          </svg>
+        </span>
+        <span class="transmit-text">TRANSMITTING...</span>
+        <div class="signal-waves">
+          <span class="wave"></span>
+          <span class="wave"></span>
+          <span class="wave"></span>
+        </div>
+      </div>
+
+      <!-- Chat bubbles container -->
+      <div class="chat-bubbles">
+        <!-- Tower Message 1 -->
+        <div class="chat-bubble tower-bubble" data-delay="0.5">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L5 6V11C5 15.42 8.58 19.42 12 21C15.42 19.42 19 15.42 19 11V6L12 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="1.5" fill="#252525"/>
+              <path d="M10 13L12 17M12 13L14 17" stroke="#252525" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Tower</div>
+            <div class="bubble-text">Control Tower here, copy that.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 5,2 Q 12,18 18,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Flight Message 1 -->
+        <div class="chat-bubble flight-bubble" data-delay="1.5">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="#252525" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Flight</div>
+            <div class="bubble-text">Requesting runway for innovation.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 12,2 Q 15,18 25,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Tower Message 2 -->
+        <div class="chat-bubble tower-bubble" data-delay="2.8">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L5 6V11C5 15.42 8.58 19.42 12 21C15.42 19.42 19 15.42 19 11V6L12 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="1.5" fill="#252525"/>
+              <path d="M10 13L12 17M12 13L14 17" stroke="#252525" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Tower</div>
+            <div class="bubble-text">Coordinates locked. Prepare for digital takeoff.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 5,2 Q 12,18 18,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Flight Message 2 -->
+        <div class="chat-bubble flight-bubble" data-delay="4.2">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="#252525" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Flight</div>
+            <div class="bubble-text">Roger that. Engines powered by creativity.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 12,2 Q 15,18 25,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Tower Message 3 -->
+        <div class="chat-bubble tower-bubble" data-delay="5.5">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L5 6V11C5 15.42 8.58 19.42 12 21C15.42 19.42 19 15.42 19 11V6L12 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="1.5" fill="#252525"/>
+              <path d="M10 13L12 17M12 13L14 17" stroke="#252525" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Tower</div>
+            <div class="bubble-text">Cleared for departure. Your journey begins now.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 5,2 Q 12,18 18,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
   
 
   
@@ -146,6 +276,282 @@
         });
         index++;
     }, 4000);
+    
+     // ===================================
+    // HERO TEXT ANIMATIONS WITH GSAP
+    // ===================================
+    
+    // Wait for DOM and GSAP to be ready
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hero Heading Animation - Split by words and characters
+      const heroHeading = document.querySelector('.hero-heading');
+      if (heroHeading) {
+        const text = heroHeading.innerHTML;
+        const lines = text.split('<br>');
+        
+        heroHeading.innerHTML = lines.map(line => {
+          const words = line.trim().split(' ');
+          return words.map(word => {
+            const chars = word.split('');
+            return `<span class="word" style="display: inline-block; overflow: hidden;">${
+              chars.map(char => `<span class="char" style="display: inline-block; opacity: 0; transform: translateY(100%)">${char}</span>`).join('')
+            }</span>`;
+          }).join(' ');
+        }).join('<br>');
+
+        // Animate each character
+        gsap.to('.hero-heading .char', {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: {
+            amount: 0.8,
+            from: 'start'
+          },
+          ease: 'power3.out',
+          delay: 0.3
+        });
+      }
+
+      // Subquote Animation - Fade and slide up
+      gsap.from('.subquote', {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 1.2,
+        ease: 'power2.out'
+      });
+
+      // Subquote HR line animation
+      gsap.from('.subquote hr', {
+        scaleX: 0,
+        transformOrigin: 'left',
+        duration: 0.8,
+        delay: 1.5,
+        ease: 'power2.inOut'
+      });
+
+      // Hero Description - Typing effect
+      const heroDescription = document.querySelector('.hero-description');
+      if (heroDescription) {
+        const originalText = heroDescription.textContent;
+        heroDescription.textContent = '';
+        
+        gsap.to(heroDescription, {
+          text: {
+            value: originalText,
+            delimiter: ''
+          },
+          duration: 2,
+          delay: 1.8,
+          ease: 'none'
+        });
+
+        // Fade in the description container
+        gsap.from('.hero-description', {
+          opacity: 0,
+          duration: 0.5,
+          delay: 1.8
+        });
+      }
+
+      // Icon round animation - Scale bounce
+      gsap.from('.icon-round', {
+        scale: 0,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.1,
+        ease: 'back.out(1.7)'
+      });
+
+      // Button Animation - Slide up with bounce
+      gsap.from('.see-more-btn', {
+        opacity: 0,
+        y: 40,
+        scale: 0.9,
+        duration: 0.8,
+        delay: 3.8,
+        ease: 'elastic.out(1, 0.75)'
+      });
+
+      // Button Arrow Pulse Animation (continuous)
+      gsap.to('.see-more-btn .arrow-icon', {
+        x: 5,
+        duration: 0.8,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut'
+      });
+
+      // Button Hover Interaction
+      const seeMoreBtn = document.querySelector('.see-more-btn');
+      if (seeMoreBtn) {
+        seeMoreBtn.addEventListener('mouseenter', () => {
+          gsap.to('.see-more-btn', {
+            scale: 1.05,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+          gsap.to('.see-more-btn .arrow-icon', {
+            x: 8,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+
+        seeMoreBtn.addEventListener('mouseleave', () => {
+          gsap.to('.see-more-btn', {
+            scale: 1,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+      }
+    });
+
+  </script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+// Initialize Lenis for smooth scrolling
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+    smoothTouch: false,
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    mouseMultiplier: 1,
+    touchMultiplier: 2,
+});
+
+// Lenis scroll event handler
+lenis.on('scroll', (e) => {
+    ScrollTrigger.update();
+});
+
+// Integrate Lenis with GSAP ScrollTrigger
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
+// Animation frame loop
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+// ===================================
+// FLIGHT CHAT SECTION ANIMATIONS
+// ===================================
+
+// Typewriter effect for chat bubbles
+function typewriterEffect(element, text, speed = 50) {
+  let index = 0;
+  element.textContent = '';
+  
+  return new Promise((resolve) => {
+    const interval = setInterval(() => {
+      if (index < text.length) {
+        element.textContent += text[index];
+        index++;
+      } else {
+        clearInterval(interval);
+        resolve();
+      }
+    }, speed);
+  });
+}
+
+// Animate Flight Chat section
+const flightChatSection = document.querySelector('.flight-chat-section');
+if (flightChatSection) {
+  
+  // ScrollTrigger for the entire section
+  ScrollTrigger.create({
+    trigger: '.flight-chat-section',
+    start: 'top 80%',
+    onEnter: () => {
+      animateFlightChat();
+    },
+    once: true
+  });
+  
+  function animateFlightChat() {
+    const towerBg = document.querySelector('.tower-bg');
+    const transmitIndicator = document.querySelector('.transmitting-indicator');
+    const chatBubbles = document.querySelectorAll('.chat-bubble');
+    
+    const masterTimeline = gsap.timeline();
+    
+    // 1. Fade in tower illustration
+    masterTimeline.to(towerBg, {
+      opacity: 1,
+      duration: 1,
+      ease: 'power2.out'
+    });
+    
+    // 2. Show transmitting indicator
+    masterTimeline.to(transmitIndicator, {
+      opacity: 1,
+      scale: 1,
+      duration: 0.5,
+      ease: 'back.out(1.7)'
+    }, '-=0.3');
+    
+    // 3. Animate each chat bubble with stagger and typing effect
+    chatBubbles.forEach((bubble, index) => {
+      const delay = parseFloat(bubble.getAttribute('data-delay')) || 0;
+      const bubbleText = bubble.querySelector('.bubble-text');
+      const originalText = bubbleText.textContent;
+      const isTower = bubble.classList.contains('tower-bubble');
+      
+      // Bubble entrance animation
+      masterTimeline.to(bubble, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+        onStart: () => {
+          // Sound wave effect on icon
+          gsap.to(bubble.querySelector('.bubble-icon'), {
+            scale: 1.15,
+            duration: 0.3,
+            yoyo: true,
+            repeat: 1,
+            ease: 'power2.inOut'
+          });
+        }
+      }, delay);
+      
+      // Typing effect for text
+      masterTimeline.call(() => {
+        typewriterEffect(bubbleText, originalText, 40);
+      }, null, delay + 0.3);
+      
+      // Subtle glow pulse after typing
+      masterTimeline.to(bubble.querySelector('.bubble-content'), {
+        boxShadow: '0 12px 40px rgba(74, 144, 226, 0.4)',
+        duration: 0.4,
+        yoyo: true,
+        repeat: 1,
+        ease: 'sine.inOut'
+      }, delay + 0.8);
+    });
+    
+    // 4. Continuous subtle animations
+    gsap.to('.signal-icon', {
+      rotation: 360,
+      duration: 3,
+      repeat: -1,
+      ease: 'none'
+    });
+  }
+}
   </script>
 
      <!-- GSAP Library -->
@@ -155,6 +561,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
     <script src="assets/js/menu-animate.js"></script>
     <script src="assets/js/main.js"></script>
-
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

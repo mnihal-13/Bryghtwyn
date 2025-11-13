@@ -35,6 +35,138 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+    // ===================================
+    // HERO TEXT ANIMATIONS WITH GSAP
+    // ===================================
+    
+    // Wait for DOM and GSAP to be ready
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hero Heading Animation - Split by words and characters
+      const heroHeading = document.querySelector('.hero-heading');
+      if (heroHeading) {
+        const text = heroHeading.innerHTML;
+        const lines = text.split('<br>');
+        
+        heroHeading.innerHTML = lines.map(line => {
+          const words = line.trim().split(' ');
+          return words.map(word => {
+            const chars = word.split('');
+            return `<span class="word" style="display: inline-block; overflow: hidden;">${
+              chars.map(char => `<span class="char" style="display: inline-block; opacity: 0; transform: translateY(100%)">${char}</span>`).join('')
+            }</span>`;
+          }).join(' ');
+        }).join('<br>');
+
+        // Animate each character
+        gsap.to('.hero-heading .char', {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: {
+            amount: 0.8,
+            from: 'start'
+          },
+          ease: 'power3.out',
+          delay: 0.3
+        });
+      }
+
+      // Subquote Animation - Fade and slide up
+      gsap.from('.subquote', {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 1.2,
+        ease: 'power2.out'
+      });
+
+      // Subquote HR line animation
+      gsap.from('.subquote hr', {
+        scaleX: 0,
+        transformOrigin: 'left',
+        duration: 0.8,
+        delay: 1.5,
+        ease: 'power2.inOut'
+      });
+
+      // Hero Description - Typing effect
+      const heroDescription = document.querySelector('.hero-description');
+      if (heroDescription) {
+        const originalText = heroDescription.textContent;
+        heroDescription.textContent = '';
+        
+        gsap.to(heroDescription, {
+          text: {
+            value: originalText,
+            delimiter: ''
+          },
+          duration: 2,
+          delay: 1.8,
+          ease: 'none'
+        });
+
+        // Fade in the description container
+        gsap.from('.hero-description', {
+          opacity: 0,
+          duration: 0.5,
+          delay: 1.8
+        });
+      }
+
+      // Icon round animation - Scale bounce
+      gsap.from('.icon-round', {
+        scale: 0,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.1,
+        ease: 'back.out(1.7)'
+      });
+
+      // Button Animation - Slide up with bounce
+      gsap.from('.see-more-btn', {
+        opacity: 0,
+        y: 40,
+        scale: 0.9,
+        duration: 0.8,
+        delay: 3.8,
+        ease: 'elastic.out(1, 0.75)'
+      });
+
+      // Button Arrow Pulse Animation (continuous)
+      gsap.to('.see-more-btn .arrow-icon', {
+        x: 5,
+        duration: 0.8,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut'
+      });
+
+      // Button Hover Interaction
+      const seeMoreBtn = document.querySelector('.see-more-btn');
+      if (seeMoreBtn) {
+        seeMoreBtn.addEventListener('mouseenter', () => {
+          gsap.to('.see-more-btn', {
+            scale: 1.05,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+          gsap.to('.see-more-btn .arrow-icon', {
+            x: 8,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+
+        seeMoreBtn.addEventListener('mouseleave', () => {
+          gsap.to('.see-more-btn', {
+            scale: 1,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+      }
+    });
+
 // ===================================
 // NAVBAR ANIMATIONS
 // ===================================
@@ -755,3 +887,4 @@ setInterval(() => {
     });
     index++;
 }, 4000);
+

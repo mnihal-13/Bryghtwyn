@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brightwyn - Your Digital Journey Takes Flight</title>
+    <link rel="stylesheet" href="assets/css/style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> -->
+</head>
+<body>
+    <!-- Interactive Flight Chat Section -->
+  <section class="flight-chat-section">
+    <div class="chat-container">
+      <!-- Background illustration -->
+      <div class="tower-illustration">
+        <!-- <img src="/" alt="Control Tower" class="tower-bg"> -->
+        
+        <!-- Animated signal waves from tower -->
+        <div class="signal-waves-from-tower">
+          <svg class="signal-wave" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle class="wave-ring wave-ring-1" cx="100" cy="100" r="20" fill="none" stroke="#212125" stroke-width="2" opacity="0"/>
+            <circle class="wave-ring wave-ring-2" cx="100" cy="100" r="20" fill="none" stroke="#212125" stroke-width="2" opacity="0"/>
+            <circle class="wave-ring wave-ring-3" cx="100" cy="100" r="20" fill="none" stroke="#212125" stroke-width="2" opacity="0"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Transmitting indicator -->
+      <div class="transmitting-indicator">
+        <span class="signal-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="2" fill="#252525"/>
+            <path d="M8 12C8 9.79 9.79 8 12 8M16 12C16 14.21 14.21 16 12 16" stroke="#252525" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5 12C5 8.13 8.13 5 12 5M19 12C19 15.87 15.87 19 12 19" stroke="#252525" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <path d="M2 12C2 6.48 6.48 2 12 2M22 12C22 17.52 17.52 22 12 22" stroke="#252525" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+          </svg>
+        </span>
+        <!-- <span class="transmit-text">TRANSMITTING...</span> -->
+        <div class="signal-waves">
+          <span class="wave"></span>
+          <span class="wave"></span>
+          <span class="wave"></span>
+        </div>
+      </div>
+
+      <!-- Chat bubbles container -->
+      <div class="chat-bubbles">
+        <!-- Tower Message 1 -->
+        <div class="chat-bubble tower-bubble" data-delay="0.5">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L5 6V11C5 15.42 8.58 19.42 12 21C15.42 19.42 19 15.42 19 11V6L12 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="1.5" fill="#252525"/>
+              <path d="M10 13L12 17M12 13L14 17" stroke="#252525" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Tower</div>
+            <div class="bubble-text">Control Tower here, copy that.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 5,2 Q 12,18 18,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Flight Message 1 -->
+        <div class="chat-bubble flight-bubble" data-delay="1.5">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="#252525" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Flight</div>
+            <div class="bubble-text">Requesting runway for innovation.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 12,2 Q 15,18 25,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Tower Message 2 -->
+        <div class="chat-bubble tower-bubble" data-delay="2.8">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L5 6V11C5 15.42 8.58 19.42 12 21C15.42 19.42 19 15.42 19 11V6L12 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="1.5" fill="#252525"/>
+              <path d="M10 13L12 17M12 13L14 17" stroke="#252525" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Tower</div>
+            <div class="bubble-text">Coordinates locked. Prepare for digital takeoff.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 5,2 Q 12,18 18,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Flight Message 2 -->
+        <div class="chat-bubble flight-bubble" data-delay="4.2">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="#252525" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Flight</div>
+            <div class="bubble-text">Roger that. Engines powered by creativity.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 12,2 Q 15,18 25,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Tower Message 3 -->
+        <div class="chat-bubble tower-bubble" data-delay="5.5">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L5 6V11C5 15.42 8.58 19.42 12 21C15.42 19.42 19 15.42 19 11V6L12 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="1.5" fill="#252525"/>
+              <path d="M10 13L12 17M12 13L14 17" stroke="#252525" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Tower</div>
+            <div class="bubble-text">Cleared for departure. Your journey begins now.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 5,2 Q 12,18 18,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+
+     <!-- Takeoff Button - Centered below chat -->
+    <div class="takeoff-button-container">
+      <a href="about.html" class="takeoff-button">
+        <svg class="plane-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="#252525" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="button-text">Begin Takeoff</span>
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <!-- <div class="runway-line"></div> -->
+    </div>
+  </section>
+
+
+       <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+    <script ></script>
+    
+    <script>
+    // Register GSAP plugins
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    
+    // Typewriter effect for chat bubbles
+    function typewriterEffect(element, text, speed = 50) {
+      let index = 0;
+      element.textContent = '';
+      
+      return new Promise((resolve) => {
+        const interval = setInterval(() => {
+          if (index < text.length) {
+            element.textContent += text[index];
+            index++;
+          } else {
+            clearInterval(interval);
+            resolve();
+          }
+        }, speed);
+      });
+    }
+
+    // Animate Flight Chat section on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const towerBg = document.querySelector('.tower-bg');
+      const transmitIndicator = document.querySelector('.transmitting-indicator');
+      const chatBubbles = document.querySelectorAll('.chat-bubble');
+      
+      const masterTimeline = gsap.timeline();
+      
+      // 1. Fade in tower illustration
+      masterTimeline.to(towerBg, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out'
+      });
+      
+      // 2. Show transmitting indicator
+      masterTimeline.to(transmitIndicator, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: 'back.out(1.7)'
+      }, '-=0.3');
+      
+      // 3. Animate each chat bubble with stagger and typing effect
+      chatBubbles.forEach((bubble, index) => {
+        const delay = parseFloat(bubble.getAttribute('data-delay')) || 0;
+        const bubbleText = bubble.querySelector('.bubble-text');
+        const originalText = bubbleText.textContent;
+        const isTower = bubble.classList.contains('tower-bubble');
+        
+        // Bubble entrance animation
+        masterTimeline.to(bubble, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          onStart: () => {
+            // Sound wave effect on icon
+            gsap.to(bubble.querySelector('.bubble-icon'), {
+              scale: 1.15,
+              duration: 0.3,
+              yoyo: true,
+              repeat: 1,
+              ease: 'power2.inOut'
+            });
+          }
+        }, delay);
+        
+        // Typing effect for text
+        masterTimeline.call(() => {
+          typewriterEffect(bubbleText, originalText, 40);
+        }, null, delay + 0.3);
+        
+        // Subtle glow pulse after typing
+        masterTimeline.to(bubble.querySelector('.bubble-content'), {
+          boxShadow: '0 12px 40px rgba(74, 144, 226, 0.4)',
+          duration: 0.4,
+          yoyo: true,
+          repeat: 1,
+          ease: 'sine.inOut'
+        }, delay + 0.8);
+      });
+      
+      // 4. Continuous subtle animations
+      gsap.to('.signal-icon', {
+        rotation: 360,
+        duration: 3,
+        repeat: -1,
+        ease: 'none'
+      });
+      
+      // 5. Show takeoff button after all messages
+      masterTimeline.to('.takeoff-button-container', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'elastic.out(1, 0.75)'
+      }, 7); // Shows 1.5s after last message at 5.5s
+      
+      // Animate runway line drawing
+      gsap.fromTo('.runway-line',
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          duration: 1.2,
+          delay: 7.3,
+          ease: 'power2.out',
+          transformOrigin: 'left'
+        }
+      );
+    });
+    </script>
+</body>
+</html>
