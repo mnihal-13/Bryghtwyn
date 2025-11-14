@@ -89,7 +89,7 @@ body {
 
 .hero {
   height: 100vh;
-  background: url("../assets/img/hero/hero.png") no-repeat right center / contain;
+  background: url("../img/hero/hero.png") no-repeat right center / contain;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -483,7 +483,7 @@ body {
 
 .flight-chat-section {
   /* min-height: 100vh; */
-  background: #ffffff url('/assets/img/abt-bg.png') no-repeat;
+  background: #ffffff url('../img/abt-bg.png') no-repeat;
   /* background-attachment: fixed; */
   position: relative;
   padding: 80px 5vw;
@@ -949,7 +949,7 @@ body {
 /* Contact Section with Background */
         .contact {
             min-height: 100vh;
-            background: #f8f8f8 url('/assets/img/enquiry.png') left center / cover no-repeat;
+            background: #f8f8f8 url('../img/enquiry.png') left center / cover no-repeat;
             /* background-attachment: fixed; */
             position: relative;
             padding: 60px 20px;
