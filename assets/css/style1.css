@@ -1429,7 +1429,7 @@ body {
 
         /* Stub Section (Right) */
         .stub-section {
-            background: #5670ff;
+            background: #fdfdfd;
             padding: 40px 30px;
             display: flex;
             flex-direction: column;
@@ -1447,7 +1447,7 @@ body {
             font-weight: 800;
             font-size: 1rem;
             letter-spacing: 3px;
-            color: #ffffff;
+            color: #252525;
             margin-bottom: 20px;
         }
 
@@ -1466,14 +1466,14 @@ body {
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
             font-size: 1.8rem;
-            color: #ffffff;
+            color: #252525;
             letter-spacing: 1px;
         }
 
         .stub-city {
             font-size: 0.7rem;
             font-weight: 600;
-            color: #ffffff;
+            color: #252525;
             text-transform: uppercase;
             margin-top: 3px;
         }
@@ -1481,7 +1481,7 @@ body {
         .stub-arrow {
             width: 30px;
             height: 2px;
-            background: #ffffff;
+            background: #252525;
             position: relative;
         }
 
@@ -1494,7 +1494,7 @@ body {
             height: 0;
             border-top: 5px solid transparent;
             border-bottom: 5px solid transparent;
-            border-left: 8px solid #ffffff;
+            border-left: 8px solid #252525;
         }
 
         /* Contact Info in Stub */
@@ -1508,7 +1508,7 @@ body {
             gap: 10px;
             margin-bottom: 12px;
             font-size: 1rem;
-            color: white;
+            color: #252525;
         }
 
         .contact-item svg {
@@ -1642,7 +1642,7 @@ body {
         }
 
         .bar {
-            background: #ffffff;
+            background: #252525;
             width: 3px;
         }
 
@@ -1661,7 +1661,7 @@ body {
         .barcode-text {
             font-family: 'Courier New', monospace;
             font-size: 0.7rem;
-            color: #ffffff;
+            color: #252525;
             letter-spacing: 2px;
         }
 
@@ -1669,21 +1669,21 @@ body {
         .company-info {
             text-align: center;
             padding-top: 20px;
-            border-top: 2px dashed #ffffff;
+            border-top: 2px dashed #252525;
         }
 
         .company-logo {
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
             font-size: 1.1rem;
-            color: #ffffff;
+            color: #252525;
             letter-spacing: 2px;
             margin-bottom: 5px;
         }
 
         .company-tagline {
             font-size: 0.7rem;
-            color: #ffffff;
+            color: #252525;
             opacity: 0.6;
             font-style: italic;
         }
