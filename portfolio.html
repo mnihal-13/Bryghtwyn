@@ -636,60 +636,7 @@
                         <div class="luggage-tag">DevOps Dashboard</div>
                     </div>
 
-                    <!-- Duplicate for seamless loop -->
-                    <div class="luggage" data-project="0">
-                        <div class="handle"></div>
-                        <div class="suitcase">
-                            <div class="sticker">UI/UX</div>
-                            <div class="sticker">2024</div>
-                        </div>
-                        <div class="luggage-tag">E-Commerce Platform</div>
-                    </div>
 
-                    <div class="luggage" data-project="1">
-                        <div class="handle"></div>
-                        <div class="suitcase">
-                            <div class="sticker">Mobile</div>
-                            <div class="sticker">App</div>
-                        </div>
-                        <div class="luggage-tag">Fitness Tracker</div>
-                    </div>
-
-                    <div class="luggage" data-project="2">
-                        <div class="handle"></div>
-                        <div class="suitcase">
-                            <div class="sticker">AI</div>
-                            <div class="sticker">SaaS</div>
-                        </div>
-                        <div class="luggage-tag">Smart Analytics</div>
-                    </div>
-
-                    <div class="luggage" data-project="3">
-                        <div class="handle"></div>
-                        <div class="suitcase">
-                            <div class="sticker">Brand</div>
-                            <div class="sticker">Design</div>
-                        </div>
-                        <div class="luggage-tag">Coffee Co.</div>
-                    </div>
-
-                    <div class="luggage" data-project="4">
-                        <div class="handle"></div>
-                        <div class="suitcase">
-                            <div class="sticker">Web</div>
-                            <div class="sticker">Dev</div>
-                        </div>
-                        <div class="luggage-tag">Portfolio Site</div>
-                    </div>
-
-                    <div class="luggage" data-project="5">
-                        <div class="handle"></div>
-                        <div class="suitcase">
-                            <div class="sticker">Cloud</div>
-                            <div class="sticker">Tech</div>
-                        </div>
-                        <div class="luggage-tag">DevOps Dashboard</div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -823,79 +770,137 @@
         const projectDetails = document.getElementById('projectDetails');
         const closeBtn = document.getElementById('closeBtn');
 
-        // Seamless Infinite Carousel Setup
-        const luggageWidth = 200; // Luggage width
-        const luggageGap = 150; // Gap between luggage
-        const totalLuggageWidth = luggageWidth + luggageGap;
-        const numOriginalItems = 6; // Number of original luggage items
+        // Guard: ensure all elements exist before proceeding
+        if (!luggageContainer || !overlay || !projectDetails || !closeBtn) {
+            console.error('Missing required DOM elements for carousel');
+            throw new Error('Carousel initialization failed - missing DOM elements');
+        }
 
-        // Set container width to hold all items
-        gsap.set(luggageContainer, {
-            width: totalLuggageWidth * (numOriginalItems * 2) + 'px'
-        });
+        // Seamless Infinite Carousel Setup (robust runtime measurement)
+        // Ensure no CSS padding-left interferes
+        luggageContainer.style.paddingLeft = '0px';
+        luggageContainer.style.willChange = 'transform';
 
-        // Create seamless infinite loop animation
-        let conveyorAnimation = gsap.timeline({ repeat: -1 })
-            .to(luggageContainer, {
-                x: -(totalLuggageWidth * numOriginalItems),
-                duration: 50,
-                ease: 'none',
-                onComplete: function() {
-                    // Reset position seamlessly
-                    gsap.set(luggageContainer, { x: 0 });
+        // Determine original unique items by data-project
+        const initialItems = Array.from(luggageContainer.querySelectorAll('.luggage'));
+        const uniqueIds = Array.from(new Set(initialItems.map(i => i.getAttribute('data-project'))));
+        const numOriginalItems = uniqueIds.length || initialItems.length;
+
+        // If DOM doesn't contain two sets, clone originals once to create a seamless pair
+        if (luggageContainer.children.length < numOriginalItems * 2) {
+            // find first occurrence of each unique id
+            const originals = [];
+            const seen = new Set();
+            for (const el of initialItems) {
+                const id = el.getAttribute('data-project');
+                if (!seen.has(id)) {
+                    originals.push(el);
+                    seen.add(id);
                 }
-            });
+            }
+            originals.forEach(el => luggageContainer.appendChild(el.cloneNode(true)));
+        }
 
-        // Alternative: Using modifiers for true seamless loop
-        conveyorAnimation.kill();
-        conveyorAnimation = gsap.to(luggageContainer, {
-            x: '-=3500', // Move continuously
+    // Re-query items after ensuring duplication
+    allLuggage = Array.from(luggageContainer.querySelectorAll('.luggage'));
+
+    // Robust measurement: compute loopDistance as the offsetLeft difference
+    // between the first item of the second set and the first item of the first set.
+    // This accounts for exact gaps and responsive widths.
+    const items = allLuggage;
+    const firstIndexOfSecondSet = numOriginalItems; // because we cloned one set
+    const loopDistance = Math.round(items[firstIndexOfSecondSet].offsetLeft - items[0].offsetLeft);
+
+    // compute container width as right edge of last item
+    const last = items[items.length - 1];
+    const containerWidth = Math.round(last.offsetLeft + last.offsetWidth);
+    luggageContainer.style.width = containerWidth + 'px';
+
+        // Create seamless infinite loop animation using wrap on measured loopDistance
+        let conveyorAnimation = gsap.to(luggageContainer, {
+            x: '-=' + loopDistance,
             duration: 50,
             ease: 'none',
             repeat: -1,
             modifiers: {
                 x: function(x) {
-                    const distance = totalLuggageWidth * numOriginalItems;
-                    return (parseFloat(x) % distance) + 'px';
+                    const n = parseFloat(x);
+                    return gsap.utils.wrap(-loopDistance, 0, n) + 'px';
                 }
             }
         });
 
-        // Hover Interactions
-        allLuggage.forEach((bag) => {
-            bag.addEventListener('mouseenter', () => {
-                // Pause conveyor
-                gsap.to(conveyorAnimation, { timeScale: 0, duration: 0.5 });
-                
-                // Bounce luggage
-                gsap.to(bag, {
-                    y: -15,
-                    duration: 0.4,
-                    ease: 'back.out(1.7)'
-                });
-            });
-
-            bag.addEventListener('mouseleave', () => {
-                // Resume conveyor
-                gsap.to(conveyorAnimation, { timeScale: 1, duration: 0.5 });
-                
-                // Reset luggage position
-                gsap.to(bag, {
-                    y: 0,
-                    duration: 0.3,
-                    ease: 'power2.out'
-                });
-            });
-
-            // Click to Open
-            bag.addEventListener('click', () => {
-                const projectIndex = bag.getAttribute('data-project');
-                openProjectDetails(projectIndex);
-            });
+        // Recalculate on resize to avoid micro-jumps when layout changes
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                if (!luggageContainer) return;
+                conveyorAnimation.pause();
+                // re-run initialization to measure and recreate clones & animation
+                // remove clones (keep only first numOriginalItems)
+                while (luggageContainer.children.length > numOriginalItems) {
+                    luggageContainer.removeChild(luggageContainer.lastElementChild);
+                }
+                // re-init (simple approach: reload page segment by re-appending originals)
+                const originals = Array.from(luggageContainer.querySelectorAll('.luggage')).slice(0, numOriginalItems);
+                originals.forEach(el => luggageContainer.appendChild(el.cloneNode(true)));
+                // recompute and update animation modifiers using offset positions
+                const newItems = Array.from(luggageContainer.querySelectorAll('.luggage'));
+                const newFirstIndexOfSecondSet = numOriginalItems;
+                const newLoop = Math.round(newItems[newFirstIndexOfSecondSet].offsetLeft - newItems[0].offsetLeft);
+                const newLast = newItems[newItems.length - 1];
+                const newContainerWidth = Math.round(newLast.offsetLeft + newLast.offsetWidth);
+                luggageContainer.style.width = newContainerWidth + 'px';
+                conveyorAnimation.vars.modifiers.x = function(x) { return gsap.utils.wrap(-newLoop, 0, parseFloat(x)) + 'px'; };
+                conveyorAnimation.play();
+            }, 160);
         });
+
+        // Hover Interactions
+        if (allLuggage.length === 0) {
+            console.error('No luggage elements found in the DOM');
+        } else {
+            allLuggage.forEach((bag) => {
+                bag.addEventListener('mouseenter', () => {
+                    // Pause conveyor
+                    gsap.to(conveyorAnimation, { timeScale: 0, duration: 0.5 });
+                    
+                    // Bounce luggage
+                    gsap.to(bag, {
+                        y: -15,
+                        duration: 0.4,
+                        ease: 'back.out(1.7)'
+                    });
+                });
+
+                bag.addEventListener('mouseleave', () => {
+                    // Resume conveyor
+                    gsap.to(conveyorAnimation, { timeScale: 1, duration: 0.5 });
+                    
+                    // Reset luggage position
+                    gsap.to(bag, {
+                        y: 0,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+
+                // Click to Open
+                bag.addEventListener('click', () => {
+                    const projectIndex = bag.getAttribute('data-project');
+                    openProjectDetails(parseInt(projectIndex));
+                });
+            });
+        }
 
         // Open Project Details
         function openProjectDetails(index) {
+            if (index === undefined || !portfolioData[index]) {
+                console.warn('Invalid project index:', index);
+                return;
+            }
+            
             const project = portfolioData[index];
 
             // Populate modal
