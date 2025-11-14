@@ -89,7 +89,7 @@ body {
 
 .hero {
   height: 100vh;
-  background: url("/assets/img/hero/hero.png") no-repeat right center / contain;
+  background: url("../assets/img/hero/hero.png") no-repeat right center / contain;
   display: flex;
   align-items: center;
   justify-content: flex-start;
