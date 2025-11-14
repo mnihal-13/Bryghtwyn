@@ -2,428 +2,404 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0,minimal-ui">
     <title>Brightwyn - Your Digital Journey Takes Flight</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> -->
+
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <svg class="logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M30 5L50 20L45 25L30 20L15 25L10 20L30 5Z" fill="#FF6B6B"/>
-                    <path d="M30 20L45 25L40 45L30 40L20 45L15 25L30 20Z" fill="#4ECDC4"/>
-                    <circle cx="30" cy="15" r="3" fill="#FFE66D"/>
-                </svg>
-                <span class="logo-text">Brightwyn</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="clouds-bg">
-            <div class="cloud cloud-1"></div>
-            <div class="cloud cloud-2"></div>
-            <div class="cloud cloud-3"></div>
-            <div class="cloud cloud-4"></div>
-            <div class="cloud cloud-5"></div>
-        </div>
+    <header class="navbar">
+    <div class="logo">
+      <div class="logo-icon"></div>
+      <span>Brightwyn</span>
+    </div>
+  </header>
+
+  <section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-title">
+      <span class="line">Your Digital Journey</span>
+      <span class="line">Takes Flight Here</span>
+    </h1>
+    <p class="hero-subtitle">
+      Transforming ideas into exceptional digital experiences with cutting-edge technology and innovative design.
+    </p>
+    <button class="btn btn-outline">
+      <span>Get Onboard</span>
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Animated plane -->
+ <!-- <img src="planeicon.png" alt="Plane Taking Off" class="plane-takeoff" /> -->
+</section>
+  
+<!-- Flight Chat Section -->
+  <section class="flight-chat-section">
+    <div class="chat-container">
+      <!-- Background illustration -->
+      <div class="tower-illustration">
+        <!-- <img src="/" alt="Control Tower" class="tower-bg"> -->
         
-        <div class="hero-content">
-            <h1 class="hero-title">
-                <span class="line">Your Digital Journey</span>
-                <span class="line">Takes Flight Here</span>
-            </h1>
-            <p class="hero-subtitle">Transforming ideas into exceptional digital experiences with cutting-edge technology and innovative design.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" data-scroll-to="contact">
-                    <span>Get Onboard</span>
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </button>
-                <button class="btn btn-secondary" data-scroll-to="about">
-                    <span>More About Us</span>
-                </button>
-            </div>
+        <!-- Animated signal waves from tower -->
+        <div class="signal-waves-from-tower">
+          <svg class="signal-wave" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle class="wave-ring wave-ring-1" cx="100" cy="100" r="20" fill="none" stroke="#212125" stroke-width="2" opacity="0"/>
+            <circle class="wave-ring wave-ring-2" cx="100" cy="100" r="20" fill="none" stroke="#212125" stroke-width="2" opacity="0"/>
+            <circle class="wave-ring wave-ring-3" cx="100" cy="100" r="20" fill="none" stroke="#212125" stroke-width="2" opacity="0"/>
+          </svg>
         </div>
+      </div>
 
-        <div class="hero-plane">
-            <svg viewBox="0 0 200 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M180 50L160 45L120 48L80 50L40 48L20 45L10 50L20 55L40 52L80 50L120 52L160 55L180 50Z" fill="#FF6B6B"/>
-                <ellipse cx="100" cy="50" rx="60" ry="15" fill="#4ECDC4" opacity="0.8"/>
-                <path d="M100 35L120 50L100 50L80 50L100 35Z" fill="#FFE66D"/>
-                <circle cx="70" cy="50" r="4" fill="#2C3E50"/>
-                <circle cx="90" cy="50" r="4" fill="#2C3E50"/>
-                <circle cx="110" cy="50" r="4" fill="#2C3E50"/>
-                <circle cx="130" cy="50" r="4" fill="#2C3E50"/>
-                <path d="M95 40L105 40L100 30L95 40Z" fill="#FF6B6B"/>
+      <!-- Transmitting indicator -->
+      <div class="transmitting-indicator">
+        <!-- <span class="signal-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="2" fill="#252525"/>
+            <path d="M8 12C8 9.79 9.79 8 12 8M16 12C16 14.21 14.21 16 12 16" stroke="#252525" stroke-width="2" stroke-linecap="round"/>
+            <path d="M5 12C5 8.13 8.13 5 12 5M19 12C19 15.87 15.87 19 12 19" stroke="#252525" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+            <path d="M2 12C2 6.48 6.48 2 12 2M22 12C22 17.52 17.52 22 12 22" stroke="#252525" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+          </svg>
+        </span> -->
+        <!-- <span class="transmit-text">TRANSMITTING...</span> -->
+        <div class="signal-waves">
+          <span class="wave"></span>
+          <span class="wave"></span>
+          <span class="wave"></span>
+        </div>
+      </div>
+
+      <!-- Chat bubbles container -->
+      <div class="chat-bubbles">
+        <!-- Tower Message 1 -->
+        <div class="chat-bubble tower-bubble" data-delay="0.5">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L5 6V11C5 15.42 8.58 19.42 12 21C15.42 19.42 19 15.42 19 11V6L12 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="1.5" fill="#252525"/>
+              <path d="M10 13L12 17M12 13L14 17" stroke="#252525" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Tower</div>
+            <div class="bubble-text">Control Tower here, copy that.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 5,2 Q 12,18 18,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
         </div>
 
-        <div class="runway-lights">
-            <div class="light"></div>
-            <div class="light"></div>
-            <div class="light"></div>
-            <div class="light"></div>
-            <div class="light"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About</h2>
-                <p class="section-subtitle">We build creative, high-performance digital products that help businesses take off.</p>
-            </div>
-
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 60 60" fill="none">
-                                <circle cx="30" cy="30" r="25" fill="#FFE66D" opacity="0.2"/>
-                                <path d="M30 15L40 25L35 30L30 25L25 30L20 25L30 15Z" fill="#FF6B6B"/>
-                                <circle cx="30" cy="35" r="8" stroke="#4ECDC4" stroke-width="2"/>
-                            </svg>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Innovation First</h3>
-                            <p>We don't just code — we innovate. Every project is a new adventure in digital creativity.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 60 60" fill="none">
-                                <rect x="15" y="20" width="30" height="25" rx="3" fill="#4ECDC4" opacity="0.2"/>
-                                <path d="M20 30L25 35L35 25" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/>
-                            </svg>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Smooth Journeys</h3>
-                            <p>From takeoff to landing, we ensure your digital experience is seamless and delightful.</p>
-                        </div>
-                    </div>
-
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg viewBox="0 0 60 60" fill="none">
-                                <polygon points="30,10 50,40 10,40" fill="#FFE66D" opacity="0.2"/>
-                                <circle cx="30" cy="30" r="5" fill="#FF6B6B"/>
-                                <circle cx="20" cy="35" r="3" fill="#4ECDC4"/>
-                                <circle cx="40" cy="35" r="3" fill="#4ECDC4"/>
-                            </svg>
-                        </div>
-                        <div class="feature-text">
-                            <h3>Global Reach</h3>
-                            <p>Your destination is worldwide. We build products that scale across continents.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="about-illustration">
-                    <svg class="control-tower" viewBox="0 0 300 400" fill="none">
-                        <rect x="120" y="250" width="60" height="150" fill="#95A5A6"/>
-                        <rect x="80" y="150" width="140" height="100" fill="#4ECDC4"/>
-                        <rect x="100" y="100" width="100" height="50" fill="#FFE66D"/>
-                        <circle cx="150" cy="75" r="30" fill="#FF6B6B"/>
-                        <rect x="130" y="170" width="15" height="20" fill="#2C3E50"/>
-                        <rect x="155" y="170" width="15" height="20" fill="#2C3E50"/>
-                        <rect x="185" y="170" width="15" height="20" fill="#2C3E50"/>
-                        <path class="plane-path" d="M 0,200 Q 150,150 300,200" stroke="#BDC3C7" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
-                        <g class="flying-plane">
-                            <path d="M0,0 L20,0 L15,5 L5,5 Z" fill="#FF6B6B"/>
-                            <circle cx="10" cy="2.5" r="1.5" fill="#2C3E50"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Choose Your Destination</h2>
-                <p class="section-subtitle">for digital excellence</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="10" y="20" width="60" height="40" rx="4" stroke="#4ECDC4" stroke-width="3"/>
-                            <line x1="10" y1="30" x2="70" y2="30" stroke="#4ECDC4" stroke-width="3"/>
-                            <circle cx="20" cy="25" r="2" fill="#FF6B6B"/>
-                            <circle cx="28" cy="25" r="2" fill="#FFE66D"/>
-                            <circle cx="36" cy="25" r="2" fill="#4ECDC4"/>
-                        </svg>
-                    </div>
-                    <h3>Web Application Development</h3>
-                    <p>Fast, responsive, and scalable web apps that take your business to cruising altitude.</p>
-                    <div class="card-tag">DESTINATION: WEB</div>
-                </div>
-
-                <div class="service-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <rect x="25" y="10" width="30" height="55" rx="5" stroke="#FF6B6B" stroke-width="3"/>
-                            <circle cx="40" cy="58" r="3" fill="#FFE66D"/>
-                            <line x1="30" y1="18" x2="50" y2="18" stroke="#FF6B6B" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3>Mobile App Development</h3>
-                    <p>Native and cross-platform apps that fit perfectly in your users' pockets.</p>
-                    <div class="card-tag">DESTINATION: MOBILE</div>
-                </div>
-
-                <div class="service-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <circle cx="40" cy="40" r="25" stroke="#FFE66D" stroke-width="3"/>
-                            <path d="M 25,40 L 35,50 L 55,30" stroke="#FFE66D" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>UI/UX Design</h3>
-                    <p>Beautiful, intuitive interfaces that make every interaction feel like first class.</p>
-                    <div class="card-tag">DESTINATION: DESIGN</div>
-                </div>
-
-                <div class="service-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <circle cx="25" cy="40" r="8" fill="#4ECDC4"/>
-                            <circle cx="55" cy="40" r="8" fill="#FF6B6B"/>
-                            <path d="M 33,40 L 47,40" stroke="#FFE66D" stroke-width="3"/>
-                            <circle cx="40" cy="40" r="4" fill="#FFE66D"/>
-                        </svg>
-                    </div>
-                    <h3>API Development & Integration</h3>
-                    <p>Connect your systems smoothly — like air traffic control for your data.</p>
-                    <div class="card-tag">DESTINATION: API</div>
-                </div>
-
-                <div class="service-card">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <path d="M 40,15 Q 25,25 25,40 Q 25,55 40,65 Q 55,55 55,40 Q 55,25 40,15" stroke="#4ECDC4" stroke-width="3" fill="none"/>
-                            <path d="M 30,35 L 35,40 L 50,25" stroke="#4ECDC4" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>Cloud Deployment & Hosting</h3>
-                    <p>Take your apps to the clouds — literally. Scalable, secure, and always online.</p>
-                    <div class="card-tag">DESTINATION: CLOUD</div>
-                </div>
-
-                <div class="service-card service-card-cta">
-                    <div class="card-icon">
-                        <svg viewBox="0 0 80 80" fill="none">
-                            <circle cx="40" cy="40" r="25" stroke="#FF6B6B" stroke-width="3" stroke-dasharray="5,5"/>
-                            <path d="M 40,25 L 40,55 M 25,40 L 55,40" stroke="#FF6B6B" stroke-width="3" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>& More Destinations</h3>
-                    <p>Explore all our services and find the perfect route for your project.</p>
-                    <button class="btn btn-outline">View All Services</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="luggage-conveyor">
-            <div class="luggage"></div>
-            <div class="luggage"></div>
-            <div class="luggage"></div>
-            <div class="luggage"></div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Destinations We've Reached</h2>
-                <p class="section-subtitle">Projects that soared beyond expectations</p>
-            </div>
-
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="boarding-pass">
-                        <div class="pass-header">
-                            <div class="pass-logo">SC</div>
-                            <div class="pass-airline">Brightwyn Airlines</div>
-                        </div>
-                        <div class="pass-content">
-                            <div class="pass-row">
-                                <div class="pass-item">
-                                    <span class="label">Project</span>
-                                    <span class="value">E-Commerce Platform</span>
-                                </div>
-                                <div class="pass-item">
-                                    <span class="label">Sector</span>
-                                    <span class="value">Retail</span>
-                                </div>
-                            </div>
-                            <div class="pass-row">
-                                <div class="pass-item">
-                                    <span class="label">Technologies</span>
-                                    <span class="value">React, Node.js, MongoDB</span>
-                                </div>
-                            </div>
-                            <div class="pass-description">
-                                Built a high-performance e-commerce platform with real-time inventory and seamless checkout.
-                            </div>
-                        </div>
-                        <div class="pass-footer">
-                            <div class="barcode"></div>
-                            <span class="flight-number">SC2024001</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="boarding-pass">
-                        <div class="pass-header">
-                            <div class="pass-logo">SC</div>
-                            <div class="pass-airline">Brightwyn Airlines</div>
-                        </div>
-                        <div class="pass-content">
-                            <div class="pass-row">
-                                <div class="pass-item">
-                                    <span class="label">Project</span>
-                                    <span class="value">HealthTech Mobile App</span>
-                                </div>
-                                <div class="pass-item">
-                                    <span class="label">Sector</span>
-                                    <span class="value">Healthcare</span>
-                                </div>
-                            </div>
-                            <div class="pass-row">
-                                <div class="pass-item">
-                                    <span class="label">Technologies</span>
-                                    <span class="value">React Native, Firebase</span>
-                                </div>
-                            </div>
-                            <div class="pass-description">
-                                Developed a cross-platform health monitoring app with AI-powered insights.
-                            </div>
-                        </div>
-                        <div class="pass-footer">
-                            <div class="barcode"></div>
-                            <span class="flight-number">SC2024002</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="boarding-pass">
-                        <div class="pass-header">
-                            <div class="pass-logo">SC</div>
-                            <div class="pass-airline">Brightwyn Airlines</div>
-                        </div>
-                        <div class="pass-content">
-                            <div class="pass-row">
-                                <div class="pass-item">
-                                    <span class="label">Project</span>
-                                    <span class="value">SaaS Dashboard</span>
-                                </div>
-                                <div class="pass-item">
-                                    <span class="label">Sector</span>
-                                    <span class="value">B2B</span>
-                                </div>
-                            </div>
-                            <div class="pass-row">
-                                <div class="pass-item">
-                                    <span class="label">Technologies</span>
-                                    <span class="value">Vue.js, Python, PostgreSQL</span>
-                                </div>
-                            </div>
-                            <div class="pass-description">
-                                Created an intuitive analytics dashboard with real-time data visualization.
-                            </div>
-                        </div>
-                        <div class="pass-footer">
-                            <div class="barcode"></div>
-                            <span class="flight-number">SC2024003</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-card">
-                    <div class="boarding-pass">
-                        <div class="pass-header">
-                            <div class="pass-logo">SC</div>
-                            <div class="pass-airline">Brightwyn Airlines</div>
-                        </div>
-                        <div class="pass-content">
-                            <div class="pass-row">
-                                <div class="pass-item">
-                                    <span class="label">Project</span>
-                                    <span class="value">EdTech Learning Portal</span>
-                                </div>
-                                <div class="pass-item">
-                                    <span class="label">Sector</span>
-                                    <span class="value">Education</span>
-                                </div>
-                            </div>
-                            <div class="pass-row">
-                                <div class="pass-item">
-                                    <span class="label">Technologies</span>
-                                    <span class="value">Next.js, GraphQL, AWS</span>
-                                </div>
-                            </div>
-                            <div class="pass-description">
-                                Designed an interactive learning platform with gamification and progress tracking.
-                            </div>
-                        </div>
-                        <div class="pass-footer">
-                            <div class="barcode"></div>
-                            <span class="flight-number">SC2024004</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="radar-container">
-            <svg class="radar" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="80" stroke="#4ECDC4" stroke-width="1" fill="none" opacity="0.2"/>
-                <circle cx="100" cy="100" r="60" stroke="#4ECDC4" stroke-width="1" fill="none" opacity="0.3"/>
-                <circle cx="100" cy="100" r="40" stroke="#4ECDC4" stroke-width="1" fill="none" opacity="0.4"/>
-                <circle cx="100" cy="100" r="20" stroke="#4ECDC4" stroke-width="1" fill="none" opacity="0.5"/>
-                <line class="radar-sweep" x1="100" y1="100" x2="100" y2="20" stroke="#FF6B6B" stroke-width="2"/>
-                <circle cx="100" cy="100" r="5" fill="#FFE66D"/>
+        <!-- Flight Message 1 -->
+        <div class="chat-bubble flight-bubble" data-delay="1.5">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="#252525" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Flight</div>
+            <div class="bubble-text">Requesting runway for innovation.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 12,2 Q 15,18 25,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Book Your Digital Journey</h2>
-                <p class="section-subtitle">Fill out your ticket details and we'll get you to your destination.</p>
+        <!-- Tower Message 2 -->
+        <div class="chat-bubble tower-bubble" data-delay="2.8">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L5 6V11C5 15.42 8.58 19.42 12 21C15.42 19.42 19 15.42 19 11V6L12 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="1.5" fill="#252525"/>
+              <path d="M10 13L12 17M12 13L14 17" stroke="#252525" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Tower</div>
+            <div class="bubble-text">Coordinates locked. Prepare for digital takeoff.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 5,2 Q 12,18 18,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Flight Message 2 -->
+        <div class="chat-bubble flight-bubble" data-delay="4.2">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="#252525" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Flight</div>
+            <div class="bubble-text">Roger that. Engines powered by creativity.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 12,2 Q 15,18 25,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <!-- Tower Message 3 -->
+        <div class="chat-bubble tower-bubble" data-delay="5.5">
+          <div class="bubble-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L5 6V11C5 15.42 8.58 19.42 12 21C15.42 19.42 19 15.42 19 11V6L12 3Z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="12" cy="10" r="1.5" fill="#252525"/>
+              <path d="M10 13L12 17M12 13L14 17" stroke="#252525" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="bubble-content">
+            <div class="bubble-label">Tower</div>
+            <div class="bubble-text">Cleared for departure. Your journey begins now.</div>
+          </div>
+          <svg class="bubble-tail" width="30" height="30" viewBox="0 0 30 30">
+            <path d="M 5,2 Q 12,18 18,5" stroke="#252525" stroke-width="2.5" fill="white" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+
+     <!-- Takeoff Button - Centered below chat -->
+    <div class="takeoff-button-container">
+      <button id="openAboutBtn" class="takeoff-button">
+        <svg class="plane-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="#252525" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="button-text">Begin Takeoff</span>
+        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <!-- <div class="runway-line"></div> -->
+    </div>
+  </section>
+
+  <!-- About Overlay Popup -->
+  <div id="aboutOverlay" class="about-overlay">
+    <!-- Floating decorative elements -->
+    <div class="floating-shapes">
+      <div class="shape shape-circle"></div>
+      <div class="shape shape-triangle"></div>
+      <div class="shape shape-square"></div>
+      <div class="shape shape-circle-2"></div>
+    </div>
+    
+    <div class="about-overlay-content">
+      <!-- Close Button -->
+      <button class="close-overlay-btn" id="closeAboutBtn">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18M6 6l12 12" stroke="#252525" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- About Content -->
+      <div class="about-container">
+        <!-- Header Section -->
+        <div class="about-header">
+          <h1 class="about-title">
+            <svg class="title-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            About Brightwyn
+          </h1>
+          <p class="about-subtitle">Where Innovation Takes Flight</p>
+        </div>
+
+        <!-- Mission Section -->
+        <div class="about-section mission-section">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="section-title">Our Mission</h2>
+          <p class="section-text">
+            At Brightwyn, we believe in transforming visionary ideas into exceptional digital experiences. 
+            Our team of passionate developers, designers, and strategists work together to craft solutions 
+            that don't just meet expectations—they exceed them.
+          </p>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <div class="about-section why-choose-section">
+          <h2 class="section-title centered">Why Choose Brightwyn</h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Lightning Fast</h3>
+              <p class="feature-text">Cutting-edge technology for optimal performance and speed.</p>
             </div>
 
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Secure & Reliable</h3>
+              <p class="feature-text">Your data and applications are protected with enterprise-grade security.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Cost Effective</h3>
+              <p class="feature-text">Premium quality solutions at competitive prices with transparent pricing.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Expert Team</h3>
+              <p class="feature-text">Experienced professionals dedicated to your project's success.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="12" r="10" stroke="#252525" stroke-width="2"/>
+                  <path d="M12 6v6l4 2" stroke="#252525" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">24/7 Support</h3>
+              <p class="feature-text">Round-the-clock assistance to keep your business running smoothly.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="#252525" stroke-width="2"/>
+                  <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="feature-title">Scalable Solutions</h3>
+              <p class="feature-text">Grow your business without worrying about technical limitations.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Section -->
+        <!-- <div class="about-section stats-section">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">150+</div>
+              <div class="stat-label">Projects Delivered</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">98%</div>
+              <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">50+</div>
+              <div class="stat-label">Happy Clients</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">5+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Values Section -->
+        <!-- <div class="about-section values-section">
+          <h2 class="section-title centered">Our Core Values</h2>
+          <div class="values-list">
+            <div class="value-item">
+              <div class="value-icon">✈️</div>
+              <div class="value-content">
+                <h3 class="value-title">Innovation First</h3>
+                <p class="value-text">We constantly push boundaries and embrace new technologies.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🎯</div>
+              <div class="value-content">
+                <h3 class="value-title">Client-Centric</h3>
+                <p class="value-text">Your success is our success. We prioritize your needs.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🚀</div>
+              <div class="value-content">
+                <h3 class="value-title">Excellence Driven</h3>
+                <p class="value-text">We deliver nothing but the highest quality in everything we do.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🤝</div>
+              <div class="value-content">
+                <h3 class="value-title">Transparent Communication</h3>
+                <p class="value-text">Clear, honest, and open dialogue throughout your journey.</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- CTA Section -->
+        <div class="about-cta">
+          <h2 class="cta-title">Ready to Take Off?</h2>
+          <p class="cta-text">Let's bring your digital vision to life together.</p>
+          <button class="cta-button" id="ctaContactBtn">
+            <span>Start Your Journey</span>
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Service Section Display -->
+  <section>
+    <div class="airport-container">
+      <img src="assets/img/service.png" alt="Airport Background" class="bg-image">
+
+      
+      <div class="overlay-mask"></div>
+
+      <!-- Custom tilted animated departure board -->
+      <div class="departure-board">
+        <div class="board-header">DEPARTURES - OUR SERVICES</div>
+        <div class="board">
+          <div class="row"><span>Web Development</span><span>ON TIME</span></div>
+          <div class="row"><span>Mobile App Development</span><span>BOARDING</span></div>
+          <div class="row"><span>UI/UX design</span><span>GATE A1</span></div>
+          <div class="row"><span>Custom Software</span><span>FINAL CALL</span></div>
+          <div class="row"><span>Cloud Solutions</span><span>DEPARTED</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+        <div class="container">
             <div class="contact-content">
+                <div class="section-header">
+                    <h2 class="section-title">Book Your Digital Journey</h2>
+                    <p class="section-subtitle">Fill out your ticket details and we'll get you to your destination.</p>
+                </div>
+
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">
@@ -432,7 +408,7 @@
                             </svg>
                             Passenger Name
                         </label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
                     </div>
 
                     <div class="form-row">
@@ -444,7 +420,7 @@
                                 </svg>
                                 Email
                             </label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            <input type="email" id="email" name="email" placeholder="abc@example.com" required>
                         </div>
 
                         <div class="form-group">
@@ -452,7 +428,7 @@
                                 <svg viewBox="0 0 24 24" fill="none">
                                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
                                 </svg>
-                                Number
+                                Phone Number
                             </label>
                             <input type="tel" id="phone" name="phone" placeholder="+1 234 567 8900" required>
                         </div>
@@ -465,145 +441,1037 @@
                             </svg>
                             Message / Project Details
                         </label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project and where you want to go..." required></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about where you want to go..." required></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-submit">
+                    <button type="submit" class="btn-submit">
                         <span>Submit Boarding Pass</span>
                         <svg viewBox="0 0 24 24" fill="none">
                             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </button>
                 </form>
-
-                <div class="contact-illustration">
-                    <svg class="taxiing-plane" viewBox="0 0 400 300" fill="none">
-                        <line class="runway" x1="0" y1="200" x2="400" y2="200" stroke="#BDC3C7" stroke-width="4"/>
-                        <line x1="0" y1="195" x2="400" y2="195" stroke="#FFE66D" stroke-width="2" stroke-dasharray="20,15"/>
-                        
-                        <g class="plane-taxiing">
-                            <ellipse cx="100" cy="150" rx="60" ry="20" fill="#4ECDC4"/>
-                            <path d="M 70,150 L 130,150 L 125,160 L 75,160 Z" fill="#FF6B6B"/>
-                            <polygon points="100,130 110,150 90,150" fill="#FFE66D"/>
-                            <circle cx="80" cy="150" r="3" fill="#2C3E50"/>
-                            <circle cx="95" cy="150" r="3" fill="#2C3E50"/>
-                            <circle cx="110" cy="150" r="3" fill="#2C3E50"/>
-                            <rect x="75" y="165" width="10" height="35" fill="#34495E"/>
-                            <rect x="115" y="165" width="10" height="35" fill="#34495E"/>
-                        </g>
-
-                        <circle class="runway-light" cx="50" cy="210" r="4" fill="#FF6B6B"/>
-                        <circle class="runway-light" cx="120" cy="210" r="4" fill="#FF6B6B"/>
-                        <circle class="runway-light" cx="190" cy="210" r="4" fill="#FF6B6B"/>
-                        <circle class="runway-light" cx="260" cy="210" r="4" fill="#FF6B6B"/>
-                        <circle class="runway-light" cx="330" cy="210" r="4" fill="#FF6B6B"/>
-                    </svg>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-left">
-                    <div class="footer-logo">
-                        <svg class="logo-icon" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30 5L50 20L45 25L30 20L15 25L10 20L30 5Z" fill="#FF6B6B"/>
-                            <path d="M30 20L45 25L40 45L30 40L20 45L15 25L30 20Z" fill="#4ECDC4"/>
-                            <circle cx="30" cy="15" r="3" fill="#FFE66D"/>
-                        </svg>
-                        <div>
-                            <div class="logo-text">Brightwyn</div>
-                            <div class="tagline">We code. You cruise.</div>
+
+    <footer class="boarding-pass-footer">
+        <!-- Background Decorative Elements -->
+        <svg class="plane-pattern" viewBox="0 0 24 24" fill="none">
+            <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        
+        <svg class="cloud-doodle" viewBox="0 0 150 80" fill="none">
+            <path d="M30 50 Q20 40 30 30 Q40 20 50 30 Q60 20 70 25 Q80 20 90 30 Q100 25 110 35 Q120 30 125 40 Q130 50 120 55 H30Z" stroke="#252525" stroke-width="3" fill="none"/>
+        </svg>
+        
+        <div class="dots-pattern"></div>
+        
+        <div class="boarding-pass-container">
+            <!-- Main Section -->
+            <div class="main-section">
+                <div class="pass-header">
+                    <div class="pass-title">BOARDING PASS</div>
+                </div>
+
+                <!-- Flight Path -->
+                <div class="flight-path">
+                    <div class="airport-code">
+                        <div class="airport-label">From</div>
+                        <div class="airport-name">YOUR</div>
+                        <div class="airport-city">Idea</div>
+                    </div>
+
+                    <svg class="plane-icon" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
+                    <div class="arrow-line"></div>
+
+                    <div class="airport-code">
+                        <div class="airport-label">To</div>
+                        <div class="airport-name">LIVE</div>
+                        <div class="airport-city">Reality</div>
+                    </div>
+                </div>
+
+                <!-- Info Grid -->
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Services</div>
+                        <div class="info-value">Full Stack</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Terminal</div>
+                        <div class="info-value">Digital</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Gate</div>
+                        <div class="info-value">Innovation</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Status</div>
+                        <div class="info-value">Ready</div>
+                    </div>
+                </div>
+
+                <!-- Links Section -->
+                <div class="links-section">
+                    <div class="links-row">
+                        <div class="link-item">
+                            <a href="#home">Home</a>
+                        </div>
+                        <div class="link-separator"></div>
+                        <div class="link-item">
+                            <a href="#about">About Us</a>
+                        </div>
+                        <div class="link-separator"></div>
+                        <div class="link-item">
+                            <a href="#services">Services</a>
+                        </div>
+                        <div class="link-separator"></div>
+                        <div class="link-item">
+                            <a href="#portfolio">Portfolio</a>
+                        </div>
+                        <div class="link-separator"></div>
+                        <div class="link-item">
+                            <a href="#contact">Contact</a>
+                        </div>
+                        <div class="link-separator"></div>
+                        <!-- <div class="link-item">
+                            <a href="#blog">Blog</a>
+                        </div>
+                        <div class="link-separator"></div>
+                        <div class="link-item">
+                            <a href="#careers">Careers</a>
+                        </div> -->
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="social-links">
+                      <a href="#" class="social-link instagram" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" style="background-image: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); background-clip: text;">
+                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link twitter" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link github" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link linkedin" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- Stub Section -->
+            <div class="stub-section">
+                <div class="stub-header">
+                    <div class="stub-title">BOARDING PASS</div>
+                    <div class="stub-route">
+                        <div class="stub-airport">
+                            <div class="stub-code">YOUR</div>
+                            <div class="stub-city">Idea</div>
+                        </div>
+                        <div class="stub-arrow"></div>
+                        <div class="stub-airport">
+                            <div class="stub-code">LIVE</div>
+                            <div class="stub-city">Reality</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="footer-center">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
+                <!-- Contact Info -->
+                <div class="stub-contact">
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>brightwyn@gmail.in</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>+1 (234) 567-8900</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>Pondichery, India</span>
+                    </div>
                 </div>
 
-                <div class="footer-right">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
-                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            hello@Brightwyn.studio
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                            +1 (555) 123-4567
-                        </li>
-                    </ul>
+                <!-- Barcode -->
+                <div class="barcode">
+                    <div class="barcode-lines">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <div class="barcode-text">BRIGHTWYN</div>
                 </div>
-            </div>
 
-            <div class="footer-bottom">
-                <p>&copy; 2025 Brightwyn. Fasten your seatbelt — your digital journey begins here.</p>
+                <!-- Company Info -->
+                <div class="company-info">
+                    <div class="company-logo">BRIGHTWYN</div>
+                    <div class="company-tagline">Your Digital Journey Takes Flight</div>
+                </div>
             </div>
         </div>
+
+        <!-- Copyright -->
+        <div class="copyright">
+            © 2025 Brightwyn. All rights reserved. Your journey to digital excellence starts here.
+        </div>
     </footer>
-    <script>
-    // Initialize Lenis
-    const lenis = new Lenis({
-      duration: 1.2,   // Smoothness speed
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Ease-out curve
-      smoothWheel: true,
-      smoothTouch: false,
-    });
 
-    // GSAP ScrollTrigger + Lenis sync
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
 
-    // Update ScrollTrigger on scroll
-    lenis.on('scroll', ScrollTrigger.update);
+  
 
-    // Example GSAP animation on scroll
-    gsap.utils.toArray('section').forEach((section, i) => {
-      gsap.fromTo(section, 
-        { opacity: 0, y: 100 },
-        {
+
+  
+
+  
+
+
+
+
+
+
+
+  <script>
+    const services = [
+      "Web Development",
+      "App Design",
+      "UI/UX Consulting",
+      "SEO Optimization",
+      "Cloud Solutions",
+      "AI Integration",
+      "E-Commerce Systems"
+    ];
+
+    const board = document.querySelector('.board');
+    const rows = board.querySelectorAll('.row span:first-child');
+    let index = 0;
+
+    setInterval(() => {
+        rows.forEach((row, i) => {
+        const nextService = services[(index + i) % services.length];
+        row.textContent = nextService;
+        });
+        index++;
+    }, 4000);
+    
+     // ===================================
+    // HERO TEXT ANIMATIONS WITH GSAP
+    // ===================================
+    
+    // Wait for DOM and GSAP to be ready
+    document.addEventListener('DOMContentLoaded', () => {
+      // Hero Heading Animation - Split by words and characters
+      const heroHeading = document.querySelector('.hero-heading');
+      if (heroHeading) {
+        const text = heroHeading.innerHTML;
+        const lines = text.split('<br>');
+        
+        heroHeading.innerHTML = lines.map(line => {
+          const words = line.trim().split(' ');
+          return words.map(word => {
+            const chars = word.split('');
+            return `<span class="word" style="display: inline-block; overflow: hidden;">${
+              chars.map(char => `<span class="char" style="display: inline-block; opacity: 0; transform: translateY(100%)">${char}</span>`).join('')
+            }</span>`;
+          }).join(' ');
+        }).join('<br>');
+
+        // Animate each character
+        gsap.to('.hero-heading .char', {
           opacity: 1,
           y: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            end: "bottom 60%",
-            toggleActions: "play none none reverse",
+          duration: 0.8,
+          stagger: {
+            amount: 0.8,
+            from: 'start'
+          },
+          ease: 'power3.out',
+          delay: 0.3
+        });
+      }
+
+      // Subquote Animation - Fade and slide up
+      gsap.from('.subquote', {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+        delay: 1.2,
+        ease: 'power2.out'
+      });
+
+      // Subquote HR line animation
+      gsap.from('.subquote hr', {
+        scaleX: 0,
+        transformOrigin: 'left',
+        duration: 0.8,
+        delay: 1.5,
+        ease: 'power2.inOut'
+      });
+
+      // Hero Description - Typing effect
+      const heroDescription = document.querySelector('.hero-description');
+      if (heroDescription) {
+        const originalText = heroDescription.textContent;
+        heroDescription.textContent = '';
+        
+        gsap.to(heroDescription, {
+          text: {
+            value: originalText,
+            delimiter: ''
+          },
+          duration: 2,
+          delay: 1.8,
+          ease: 'none'
+        });
+
+        // Fade in the description container
+        gsap.from('.hero-description', {
+          opacity: 0,
+          duration: 0.5,
+          delay: 1.8
+        });
+      }
+
+      // Icon round animation - Scale bounce
+      gsap.from('.icon-round', {
+        scale: 0,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.1,
+        ease: 'back.out(1.7)'
+      });
+
+      // Button Animation - Slide up with bounce
+      gsap.from('.see-more-btn', {
+        opacity: 0,
+        y: 40,
+        scale: 0.9,
+        duration: 0.8,
+        delay: 3.8,
+        ease: 'elastic.out(1, 0.75)'
+      });
+
+      // Button Arrow Pulse Animation (continuous)
+      gsap.to('.see-more-btn .arrow-icon', {
+        x: 5,
+        duration: 0.8,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut'
+      });
+
+      // Button Hover Interaction
+      const seeMoreBtn = document.querySelector('.see-more-btn');
+      if (seeMoreBtn) {
+        seeMoreBtn.addEventListener('mouseenter', () => {
+          gsap.to('.see-more-btn', {
+            scale: 1.05,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+          gsap.to('.see-more-btn .arrow-icon', {
+            x: 8,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+
+        seeMoreBtn.addEventListener('mouseleave', () => {
+          gsap.to('.see-more-btn', {
+            scale: 1,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+      }
+    });
+
+    // gsap.registerPlugin(ScrollTrigger, TextPlugin);
+    
+    // Typewriter effect for chat bubbles
+    function typewriterEffect(element, text, speed = 50) {
+      let index = 0;
+      element.textContent = '';
+      
+      return new Promise((resolve) => {
+        const interval = setInterval(() => {
+          if (index < text.length) {
+            element.textContent += text[index];
+            index++;
+          } else {
+            clearInterval(interval);
+            resolve();
           }
+        }, speed);
+      });
+    }
+
+    // Animate Flight Chat section on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const towerBg = document.querySelector('.tower-bg');
+      const transmitIndicator = document.querySelector('.transmitting-indicator');
+      const chatBubbles = document.querySelectorAll('.chat-bubble');
+      
+      const masterTimeline = gsap.timeline();
+      
+      // 1. Fade in tower illustration
+      masterTimeline.to(towerBg, {
+        opacity: 1,
+        duration: 1,
+        ease: 'power2.out'
+      });
+      
+      // 2. Show transmitting indicator
+      masterTimeline.to(transmitIndicator, {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: 'back.out(1.7)'
+      }, '-=0.3');
+      
+      // 3. Animate each chat bubble with stagger and typing effect
+      chatBubbles.forEach((bubble, index) => {
+        const delay = parseFloat(bubble.getAttribute('data-delay')) || 0;
+        const bubbleText = bubble.querySelector('.bubble-text');
+        const originalText = bubbleText.textContent;
+        const isTower = bubble.classList.contains('tower-bubble');
+        
+        // Bubble entrance animation
+        masterTimeline.to(bubble, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          onStart: () => {
+            // Sound wave effect on icon
+            gsap.to(bubble.querySelector('.bubble-icon'), {
+              scale: 1.15,
+              duration: 0.3,
+              yoyo: true,
+              repeat: 1,
+              ease: 'power2.inOut'
+            });
+          }
+        }, delay);
+        
+        // Typing effect for text
+        masterTimeline.call(() => {
+          typewriterEffect(bubbleText, originalText, 40);
+        }, null, delay + 0.3);
+        
+        // Subtle glow pulse after typing
+        masterTimeline.to(bubble.querySelector('.bubble-content'), {
+          boxShadow: '0 12px 40px rgba(74, 144, 226, 0.4)',
+          duration: 0.4,
+          yoyo: true,
+          repeat: 1,
+          ease: 'sine.inOut'
+        }, delay + 0.8);
+      });
+      
+      // 4. Continuous subtle animations
+      gsap.to('.signal-icon', {
+        rotation: 360,
+        duration: 3,
+        repeat: -1,
+        ease: 'none'
+      });
+      
+      // 5. Show takeoff button after all messages
+      masterTimeline.to('.takeoff-button-container', {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'elastic.out(1, 0.75)'
+      }, 7); // Shows 1.5s after last message at 5.5s
+      
+      // Animate runway line drawing
+      gsap.fromTo('.runway-line',
+        { scaleX: 0 },
+        {
+          scaleX: 1,
+          duration: 1.2,
+          delay: 7.3,
+          ease: 'power2.out',
+          transformOrigin: 'left'
         }
       );
     });
+
+  </script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger, TextPlugin);
+
+// Initialize Lenis for smooth scrolling
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+    smoothTouch: false,
+    direction: 'vertical',
+    gestureDirection: 'vertical',
+    mouseMultiplier: 1,
+    touchMultiplier: 2,
+});
+
+// Lenis scroll event handler
+lenis.on('scroll', (e) => {
+    ScrollTrigger.update();
+});
+
+// Integrate Lenis with GSAP ScrollTrigger
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+
+// Animation frame loop
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
+
   </script>
 
-    <!-- GSAP Library -->
+  <script>
+    // ===================================
+    // ABOUT OVERLAY FUNCTIONALITY
+    // ===================================
+    
+    const aboutOverlay = document.getElementById('aboutOverlay');
+    const openAboutBtn = document.getElementById('openAboutBtn');
+    const closeAboutBtn = document.getElementById('closeAboutBtn');
+    const ctaContactBtn = document.getElementById('ctaContactBtn');
+
+    // Open overlay with GSAP animations
+    openAboutBtn.addEventListener('click', () => {
+      aboutOverlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      
+      // Timeline for coordinated animations
+      const openTimeline = gsap.timeline();
+      
+      // 1. Fade in overlay backdrop
+      openTimeline.to(aboutOverlay, {
+        opacity: 1,
+        duration: 0.4,
+        ease: 'power2.out'
+      });
+      
+      // 2. Slide up content with elastic bounce
+      openTimeline.fromTo('.about-overlay-content', 
+        { y: '100%', rotation: 2 },
+        { 
+          y: 0, 
+          rotation: 0,
+          duration: 0.8, 
+          ease: 'elastic.out(1, 0.75)'
+        }, '-=0.2'
+      );
+      
+      // 3. Animate close button with rotation and scale
+      openTimeline.fromTo('.close-overlay-btn',
+        { scale: 0, rotation: -180 },
+        { 
+          scale: 1, 
+          rotation: 0,
+          duration: 0.6,
+          ease: 'back.out(2)'
+        }, '-=0.4'
+      );
+      
+      // 4. Stagger animate header elements
+      openTimeline.fromTo('.about-title',
+        { opacity: 0, y: 50, scale: 0.8 },
+        { 
+          opacity: 1, 
+          y: 0, 
+          scale: 1,
+          duration: 0.6,
+          ease: 'back.out(1.5)'
+        }, '-=0.3'
+      );
+      
+      openTimeline.fromTo('.about-subtitle',
+        { opacity: 0, x: -30 },
+        { 
+          opacity: 1, 
+          x: 0,
+          duration: 0.5,
+          ease: 'power3.out'
+        }, '-=0.4'
+      );
+      
+      // 5. Animate sections with stagger
+      openTimeline.fromTo('.about-section',
+        { opacity: 0, y: 60, rotationX: -15 },
+        { 
+          opacity: 1, 
+          y: 0,
+          rotationX: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power3.out'
+        }, '-=0.3'
+      );
+      
+      // 6. Feature cards with 3D flip effect
+      openTimeline.fromTo('.feature-card',
+        { opacity: 0, rotationY: 90, z: -100 },
+        { 
+          opacity: 1, 
+          rotationY: 0,
+          z: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: 'back.out(1.5)'
+        }, '-=0.6'
+      );
+      
+      // 7. Stats counter animation
+      openTimeline.add(() => {
+        document.querySelectorAll('.stat-number').forEach(stat => {
+          const text = stat.textContent;
+          const hasPlus = text.includes('+');
+          const hasPercent = text.includes('%');
+          const number = parseInt(text);
+          
+          gsap.from(stat, {
+            textContent: 0,
+            duration: 2,
+            ease: 'power1.out',
+            snap: { textContent: 1 },
+            onUpdate: function() {
+              const current = Math.ceil(this.targets()[0].textContent);
+              stat.textContent = current + (hasPlus ? '+' : hasPercent ? '%' : '');
+            }
+          });
+        });
+      }, '-=0.5');
+      
+      // 8. Values with slide and bounce
+      openTimeline.fromTo('.value-item',
+        { opacity: 0, x: -80 },
+        { 
+          opacity: 1, 
+          x: 0,
+          duration: 0.6,
+          stagger: 0.12,
+          ease: 'elastic.out(1, 0.8)'
+        }, '-=1.2'
+      );
+      
+      // 9. CTA section with pulsing effect
+      openTimeline.fromTo('.about-cta',
+        { opacity: 0, scale: 0.8 },
+        { 
+          opacity: 1, 
+          scale: 1,
+          duration: 0.8,
+          ease: 'elastic.out(1, 0.75)'
+        }, '-=0.4'
+      );
+      
+      // Add class for scroll animations
+      setTimeout(() => {
+        aboutOverlay.classList.add('active');
+        // Add floating particles
+        createFloatingParticles();
+      }, 100);
+    });
+    
+    // Create floating particles for visual interest
+    function createFloatingParticles() {
+      const particleContainer = document.querySelector('.floating-shapes');
+      if (!particleContainer) return;
+      
+      // Remove old particles
+      const oldParticles = particleContainer.querySelectorAll('.particle');
+      oldParticles.forEach(p => p.remove());
+      
+      // Create new particles
+      for (let i = 0; i < 15; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 3 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        particleContainer.appendChild(particle);
+        
+        // Animate with GSAP
+        gsap.to(particle, {
+          y: -100 - Math.random() * 200,
+          x: (Math.random() - 0.5) * 100,
+          opacity: 0,
+          scale: Math.random() * 0.5 + 0.5,
+          duration: Math.random() * 3 + 4,
+          repeat: -1,
+          ease: 'none'
+        });
+      }
+    }
+
+    // Close overlay with reverse animation
+    function closeOverlay() {
+      const closeTimeline = gsap.timeline({
+        onComplete: () => {
+          aboutOverlay.style.display = 'none';
+          aboutOverlay.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+      
+      // Reverse animations
+      closeTimeline.to('.about-cta', {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.3
+      });
+      
+      closeTimeline.to(['.feature-card', '.value-item', '.stat-card'], {
+        opacity: 0,
+        y: 30,
+        duration: 0.3,
+        stagger: 0.02
+      }, '-=0.2');
+      
+      closeTimeline.to('.about-section', {
+        opacity: 0,
+        y: -30,
+        duration: 0.3
+      }, '-=0.2');
+      
+      closeTimeline.to('.about-overlay-content', {
+        y: '100%',
+        duration: 0.5,
+        ease: 'power3.in'
+      }, '-=0.1');
+      
+      closeTimeline.to(aboutOverlay, {
+        opacity: 0,
+        duration: 0.3
+      }, '-=0.3');
+    }
+
+    closeAboutBtn.addEventListener('click', closeOverlay);
+
+    // Close on overlay background click
+    aboutOverlay.addEventListener('click', (e) => {
+      if (e.target === aboutOverlay) {
+        closeOverlay();
+      }
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && aboutOverlay.classList.contains('active')) {
+        closeOverlay();
+      }
+    });
+
+    // CTA button - scroll to contact section
+    ctaContactBtn.addEventListener('click', () => {
+      closeOverlay();
+      
+      // Smooth scroll to contact section
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 600);
+    });
+    
+    // ===================================
+    // INTERACTIVE ANIMATIONS
+    // ===================================
+    
+    // Continuous animations when overlay is active
+    aboutOverlay.addEventListener('transitionend', () => {
+      if (aboutOverlay.classList.contains('active')) {
+        // Floating animation for feature icons
+        gsap.to('.feature-icon', {
+          y: -10,
+          duration: 2,
+          stagger: 0.2,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        });
+        
+        // Rotating animation for value icons
+        gsap.to('.value-icon', {
+          rotation: 360,
+          duration: 20,
+          repeat: -1,
+          ease: 'none'
+        });
+        
+        // Pulsing glow on CTA button
+        gsap.to('.cta-button', {
+          boxShadow: '5px 5px 20px rgba(86, 112, 255, 0.6), 5px 5px 0px #252525',
+          duration: 1.5,
+          repeat: -1,
+          yoyo: true,
+          ease: 'sine.inOut'
+        });
+      }
+    });
+    
+    // Hover effects with GSAP for feature cards
+    document.querySelectorAll('.feature-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        gsap.to(this, {
+          scale: 1.05,
+          rotation: 2,
+          duration: 0.3,
+          ease: 'back.out(2)'
+        });
+        
+        gsap.to(this.querySelector('.feature-icon'), {
+          rotation: 360,
+          scale: 1.2,
+          duration: 0.5,
+          ease: 'back.out(2)'
+        });
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        gsap.to(this, {
+          scale: 1,
+          rotation: 0,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+        
+        gsap.to(this.querySelector('.feature-icon'), {
+          rotation: 0,
+          scale: 1,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      });
+    });
+    
+    // Stat cards hover with color pulse
+    document.querySelectorAll('.stat-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        gsap.to(this, {
+          scale: 1.08,
+          y: -5,
+          duration: 0.3,
+          ease: 'back.out(1.5)'
+        });
+        
+        gsap.to(this.querySelector('.stat-number'), {
+          scale: 1.2,
+          duration: 0.3,
+          ease: 'elastic.out(1, 0.5)'
+        });
+      });
+      
+      card.addEventListener('mouseleave', function() {
+        gsap.to(this, {
+          scale: 1,
+          y: 0,
+          duration: 0.3
+        });
+        
+        gsap.to(this.querySelector('.stat-number'), {
+          scale: 1,
+          duration: 0.3
+        });
+      });
+    });
+    
+    // Value items slide effect on hover
+    document.querySelectorAll('.value-item').forEach(item => {
+      item.addEventListener('mouseenter', function() {
+        gsap.to(this, {
+          x: 10,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+        
+        gsap.to(this.querySelector('.value-icon'), {
+          scale: 1.3,
+          rotation: '+=20',
+          duration: 0.3,
+          ease: 'back.out(2)'
+        });
+      });
+      
+      item.addEventListener('mouseleave', function() {
+        gsap.to(this, {
+          x: 0,
+          duration: 0.3
+        });
+        
+        gsap.to(this.querySelector('.value-icon'), {
+          scale: 1,
+          duration: 0.3
+        });
+      });
+    });
+    
+    // Close button spin on hover
+    closeAboutBtn.addEventListener('mouseenter', () => {
+      gsap.to('.close-overlay-btn', {
+        rotation: 90,
+        scale: 1.1,
+        duration: 0.3,
+        ease: 'back.out(2)'
+      });
+    });
+    
+    closeAboutBtn.addEventListener('mouseleave', () => {
+      gsap.to('.close-overlay-btn', {
+        rotation: 0,
+        scale: 1,
+        duration: 0.3
+      });
+    });
+    
+    // ===================================
+    // PARALLAX SCROLL EFFECT
+    // ===================================
+    
+    aboutOverlay.addEventListener('scroll', () => {
+      if (!aboutOverlay.classList.contains('active')) return;
+      
+      const scrollY = aboutOverlay.scrollTop;
+      const scrollPercent = scrollY / (aboutOverlay.scrollHeight - aboutOverlay.clientHeight);
+      
+      // Parallax effect for shapes
+      gsap.to('.shape-circle', {
+        y: scrollY * 0.5,
+        rotation: scrollY * 0.2,
+        duration: 0.5,
+        ease: 'power1.out'
+      });
+      
+      gsap.to('.shape-circle-2', {
+        y: scrollY * 0.3,
+        rotation: -scrollY * 0.15,
+        duration: 0.5,
+        ease: 'power1.out'
+      });
+      
+      gsap.to('.shape-triangle', {
+        y: -scrollY * 0.4,
+        duration: 0.5,
+        ease: 'power1.out'
+      });
+      
+      gsap.to('.shape-square', {
+        y: -scrollY * 0.6,
+        rotation: scrollY * 0.1,
+        duration: 0.5,
+        ease: 'power1.out'
+      });
+      
+      // Fade header on scroll
+      gsap.to('.about-header', {
+        opacity: Math.max(0.3, 1 - scrollPercent * 2),
+        y: scrollY * 0.3,
+        duration: 0.3,
+        ease: 'power1.out'
+      });
+    });
+    
+    // Mouse move parallax effect
+    aboutOverlay.addEventListener('mousemove', (e) => {
+      if (!aboutOverlay.classList.contains('active')) return;
+      
+      const mouseX = e.clientX / window.innerWidth - 0.5;
+      const mouseY = e.clientY / window.innerHeight - 0.5;
+      
+      // Subtle movement for shapes
+      gsap.to('.shape-circle', {
+        x: mouseX * 30,
+        duration: 1,
+        ease: 'power2.out'
+      });
+      
+      gsap.to('.shape-circle-2', {
+        x: -mouseX * 40,
+        y: mouseY * 40,
+        duration: 1.2,
+        ease: 'power2.out'
+      });
+      
+      gsap.to('.shape-triangle', {
+        x: mouseX * 50,
+        duration: 1.5,
+        ease: 'power2.out'
+      });
+      
+      gsap.to('.shape-square', {
+        x: -mouseX * 35,
+        y: -mouseY * 35,
+        duration: 1.3,
+        ease: 'power2.out'
+      });
+    });
+  </script>
+
+     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+    <script src="assets/js/menu-animate.js"></script>
     <script src="assets/js/main.js"></script>
-	<script src="assets/js/plugins.js"></script>
-
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
