@@ -2565,7 +2565,7 @@ section {
         /* Responsive */
        @media (max-width: 968px) {
     .contact {
-        background: #f8f8f8 url('/assets/img/enquiryverticalimg.png') top center / 120% no-repeat;
+        background: #f8f8f8 url('../img/enquiryverticalimg.png') top center / 120% no-repeat;
         padding-top: 0; 
         padding-bottom: 40px; 
         min-height: auto;
@@ -2600,7 +2600,7 @@ section {
      
 @media (max-width: 600px) {
     .contact {
-        background: #f8f8f8 url('/assets/img/enquiryverticalimg.png')
+        background: #f8f8f8 url('../img/enquiryverticalimg.png')
             top center / 130% no-repeat;
         padding: 0 20px 40px;
         min-height: auto;
@@ -4336,7 +4336,7 @@ html:has(.about-overlay.active) {
 /* Responsive */
 @media (max-width: 968px) {
     .contact {
-        background: #f8f8f8 url('/assets/img/enquiryverticalimg.png') top center / 120% no-repeat;
+        background: #f8f8f8 url('../img/enquiryverticalimg.png') top center / 120% no-repeat;
         padding-top: 0; 
         padding-bottom: 40px; 
         min-height: auto;
@@ -4356,7 +4356,7 @@ html:has(.about-overlay.active) {
      
 @media (max-width: 600px) {
     .contact {
-        background: #f8f8f8 url('/assets/img/enquiryverticalimg.png')
+        background: #f8f8f8 url('../img/enquiryverticalimg.png')
             top center / 130% no-repeat;
         padding: 0 20px 40px;
         min-height: auto;
