@@ -1,12 +1,17 @@
+
+@import url('https://fonts.cdnfonts.com/css/frutiger');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Frutiger', sans-serif !important;
+    
 }
 
 html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
     overflow-x: hidden;
+     font-family: 'Frutiger', sans-serif !important;
 }
 
 html.lenis {
@@ -31,8 +36,7 @@ html.lenis {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", sans-serif;
-  font-family: "Inter", sans-serif;
+  font-family: 'Frutiger', Arial, sans-serif !important;
   color: #252525;
   /* background: #f4efea; */
   min-height: 100vh;
@@ -159,7 +163,7 @@ body {
 .hero-subtitle {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1rem, 2vw, 1.125rem);
   color: var(--runway-gray);
   margin-bottom: 2.5rem;
   max-width: 400px;
@@ -207,33 +211,9 @@ body {
 .btn:hover svg {
   transform: translateX(4px);
 }
-.plane-takeoff {
-  position: absolute;
-  top: 25%;
-  right: 15%;
-  width: 130px;
-  opacity: 1;
-  transform: rotate(10deg) scale(1);
-  animation: smoothFly 7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  z-index: 3;
-  transform-origin: center center;
-  will-change: transform, opacity; 
-}
 
 
-@keyframes smoothFly {
-  0% {
-    transform: translate(0, 0) rotate(10deg) scale(1);
-    opacity: 1;
-  }
-  60% {
-    opacity: 0; 
-  }
-  100% {
-    transform: translate(240px, -220px) rotate(13deg) scale(0.8);
-    opacity: 0;
-  }
-}
+
 
 
 
@@ -327,7 +307,7 @@ body {
     position: absolute;
     left: 0;
     right: 0;
-    /* bottom: 0; */
+    
     height: 100px;
     pointer-events: none;
     z-index: 10;
@@ -534,6 +514,7 @@ section {
       width: 100vw;
       display: flex;
       align-items: center;
+      z-index: 0;
       justify-content: center;
       overflow: hidden;
       padding: 120px 0; /* Consistent section spacing */
@@ -559,7 +540,31 @@ section {
       will-change: transform, opacity;
       /* filter: brightness(0.85); */
     }
+    
+  .yellow-board-label {
+  position: absolute;
+  top: 25%;         
+  left: 57%;        
+  z-index: 1;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  transform: rotate(-7deg);  
+  transform-style: preserve-3d;
+}
 
+.yellow-board-label .arrow {
+  font-size: 2rem;
+  font-weight: 600;
+  color:  #020263;   
+}
+
+.yellow-board-label .label-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #020263;  
+}
 
 .overlay-mask {
   position: absolute;
@@ -570,9 +575,10 @@ section {
   background:rgba(199, 198, 198, 0.95);
   transform: perspective(1100px) rotateY(36deg) rotateX(6deg) rotateZ(6deg);
   border-radius: 12px;
-  z-index: 2;
+  z-index: 50;
   filter: blur(1.5px);
   will-change: transform;
+  transform-style: preserve-3d;
 }
 
 .departure-board {
@@ -586,12 +592,13 @@ section {
   border: 3px solid #000000;
   border-radius: 12px;
   padding: 15px; 
-  z-index: 3;
+  z-index: 50;
   box-shadow: 0 0 30px rgba(0,0,0,0.7);
   transform: perspective(1100px) rotateY(36deg) rotateX(6deg) rotateZ(6deg);
   backdrop-filter: blur(3px);
   transition: box-shadow 0.3s ease;
   will-change: transform, box-shadow;
+  transform-style: preserve-3d;
 }
 
 
@@ -1353,6 +1360,11 @@ section {
     height: 100%;
     transform: scale(1.0);
   }
+  .yellow-board-label {
+    top: 31%;
+    left: 50%;
+    transform: rotate(-5deg) scale(0.5);
+  }
 
   .airport-container {
     align-items: flex-start;
@@ -1478,6 +1490,18 @@ section {
 }
 
 @media (max-width: 480px) {
+  
+  .bg-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.9);
+  }
+  .yellow-board-label {
+    top: 33%;
+    left: 57%;
+    transform: rotate(-5deg) scale(0.6);
+  }
   .overlay-mask,
   .departure-board {
     top: 28%;
@@ -1682,7 +1706,7 @@ section {
 .signal-waves-from-tower {
   position: absolute;
   top: -314px;
-  left: 7%;
+  left: 16%;
   width: 120px;
   height: 120px;
   pointer-events: none;
@@ -2290,10 +2314,10 @@ section {
 
   /* SIGNAL WAVES */
   .signal-waves-from-tower {
-            width: 90px;
+            width: 80px;
         height: 90px;
-        top: 111px;
-        left: -164px;
+        top: 114px;
+        left: -155px;
   }
 
   /* TRANSMITTING INDICATOR */
@@ -2428,7 +2452,7 @@ section {
             margin-bottom: 40px;
         }
 
-        .section-title {
+        .section-titles {
             font-family: 'Poppins', sans-serif;
             font-weight: 800;
             font-size: 2.5rem;
@@ -2437,10 +2461,10 @@ section {
             letter-spacing: 0.5px;
         }
 
-        .section-subtitle {
+        .section-subtitles {
             font-family: 'Nunito', sans-serif;
             font-size: 1.1rem;
-            color: #252525;
+            color: #151414;
             opacity: 0.7;
         }
 
@@ -2618,7 +2642,7 @@ section {
 
        .enquiry-arrow::before {
         content: "↓";  
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         transform: translateY(-3px);
     }
 
@@ -2642,11 +2666,11 @@ section {
     }
 
     
-    .section-title {
+    .section-titles {
         font-size: 1.6rem;
     }
 
-    .section-subtitle {
+    .section-subtitles {
         font-size: 0.9rem;
     }
 
@@ -5064,46 +5088,3 @@ html:has(.about-overlay.active) {
             }
         }
 
-
-.yellow-board-label {
-  position: absolute;
-  top: 25%;         
-  left: 56%;        
-  z-index: 5;
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  transform: rotate(-7deg);  
-}
-
-.yellow-board-label .arrow {
-  font-size: 2rem;
-  font-weight: 500;
-  color:  #020263;   
-}
-
-.yellow-board-label .label-text {
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  color:#020263;
-}
-
-@media (max-width: 768px){
-.yellow-board-label {
-    top: 31%;
-    left: 50%;
-    transform: rotate(-5deg) scale(0.5);
-  }
-}
-
-
-
-@media (max-width: 480px) {
-
-  .yellow-board-label {
-    top: 33%;
-    left: 57%;
-    transform: rotate(-5deg) scale(0.6);
-  }
-}
