@@ -19,6 +19,17 @@
       <div class="logo-icon"></div>
       <span>Brightwyn</span>
     </div>
+    <div class="hero-flight-nav">
+    <div class="plane-icon">✈</div>
+
+    <div class="flight-route">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+    
   </header>
 
   <section class="hero">
@@ -513,13 +524,105 @@
 
 
   
+<!-- menu links  -->
+<script>
+    
+window.addEventListener("load", () => {
+
+    const nav = document.querySelector(".hero-flight-nav");
+    const route = nav.querySelector(".flight-route");
+    const plane = nav.querySelector(".plane-icon");
+    const links = nav.querySelectorAll(".flight-route a");
+
+    const isMobile = window.innerWidth < 700;
+
+    /* -----------------------------------------------------------
+       DESKTOP PAGE LOAD EXPAND
+    ----------------------------------------------------------- */
+    if (!isMobile) {
+        setTimeout(() => {
+            route.style.maxWidth = "600px";
+            route.style.opacity = "1";
+            plane.style.transform = "rotate(180deg) translateX(-8px)";
+            links.forEach(link => link.style.opacity = "1");
+        }, 300);
+
+        setTimeout(() => {
+            route.style.maxWidth = "0";
+            route.style.opacity = "0";
+            plane.style.transform = "rotate(180deg)";
+            links.forEach(link => link.style.opacity = "0");
+        }, 1800);
+
+        setTimeout(() => {
+            route.style.maxWidth = null;
+            route.style.opacity = null;
+            plane.style.transform = null;
+            links.forEach(link => link.style.opacity = null);
+        }, 2400);
+    }
+
+});
 
 
+<!-- ===== MOBILE TAP-TO-TOGGLE SCRIPT ===== -->
+
+document.addEventListener("DOMContentLoaded", () => {
   
 
+    const nav = document.querySelector(".hero-flight-nav");
+    const plane = nav.querySelector(".plane-icon");
+    const route = nav.querySelector(".flight-route");
+    const links = nav.querySelectorAll(".flight-route a");
+    
+
+    const isMobile = window.innerWidth < 700;
+    if (!isMobile) return;
+
+    let menuOpen = false;
+
+    function openMenu() {
+    nav.classList.add("open"); // ⭐ IMPORTANT
+    route.style.maxHeight = "260px";
+    route.style.opacity = "1";
+    plane.style.transform = "rotate(90deg) translateY(6px)";
+    links.forEach(link => link.style.opacity = "1");
+    menuOpen = true;
+}
+
+function closeMenu() {
+    nav.classList.remove("open"); // ⭐ IMPORTANT
+    route.style.maxHeight = "0";
+    route.style.opacity = "0";
+    plane.style.transform = "rotate(90deg)";
+    links.forEach(link => link.style.opacity = "0");
+    menuOpen = false;
+}
+    // Toggle
+    plane.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menuOpen ? closeMenu() : openMenu();
+    });
+
+    // Link click
+    links.forEach(link => link.addEventListener("click", closeMenu));
+
+    // Click outside
+    document.addEventListener("click", closeMenu);
+
+    route.addEventListener("click", e => e.stopPropagation());
+
+    // Scroll closes
+    window.addEventListener("scroll", () => {
+        if (menuOpen) closeMenu();
+    });
+    
+
+});
+
+  </script>
+
   
-
-
 
 
 
