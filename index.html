@@ -501,6 +501,17 @@
 
 </footer>
 
+
+<!-- Success Popup  -->
+<div id="successPopup" class="success-popup">
+    <div class="success-box">
+        <h3>Message Sent Successfully!</h3>
+        <p>Our team will contact you shortly.</p>
+        <button onclick="closeSuccess()">OK</button>
+    </div>
+</div>
+
+
   
 
 
@@ -1549,5 +1560,93 @@ requestAnimationFrame(raf);
         });
       });
     </script>
+
+
+
+
+<!-- form validation  -->
+<script>
+const form = document.getElementById("contactForm");
+const phone = document.getElementById("phone");
+
+
+phone.addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, ""); // Allow only digits
+});
+
+form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name");
+    const email = document.getElementById("email");
+    const message = document.getElementById("message");
+
+    let isValid = true;
+
+    // Clear previous errors
+    document.querySelectorAll(".error-text").forEach(el => el.remove());
+    document.querySelectorAll(".error").forEach(el => el.classList.remove("error"));
+
+    // NAME VALIDATION (letters only)
+    if (!/^[A-Za-z ]+$/.test(name.value.trim())) {
+        showError(name, "Name should contain only letters.");
+        isValid = false;
+    }
+
+    // EMAIL VALIDATION
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+        showError(email, "Enter a valid email address.");
+        isValid = false;
+    }
+
+    // PHONE VALIDATION
+    if (phone.value.trim().length < 8) {
+        showError(phone, "Phone number is too short.");
+        isValid = false;
+    }
+
+    // MESSAGE VALIDATION
+    if (message.value.trim().length < 5) {
+        showError(message, "Please enter more details.");
+        isValid = false;
+    }
+
+    // STOP IF ANY ERROR
+    if (!isValid) return;
+
+    // SHOW TOP POPUP
+    const popup = document.getElementById("successPopup");
+    popup.classList.add("show");
+
+    // AUTO HIDE AFTER 3 SECONDS
+    setTimeout(() => popup.classList.remove("show"), 3000);
+
+    // RESET FORM
+    form.reset();
+});
+
+// Show error message
+function showError(input, msg) {
+    input.classList.add("error");
+    const error = document.createElement("div");
+    error.className = "error-text";
+    error.style.color = "red";
+    error.style.fontSize = "0.8rem";
+    error.style.marginTop = "4px";
+    error.textContent = msg;
+    input.parentNode.appendChild(error);
+}
+
+// Close popup manually
+function closeSuccess() {
+    document.getElementById("successPopup").classList.remove("show");
+}
+</script>
+
+
+
+
+
+
 </body>
 </html>
