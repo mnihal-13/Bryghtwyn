@@ -1767,6 +1767,7 @@ section {
 /* ============================================ */
 
 .flight-chat-section {
+  position: relative;
   /* min-height: 100vh; */
   background: #ffffff url('../img/abt-bg.png') no-repeat;
   /* background-attachment: fixed; */
@@ -2256,7 +2257,7 @@ section {
 }
 
 .takeoff-button:hover .plane-icon {
-  animation: plane-ascend 0.8s ease-in-out infinite;
+  /* animation: plane-ascend 0.8s ease-in-out infinite; */
   filter: drop-shadow(0 4px 8px rgba(78, 205, 196, 0.5));
 }
 
@@ -3029,12 +3030,13 @@ section {
             letter-spacing: 1px;
         }
 
-        .plane-icon {
+        .plane-icon-footer {
             width: 60px;
             height: 60px;
             stroke: #252525;
             stroke-width: 2;
             fill: none;
+            /* transform: unset !important; */
         }
 
         .arrow-line {
@@ -3488,39 +3490,33 @@ section {
 /* ============================================ */
 
 .about-overlay {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(10px);
-    z-index: 9999;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    z-index: 100;
     display: none;
     opacity: 0;
     transition: opacity 0.4s ease;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: auto;
     perspective: 1000px;
-}
-
-/* Prevent scrollbar when overlay is active */
-body:has(.about-overlay.active) {
-    overflow: hidden !important;
-}
-
-html:has(.about-overlay.active) {
-    overflow: hidden !important;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-overlay.active {
     display: flex;
     opacity: 1;
+    pointer-events: auto;
 }
 
 /* Floating decorative shapes */
 .floating-shapes {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -3628,13 +3624,16 @@ html:has(.about-overlay.active) {
 .about-overlay-content {
     position: relative;
     width: 90%;
-    min-height: 90vh;
+    max-width: 900px;
+    min-height: 50vh;
     background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
     padding: 60px 20px 40px;
     transform-style: preserve-3d;
     overflow-x: hidden;
-    margin: 30px auto;
     border-radius: 20px;
+    height: max-content;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 /* Animated background pattern */
