@@ -4144,6 +4144,7 @@ section {
 @media (max-width: 968px) {
     .about-overlay-content {
         padding: 60px 15px 40px;
+        height: -webkit-fill-available;
     }
 
     .close-overlay-btn {
