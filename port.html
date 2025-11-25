@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Pick Your Luggage - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito:wght@400;600&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fffffe;
+            color: #252525;
+            overflow-x: hidden;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            background: linear-gradient(180deg, #fffffe 0%, #f8f8f8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background decorations */
+        .bg-clouds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.04;
+            pointer-events: none;
+        }
+
+        .cloud {
+            position: absolute;
+            width: 150px;
+            height: 60px;
+            background: #252525;
+            border-radius: 50px;
+        }
+
+        .cloud:nth-child(1) { top: 10%; left: 10%; }
+        .cloud:nth-child(2) { top: 20%; right: 15%; width: 100px; height: 40px; }
+        .cloud:nth-child(3) { bottom: 15%; left: 20%; width: 120px; height: 50px; }
+
+        /* Section Header */
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 3rem;
+            color: #252525;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .section-title::before {
+            content: '✈';
+            margin-right: 15px;
+            font-size: 2.5rem;
+        }
+
+        .section-subtitle {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.2rem;
+            color: #252525;
+            opacity: 0.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .baggage-claim-sign {
+            display: inline-block;
+            background: white;
+            border: 3px solid #252525;
+            border-radius: 15px;
+            padding: 12px 25px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 20px;
+            box-shadow: 4px 4px 0px #252525;
+        }
+
+        /* Conveyor Belt Container */
+        .conveyor-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        /* Conveyor Belt */
+        .conveyor-belt {
+            position: relative;
+            width: 100%;
+            height: 225px;
+            overflow: hidden;
+        }
+
+        /* Belt Main Body - Front View */
+        .belt-main {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 180px;
+            transform: translateY(-50%);
+            background: white;
+            border: 3px solid #252525;
+            border-radius: 60px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Belt Top Surface with Diagonal Stripes */
+        .belt-surface {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            overflow: hidden;
+        }
+
+        .belt-stripes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 22px,
+                #252525 22px,
+                #252525 25px
+            );
+            animation: belt-stripe-move 2s linear infinite;
+        }
+
+        @keyframes belt-stripe-move {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-35.355px); }
+        }
+
+        /* Belt Rounded Edges - Improved */
+        .belt-edge-left,
+        .belt-edge-right {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 70px;
+            height: 200px;
+            background: linear-gradient(90deg, #e8e8e8 0%, #f5f5f5 50%, #e8e8e8 100%);
+            border: 3px solid #252525;
+            z-index: 10;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .belt-edge-left {
+            left: -3px;
+            border-radius: 50px 0 0 50px;
+            border-right: none;
+        }
+
+        .belt-edge-right {
+            right: -3px;
+            border-radius: 0 50px 50px 0;
+            border-left: none;
+        }
+
+        /* Belt Side Stripes on Edges */
+        .belt-edge-left::before,
+        .belt-edge-right::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 8px,
+                rgba(37, 37, 37, 0.15) 8px,
+                rgba(37, 37, 37, 0.15) 10px
+            );
+        }
+
+        /* Belt Bottom Shadow Layer */
+        .belt-shadow {
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            right: 30px;
+            height: 115px;
+            transform: translateY(-50%);
+            background: #d0d0d0;
+            border: 3px solid #252525;
+            border-radius: 60px;
+            z-index: -1;
+            margin-top: 8px;
+        }
+
+        /* Belt Pattern - Remove old one */
+        .belt-pattern {
+            display: none;
+        }
+
+        .belt-bottom {
+            display: none;
+        }
+
+        /* Luggage Container */
+        .luggage-container {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            gap: 150px;
+            /* Removed padding-left:100% to make continuous seamless loop simpler */
+            padding-left: 0;
+            will-change: transform;
+        }
+
+        /* Individual Luggage */
+        .luggage {
+            position: relative;
+            width: 200px;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .luggage:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        /* Suitcase Body */
+        .suitcase {
+            position: relative;
+            width: 200px;
+            height: 140px;
+            background: white;
+            border: 3px solid #252525;
+            border-radius: 15px;
+            box-shadow: 5px 5px 0px #252525;
+            overflow: hidden;
+        }
+
+        /* Suitcase colors - use data-project attribute so clones keep their color */
+        .luggage[data-project="0"] .suitcase { background: #FFE66D; }
+        .luggage[data-project="1"] .suitcase { background: #FF6B6B; }
+        .luggage[data-project="2"] .suitcase { background: #4ECDC4; }
+        .luggage[data-project="3"] .suitcase { background: #95E1D3; }
+        .luggage[data-project="4"] .suitcase { background: #A8DADC; }
+        .luggage[data-project="5"] .suitcase { background: #FFB6C1; }
+
+        /* Handle */
+        .handle {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 30px;
+            border: 3px solid #252525;
+            border-bottom: none;
+            border-radius: 30px 30px 0 0;
+            background: transparent;
+        }
+
+        /* Stickers on suitcase */
+        .sticker {
+            position: absolute;
+            background: white;
+            border: 2px solid #252525;
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-family: 'Caveat', cursive;
+            font-weight: 700;
+            font-size: 0.85rem;
+            box-shadow: 2px 2px 0px rgba(37, 37, 37, 0.3);
+        }
+
+        .sticker:nth-child(1) {
+            top: 15px;
+            left: 15px;
+            transform: rotate(-5deg);
+        }
+
+        .sticker:nth-child(2) {
+            bottom: 20px;
+            right: 15px;
+            transform: rotate(3deg);
+        }
+
+        /* Luggage Tag */
+        .luggage-tag {
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            border: 2.5px solid #252525;
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            box-shadow: 3px 3px 0px #252525;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .luggage:hover .luggage-tag {
+            opacity: 1;
+        }
+
+        /* Project Details Modal */
+        .project-details {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 90%;
+            max-width: 800px;
+            max-height: 85vh;
+            background: white;
+            border: 3px solid #252525;
+            border-radius: 20px;
+            box-shadow: 12px 12px 0px #252525;
+            padding: 40px;
+            z-index: 1000;
+            opacity: 0;
+            overflow-y: auto;
+        }
+
+        .project-details.active {
+            opacity: 1;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Close Button */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border: 2.5px solid #252525;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 3px 3px 0px #252525;
+        }
+
+        .close-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0px #252525;
+        }
+
+        .project-header {
+            margin-bottom: 25px;
+        }
+
+        .project-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 2rem;
+            color: #252525;
+            margin-bottom: 10px;
+        }
+
+        .project-category {
+            display: inline-block;
+            background: #FFE66D;
+            border: 2px solid #252525;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: #f0f0f0;
+            border: 3px solid #252525;
+            border-radius: 12px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-description {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #252525;
+            margin: 20px 0;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .meta-item {
+            border-left: 3px solid #252525;
+            padding-left: 12px;
+        }
+
+        .meta-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0.6;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .meta-value {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .view-project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: white;
+            border: 3px solid #252525;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #252525;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 4px 4px 0px #252525;
+            margin-top: 20px;
+        }
+
+        .view-project-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #252525;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .conveyor-belt {
+                height: 150px;
+            }
+
+            .luggage {
+                width: 160px;
+            }
+
+            .suitcase {
+                width: 160px;
+                height: 110px;
+            }
+
+            .project-details {
+                padding: 30px 20px;
+            }
+
+            .project-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .luggage {
+                width: 140px;
+            }
+
+            .suitcase {
+                width: 140px;
+                height: 100px;
+            }
+
+            .project-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="portfolio-section">
+        <!-- Background Clouds -->
+        <div class="bg-clouds">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title">Pick Your Luggage</h2>
+            <p class="section-subtitle">Each bag contains a journey of creativity. Click on any luggage to explore the project inside.</p>
+            <div class="baggage-claim-sign">✈ Baggage Claim for Creativity</div>
+        </div>
+
+        <!-- Conveyor Belt -->
+        <div class="conveyor-wrapper">
+            <div class="conveyor-belt">
+                <div class="belt-shadow"></div>
+                <div class="belt-main">
+                    <div class="belt-surface">
+                        <div class="belt-stripes"></div>
+                    </div>
+                </div>
+                <div class="belt-edge-left"></div>
+                <div class="belt-edge-right"></div>
+                
+                <div class="luggage-container">
+                    <!-- Luggage 1 -->
+                    <div class="luggage" data-project="0">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">UI/UX</div>
+                            <div class="sticker">2024</div>
+                        </div>
+                        <div class="luggage-tag">E-Commerce Platform</div>
+                    </div>
+
+                    <!-- Luggage 2 -->
+                    <div class="luggage" data-project="1">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">Mobile</div>
+                            <div class="sticker">App</div>
+                        </div>
+                        <div class="luggage-tag">Fitness Tracker</div>
+                    </div>
+
+                    <!-- Luggage 3 -->
+                    <div class="luggage" data-project="2">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">AI</div>
+                            <div class="sticker">SaaS</div>
+                        </div>
+                        <div class="luggage-tag">Smart Analytics</div>
+                    </div>
+
+                    <!-- Luggage 4 -->
+                    <div class="luggage" data-project="3">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">Brand</div>
+                            <div class="sticker">Design</div>
+                        </div>
+                        <div class="luggage-tag">Coffee Co.</div>
+                    </div>
+
+                    <!-- Luggage 5 -->
+                    <div class="luggage" data-project="4">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">Web</div>
+                            <div class="sticker">Dev</div>
+                        </div>
+                        <div class="luggage-tag">Portfolio Site</div>
+                    </div>
+
+                    <!-- Luggage 6 -->
+                    <div class="luggage" data-project="5">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">Cloud</div>
+                            <div class="sticker">Tech</div>
+                        </div>
+                        <div class="luggage-tag">DevOps Dashboard</div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Project Details Modal -->
+    <div class="project-details" id="projectDetails">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        
+        <div class="project-header">
+            <h3 class="project-title" id="projectTitle">Project Title</h3>
+            <span class="project-category" id="projectCategory">Category</span>
+        </div>
+
+        <div class="project-image" id="projectImage">
+            <img src="" alt="Project Screenshot" id="projectImg">
+        </div>
+
+        <p class="project-description" id="projectDescription">
+            Project description goes here...
+        </p>
+
+        <div class="project-meta">
+            <div class="meta-item">
+                <div class="meta-label">Role</div>
+                <div class="meta-value" id="projectRole">Full Stack</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Tech Stack</div>
+                <div class="meta-value" id="projectTech">React, Node.js</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Year</div>
+                <div class="meta-value" id="projectYear">2024</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Client</div>
+                <div class="meta-value" id="projectClient">Startup Inc.</div>
+            </div>
+        </div>
+
+        <a href="#" class="view-project-btn" id="projectLink">
+            <span>View Live Project</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <script>
+        // Portfolio Data
+        const portfolioData = [
+            {
+                title: "E-Commerce Platform",
+                category: "UI/UX Design",
+                description: "A modern e-commerce platform with seamless checkout experience and intuitive product discovery. Built with scalability and user engagement in mind.",
+                role: "Lead Designer & Developer",
+                tech: "React, Node.js, MongoDB",
+                year: "2024",
+                client: "Fashion Retail Co.",
+                link: "#",
+                image: "" // Add your image path
+            },
+            {
+                title: "Fitness Tracker App",
+                category: "Mobile Development",
+                description: "Cross-platform mobile app for tracking workouts, nutrition, and health metrics. Features AI-powered workout recommendations and progress analytics.",
+                role: "Mobile Developer",
+                tech: "React Native, Firebase",
+                year: "2024",
+                client: "HealthTech Startup",
+                link: "#",
+                image: ""
+            },
+            {
+                title: "Smart Analytics Dashboard",
+                category: "AI/SaaS Platform",
+                description: "Enterprise analytics platform powered by machine learning for predictive insights. Real-time data visualization and automated reporting.",
+                role: "Full Stack Developer",
+                tech: "Python, TensorFlow, Vue.js",
+                year: "2023",
+                client: "Analytics Corp.",
+                link: "#",
+                image: ""
+            },
+            {
+                title: "Coffee Co. Rebrand",
+                category: "Brand Identity",
+                description: "Complete brand refresh including logo design, packaging, and digital presence. Created a warm, artisanal identity that connects with coffee lovers.",
+                role: "Brand Designer",
+                tech: "Adobe CC, Figma",
+                year: "2024",
+                client: "Local Coffee Shop",
+                link: "#",
+                image: ""
+            },
+            {
+                title: "Creative Portfolio Site",
+                category: "Web Development",
+                description: "Award-winning portfolio website with unique interactions and animations. Showcases creative work through an immersive storytelling experience.",
+                role: "Web Developer & Designer",
+                tech: "HTML, CSS, GSAP",
+                year: "2024",
+                client: "Personal Project",
+                link: "#",
+                image: ""
+            },
+            {
+                title: "DevOps Monitoring Dashboard",
+                category: "Cloud Technology",
+                description: "Cloud-based monitoring solution for DevOps teams. Real-time metrics, alerts, and deployment tracking with beautiful visualizations.",
+                role: "Cloud Engineer",
+                tech: "AWS, Docker, Kubernetes",
+                year: "2023",
+                client: "Tech Enterprise",
+                link: "#",
+                image: ""
+            }
+        ];
+
+        // GSAP Animation Setup
+        const luggageContainer = document.querySelector('.luggage-container');
+        let allLuggage = document.querySelectorAll('.luggage');
+        const overlay = document.getElementById('overlay');
+        const projectDetails = document.getElementById('projectDetails');
+        const closeBtn = document.getElementById('closeBtn');
+
+        // Guard: ensure all elements exist before proceeding
+        if (!luggageContainer || !overlay || !projectDetails || !closeBtn) {
+            console.error('Missing required DOM elements for carousel');
+            throw new Error('Carousel initialization failed - missing DOM elements');
+        }
+
+        // Clone luggage items multiple times for true seamless infinite loop
+        const originalLuggage = Array.from(allLuggage);
+        
+        // Clone the set 2 more times to ensure seamless loop (so we have [1..6][1..6][1..6])
+        for (let i = 0; i < 2; i++) {
+            originalLuggage.forEach(item => {
+                const clone = item.cloneNode(true);
+                luggageContainer.appendChild(clone);
+            });
+        }
+
+        // Re-query all luggage after cloning
+        allLuggage = document.querySelectorAll('.luggage');
+
+        // Wait for browser to layout and get widths (use requestAnimationFrame to ensure layout)
+        requestAnimationFrame(() => {
+            // Calculate the width of one complete set (sum of widths + gaps)
+            let singleSetWidth = 0;
+            const gap = parseFloat(getComputedStyle(luggageContainer).gap) || 0;
+
+            originalLuggage.forEach((item, idx) => {
+                // Use offsetWidth as the rendered width
+                singleSetWidth += item.offsetWidth;
+                // add gap between items except after last (we want total length of one set as rendered)
+                if (idx !== originalLuggage.length - 1) {
+                    singleSetWidth += gap;
+                }
+            });
+
+            // If the container's gap is large or items have margins, ensure we add final gap between sets as they sit inline
+            // Add the gap after the last item so that when concatenated sets, spacing matches
+            singleSetWidth += gap;
+
+            // Create infinite continuous animation using modifiers wrap so there's no visual reset/jump.
+            // gsap.utils.wrap(min, max, value) keeps the value within [min, max).
+            // The modifiers plugin style function is used inline here (available in GSAP core).
+            const speedSeconds = 10; // change this to control the loop speed (larger = slower)
+            const conveyorAnimation = gsap.to(luggageContainer, {
+                x: -singleSetWidth,
+                duration: speedSeconds,
+                ease: 'none',
+                repeat: -1,
+                modifiers: {
+                    x: function(value) {
+                        // value comes in as like "123.45px" or "-10px"
+                        const num = parseFloat(value) || 0;
+                        const wrapped = gsap.utils.wrap(-singleSetWidth, 0, num);
+                        return wrapped + "px";
+                    }
+                }
+            });
+
+            // Hover Interactions
+            allLuggage.forEach((bag) => {
+                bag.addEventListener('mouseenter', () => {
+                    // Pause conveyor smoothly
+                    gsap.to(conveyorAnimation, { timeScale: 0, duration: 0.4 });
+
+                    // Bounce luggage
+                    gsap.to(bag, {
+                        y: -15,
+                        duration: 0.4,
+                        ease: 'back.out(1.7)'
+                    });
+                });
+
+                bag.addEventListener('mouseleave', () => {
+                    // Resume conveyor
+                    gsap.to(conveyorAnimation, { timeScale: 1, duration: 0.4 });
+
+                    // Reset luggage position
+                    gsap.to(bag, {
+                        y: 0,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+
+                // Click to Open
+                bag.addEventListener('click', () => {
+                    // data-project attribute exists on the original items and the clones (cloneNode(true) copies attributes)
+                    const projectIndex = bag.getAttribute('data-project');
+                    openProjectDetails(parseInt(projectIndex, 10));
+                });
+            });
+
+            // Make the conveyorAnimation accessible outside if needed
+            window._conveyorAnimation = conveyorAnimation;
+        });
+
+        // Open Project Details
+        function openProjectDetails(index) {
+            if (index === undefined || !portfolioData[index]) {
+                console.warn('Invalid project index:', index);
+                return;
+            }
+            
+            const project = portfolioData[index];
+
+            // Populate modal
+            document.getElementById('projectTitle').textContent = project.title;
+            document.getElementById('projectCategory').textContent = project.category;
+            document.getElementById('projectDescription').textContent = project.description;
+            document.getElementById('projectRole').textContent = project.role;
+            document.getElementById('projectTech').textContent = project.tech;
+            document.getElementById('projectYear').textContent = project.year;
+            document.getElementById('projectClient').textContent = project.client;
+            document.getElementById('projectLink').href = project.link;
+
+            // Show overlay
+            overlay.classList.add('active');
+            projectDetails.classList.add('active');
+
+            // Pause conveyor
+            if (window._conveyorAnimation) gsap.to(window._conveyorAnimation, { timeScale: 0, duration: 0.3 });
+
+            // Animate modal open (Suitcase opening effect)
+            gsap.fromTo(projectDetails,
+                {
+                    scale: 0,
+                    rotationY: -90,
+                    opacity: 0
+                },
+                {
+                    scale: 1,
+                    rotationY: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: 'back.out(1.4)'
+                }
+            );
+        }
+
+        // Close Modal
+        function closeProjectDetails() {
+            overlay.classList.remove('active');
+            projectDetails.classList.remove('active');
+
+            // Resume conveyor
+            if (window._conveyorAnimation) gsap.to(window._conveyorAnimation, { timeScale: 1, duration: 0.5 });
+
+            // Animate modal close
+            gsap.to(projectDetails, {
+                scale: 0,
+                rotationY: 90,
+                opacity: 0,
+                duration: 0.5,
+                ease: 'back.in(1.4)'
+            });
+        }
+
+        closeBtn.addEventListener('click', closeProjectDetails);
+        overlay.addEventListener('click', closeProjectDetails);
+
+        // Keyboard ESC to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeProjectDetails();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="assets/css/style1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> -->
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -18,6 +23,28 @@
       <div class="logo-icon"></div>
       <span>Brightwyn</span>
     </div>
+    <div class="hero-flight-nav">
+      <!-- Contact Info -->
+    <div class="nav-contact-info">
+        <a href="tel:+919876543210" class="nav-phone">
+            <span>+91 98765 43210</span>
+        </a>
+        <a href="mailto:hello@brightwyn.com" class="nav-email">
+            <span>hello@brightwyn.com</span>
+        </a>
+    </div>
+      <div class="plane-icon">✈</div>
+      
+      <div class="flight-route">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+    
+</div>
+    
   </header>
 
   <section class="hero">
@@ -29,20 +56,17 @@
     <p class="hero-subtitle">
       Transforming ideas into exceptional digital experiences with cutting-edge technology and innovative design.
     </p>
-    <button class="btn btn-outline">
+    <a href="#contact" class="btn btn-outline takeoff-button">
       <span>Get Onboard</span>
       <svg viewBox="0 0 24 24" fill="none">
         <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
-    </button>
+    </a>
   </div>
-
-  <!-- Animated plane -->
- <!-- <img src="planeicon.png" alt="Plane Taking Off" class="plane-takeoff" /> -->
 </section>
   
 <!-- Flight Chat Section -->
-  <section class="flight-chat-section">
+  <section class="flight-chat-section" id="about">
     <div class="chat-container">
       <!-- Background illustration -->
       <div class="tower-illustration">
@@ -180,227 +204,381 @@
       </button>
       <!-- <div class="runway-line"></div> -->
     </div>
-  </section>
-
-  <!-- About Overlay Popup -->
-  <div id="aboutOverlay" class="about-overlay">
-    <!-- Floating decorative elements -->
-    <div class="floating-shapes">
-      <div class="shape shape-circle"></div>
-      <div class="shape shape-triangle"></div>
-      <div class="shape shape-square"></div>
-      <div class="shape shape-circle-2"></div>
-    </div>
-    
-    <div class="about-overlay-content">
-      <!-- Close Button -->
-      <button class="close-overlay-btn" id="closeAboutBtn">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18 6L6 18M6 6l12 12" stroke="#252525" stroke-width="3" stroke-linecap="round"/>
-        </svg>
-      </button>
-
-      <!-- About Content -->
-      <div class="about-container">
-        <!-- Header Section -->
-        <div class="about-header">
-          <h1 class="about-title">
-            <svg class="title-icon" viewBox="0 0 24 24" fill="none">
-              <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            About Brightwyn
-          </h1>
-          <p class="about-subtitle">Where Innovation Takes Flight</p>
-        </div>
-
-        <!-- Mission Section -->
-        <div class="about-section mission-section">
-          <div class="section-icon">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+    <!-- About Overlay Popup -->
+    <div id="aboutOverlay" class="about-overlay">
+      <!-- Floating decorative elements -->
+      <div class="floating-shapes">
+        <div class="shape shape-circle"></div>
+        <div class="shape shape-triangle"></div>
+        <div class="shape shape-square"></div>
+        <div class="shape shape-circle-2"></div>
+      </div>
+      
+      <div class="about-overlay-content">
+        <!-- Close Button -->
+        <button class="close-overlay-btn" id="closeAboutBtn">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 6L6 18M6 6l12 12" stroke="#252525" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </button>
+  
+        <!-- About Content -->
+        <div class="about-container">
+          <!-- Header Section -->
+          <div class="about-header">
+            <h1 class="about-title">
+              <svg class="title-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              About Brightwyn
+            </h1>
+            <p class="about-subtitle">Where Innovation Takes Flight</p>
           </div>
-          <h2 class="section-title">Our Mission</h2>
-          <p class="section-text">
-            At Brightwyn, we believe in transforming visionary ideas into exceptional digital experiences. 
-            Our team of passionate developers, designers, and strategists work together to craft solutions 
-            that don't just meet expectations—they exceed them.
-          </p>
-        </div>
-
-        <!-- Why Choose Us Section -->
-        <div class="about-section why-choose-section">
-          <h2 class="section-title centered">Why Choose Brightwyn</h2>
-          <div class="features-grid">
-            <div class="feature-card">
-              <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3 class="feature-title">Lightning Fast</h3>
-              <p class="feature-text">Cutting-edge technology for optimal performance and speed.</p>
+  
+          <!-- Mission Section -->
+          <div class="about-section mission-section">
+            <div class="section-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
-
-            <div class="feature-card">
-              <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3 class="feature-title">Secure & Reliable</h3>
-              <p class="feature-text">Your data and applications are protected with enterprise-grade security.</p>
-            </div>
-
-            <div class="feature-card">
-              <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3 class="feature-title">Cost Effective</h3>
-              <p class="feature-text">Premium quality solutions at competitive prices with transparent pricing.</p>
-            </div>
-
-            <div class="feature-card">
-              <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3 class="feature-title">Expert Team</h3>
-              <p class="feature-text">Experienced professionals dedicated to your project's success.</p>
-            </div>
-
-            <div class="feature-card">
-              <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="10" stroke="#252525" stroke-width="2"/>
-                  <path d="M12 6v6l4 2" stroke="#252525" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <h3 class="feature-title">24/7 Support</h3>
-              <p class="feature-text">Round-the-clock assistance to keep your business running smoothly.</p>
-            </div>
-
-            <div class="feature-card">
-              <div class="feature-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="#252525" stroke-width="2"/>
-                  <path d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" stroke="#252525" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3 class="feature-title">Scalable Solutions</h3>
-              <p class="feature-text">Grow your business without worrying about technical limitations.</p>
-            </div>
+            <h2 class="section-title">Our Mission</h2>
+            <p class="section-text">
+              At Brightwyn, we believe in transforming visionary ideas into exceptional digital experiences. 
+              Our team of passionate developers, designers, and strategists work together to craft solutions 
+              that don't just meet expectations—they exceed them.
+            </p>
           </div>
-        </div>
-
-        <!-- Stats Section -->
-        <!-- <div class="about-section stats-section">
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-number">150+</div>
-              <div class="stat-label">Projects Delivered</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">98%</div>
-              <div class="stat-label">Client Satisfaction</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">50+</div>
-              <div class="stat-label">Happy Clients</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number">5+</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- Values Section -->
-        <!-- <div class="about-section values-section">
-          <h2 class="section-title centered">Our Core Values</h2>
-          <div class="values-list">
-            <div class="value-item">
-              <div class="value-icon">✈️</div>
-              <div class="value-content">
-                <h3 class="value-title">Innovation First</h3>
-                <p class="value-text">We constantly push boundaries and embrace new technologies.</p>
-              </div>
-            </div>
-            <div class="value-item">
-              <div class="value-icon">🎯</div>
-              <div class="value-content">
-                <h3 class="value-title">Client-Centric</h3>
-                <p class="value-text">Your success is our success. We prioritize your needs.</p>
-              </div>
-            </div>
-            <div class="value-item">
-              <div class="value-icon">🚀</div>
-              <div class="value-content">
-                <h3 class="value-title">Excellence Driven</h3>
-                <p class="value-text">We deliver nothing but the highest quality in everything we do.</p>
-              </div>
-            </div>
-            <div class="value-item">
-              <div class="value-icon">🤝</div>
-              <div class="value-content">
-                <h3 class="value-title">Transparent Communication</h3>
-                <p class="value-text">Clear, honest, and open dialogue throughout your journey.</p>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- CTA Section -->
-        <div class="about-cta">
-          <h2 class="cta-title">Ready to Take Off?</h2>
-          <p class="cta-text">Let's bring your digital vision to life together.</p>
-          <button class="cta-button" id="ctaContactBtn">
-            <span>Start Your Journey</span>
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </button>
+  
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
 
   
   <!-- Service Section Display -->
-  <section>
+  <section class="service" id="services">
     <div class="airport-container">
       <img src="assets/img/service.png" alt="Airport Background" class="bg-image">
 
       
       <div class="overlay-mask"></div>
-
       <!-- Custom tilted animated departure board -->
       <div class="departure-board">
         <div class="board-header">DEPARTURES - OUR SERVICES</div>
         <div class="board">
-          <div class="row"><span>Web Development</span><span>ON TIME</span></div>
-          <div class="row"><span>Mobile App Development</span><span>BOARDING</span></div>
-          <div class="row"><span>UI/UX design</span><span>GATE A1</span></div>
-          <div class="row"><span>Custom Software</span><span>FINAL CALL</span></div>
-          <div class="row"><span>Cloud Solutions</span><span>DEPARTED</span></div>
+          <div class="row service-row" data-service="web">
+            <svg class="service-arrow" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Web Development</span><span class="status">ON TIME</span>
+          </div>
+          <div class="row service-row" data-service="mobile">
+            <svg class="service-arrow" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Mobile App Development</span><span class="status">BOARDING</span>
+          </div>
+          <div class="row service-row" data-service="uiux">
+            <svg class="service-arrow" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>UI/UX design</span><span class="status">GATE A1</span>
+          </div>
+          <div class="row service-row" data-service="software">
+            <svg class="service-arrow" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Custom Software</span><span class="status">FINAL CALL</span>
+          </div>
+          <div class="row service-row" data-service="cloud">
+            <svg class="service-arrow" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span>Cloud Solutions</span><span class="status">DEPARTED</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="yellow-board-label">
+        <span class="arrow">⬅</span>
+        <span class="label-text">SERVICES</span>
+      </div>
+
+      <!-- Service Detail Cards Dashboard -->
+      <div class="service-details-container">
+        <!-- Web Development - Browser Window Design -->
+        <div class="service-detail-card browser-card" data-service="web">
+          <div class="browser-header">
+            <div class="browser-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="browser-url">brightwyn.dev/web</div>
+          </div>
+          <div class="browser-content">
+            <div class="code-line"><span>&lt;div</span> class="responsive"<span>&gt;</span></div>
+            <div class="code-line">  <span>React • Vue • Next.js</span></div>
+            <div class="code-line">  <span>Fast, Scalable & SEO</span></div>
+            <div class="code-line"><span>&lt;/div&gt;</span></div>
+          </div>
+        </div>
+
+        <!-- Mobile App Development - Phone Design -->
+        <div class="service-detail-card phone-card" data-service="mobile">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="app-icon">📱</div>
+            <h3>Mobile Apps</h3>
+            <div class="app-features">
+              <span>iOS</span>
+              <span>Android</span>
+            </div>
+            <p>React Native • Flutter</p>
+            <p style="font-size: 0.65rem; margin-top: 4px; opacity: 0.6;">Cross-platform excellence</p>
+          </div>
+          <div class="phone-bottom"></div>
+        </div>
+
+        <!-- UI/UX Design - Artboard Design -->
+        <div class="service-detail-card artboard-card" data-service="uiux">
+          <div class="artboard-tools">
+            <div class="tool">◯</div>
+            <div class="tool">◻</div>
+            <div class="tool">✎</div>
+          </div>
+          <div class="artboard-canvas">
+            <div class="design-element"></div>
+            <div class="design-element small"></div>
+            <h3>UI/UX Design</h3>
+            <p>User-Centered Design</p>
+            <p style="font-size: 0.65rem; margin-top: 4px; opacity: 0.6;">Figma • Adobe XD</p>
+          </div>
+        </div>
+
+        <!-- Custom Software - Terminal Design -->
+        <div class="service-detail-card terminal-card" data-service="software">
+          <div class="terminal-header">
+            <span>●</span><span>●</span><span>●</span>
+            <span class="terminal-title">custom_software.sh</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">$ build --enterprise</div>
+            <div class="terminal-line">✓ Scalable Systems</div>
+            <div class="terminal-line">✓ Custom Solutions</div>
+            <div class="terminal-line">✓ Business Logic</div>
+          </div>
+        </div>
+
+        <!-- Cloud Solutions - Cloud Architecture Design -->
+        <div class="service-detail-card cloud-card" data-service="cloud">
+          <div class="cloud-icon">☁</div>
+          <div class="cloud-layers">
+            <div class="cloud-layer">AWS</div>
+            <div class="cloud-layer">Azure</div>
+            <div class="cloud-layer">GCP</div>
+          </div>
+          <h3>Cloud Infrastructure</h3>
+          <p style="font-size: 0.65rem; margin-top: 4px; opacity: 0.7;">Migration • DevOps</p>
+        </div>
+
+        <!-- SEO Optimization - Analytics Design -->
+        <div class="service-detail-card seo-card" data-service="seo">
+          <div class="seo-header">
+            <div class="seo-icon">📈</div>
+            <h3>SEO Optimization</h3>
+          </div>
+          <div class="seo-metrics">
+            <div class="metric">
+              <span class="metric-value">+150%</span>
+              <span class="metric-label">Traffic</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value">#1</span>
+              <span class="metric-label">Rankings</span>
+            </div>
+          </div>
+          <p style="font-size: 0.65rem; margin-top: 6px; text-align: center; opacity: 0.7;">Google Analytics • Keywords</p>
+        </div>
+
+        <!-- AI Integration - Neural Network Design -->
+        <div class="service-detail-card ai-card" data-service="ai">
+          <div class="ai-brain">
+            <div class="neural-node"></div>
+            <div class="neural-node"></div>
+            <div class="neural-node"></div>
+            <div class="neural-connection"></div>
+          </div>
+          <h3>AI Integration</h3>
+          <div class="ai-tech">
+            <span>GPT</span><span>ML</span><span>NLP</span>
+          </div>
+          <p style="font-size: 0.65rem; margin-top: 4px; text-align: center; opacity: 0.7;">Smart Automation</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio-section" id="portfolio">
+        <!-- Background Clouds -->
+        <div class="bg-clouds">
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+            <div class="cloud"></div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="section-header">
+            <h2 class="section-title">Pick Your Luggage</h2>
+            <!-- <p class="section-subtitle">Each bag contains a journey of creativity. Click on any luggage to explore the project inside.</p> -->
+            <!-- <div class="baggage-claim-sign">✈ Baggage Claim for Creativity</div> -->
+        </div>
+
+        <!-- Conveyor Belt -->
+        <div class="conveyor-wrapper">
+            <div class="conveyor-belt">
+                <div class="belt-shadow"></div>
+                <div class="belt-main">
+                    <div class="belt-surface">
+                        <div class="belt-stripes"></div>
+                    </div>
+                </div>
+                <div class="belt-edge-left"></div>
+                <div class="belt-edge-right"></div>
+                
+                <div class="luggage-container">
+                    <!-- Luggage 1 -->
+                    <div class="luggage" data-project="0">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">UI/UX</div>
+                            <div class="sticker">2024</div>
+                        </div>
+                        <div class="luggage-tag">E-Commerce Platform</div>
+                    </div>
+
+                    <!-- Luggage 2 -->
+                    <div class="luggage" data-project="1">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">Mobile</div>
+                            <div class="sticker">App</div>
+                        </div>
+                        <div class="luggage-tag">Fitness Tracker</div>
+                    </div>
+
+                    <!-- Luggage 3 -->
+                    <div class="luggage" data-project="2">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">AI</div>
+                            <div class="sticker">SaaS</div>
+                        </div>
+                        <div class="luggage-tag">Smart Analytics</div>
+                    </div>
+
+                    <!-- Luggage 4 -->
+                    <div class="luggage" data-project="3">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">Brand</div>
+                            <div class="sticker">Design</div>
+                        </div>
+                        <div class="luggage-tag">Coffee Co.</div>
+                    </div>
+
+                    <!-- Luggage 5 -->
+                    <div class="luggage" data-project="4">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">Web</div>
+                            <div class="sticker">Dev</div>
+                        </div>
+                        <div class="luggage-tag">Portfolio Site</div>
+                    </div>
+
+                    <!-- Luggage 6 -->
+                    <div class="luggage" data-project="5">
+                        <div class="handle"></div>
+                        <div class="suitcase">
+                            <div class="sticker">Cloud</div>
+                            <div class="sticker">Tech</div>
+                        </div>
+                        <div class="luggage-tag">DevOps Dashboard</div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- Overlay -->
+        <div class="overlay" id="overlay"></div>
+    
+        <!-- Project Details Modal -->
+        <div class="project-details" id="projectDetails">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            
+            <div class="project-header">
+                <h3 class="project-title" id="projectTitle">Project Title</h3>
+                <span class="project-category" id="projectCategory">Category</span>
+            </div>
+    
+            <div class="project-image" id="projectImage">
+                <img src="" alt="Project Screenshot" id="projectImg">
+            </div>
+    
+            <p class="project-description" id="projectDescription">
+                Project description goes here...
+            </p>
+    
+            <div class="project-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Role</div>
+                    <div class="meta-value" id="projectRole">Full Stack</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Tech Stack</div>
+                    <div class="meta-value" id="projectTech">React, Node.js</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Year</div>
+                    <div class="meta-value" id="projectYear">2024</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Client</div>
+                    <div class="meta-value" id="projectClient">Startup Inc.</div>
+                </div>
+            </div>
+    
+            <a href="#" class="view-project-btn" id="projectLink">
+                <span>View Live Project</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+
+
   
-  <!-- Contact Section -->
+<!-- Contact Section -->
   <section class="contact" id="contact">
+    <div class="enquiry-sign">
+    <span class="enquiry-text">ENQUIRY</span>
+    <span class="enquiry-arrow"></span>
+
+</div>
+
         <div class="container">
             <div class="contact-content">
                 <div class="section-header">
-                    <h2 class="section-title">Book Your Digital Journey</h2>
-                    <p class="section-subtitle">Fill out your ticket details and we'll get you to your destination.</p>
+                    <h2 class="section-titles">Book Your Digital Journey</h2>
+                    <p class="section-subtitles">Fill out your ticket details and we'll get you to your destination.</p>
                 </div>
 
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="gform">
                     <div class="form-group">
                         <label for="name">
                             <svg viewBox="0 0 24 24" fill="none">
@@ -449,228 +627,460 @@
                         <svg viewBox="0 0 24 24" fill="none">
                             <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
-                    </button>
+                    </button><br>
+                    <div>
+                      <p id="submit-alert"></p>
+                    </div>
                 </form>
             </div>
         </div>
-    </section>
+      </section>
 
 
-    <footer class="boarding-pass-footer">
-        <!-- Background Decorative Elements -->
-        <svg class="plane-pattern" viewBox="0 0 24 24" fill="none">
-            <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        
-        <svg class="cloud-doodle" viewBox="0 0 150 80" fill="none">
-            <path d="M30 50 Q20 40 30 30 Q40 20 50 30 Q60 20 70 25 Q80 20 90 30 Q100 25 110 35 Q120 30 125 40 Q130 50 120 55 H30Z" stroke="#252525" stroke-width="3" fill="none"/>
-        </svg>
-        
-        <div class="dots-pattern"></div>
-        
-        <div class="boarding-pass-container">
-            <!-- Main Section -->
-            <div class="main-section">
-                <div class="pass-header">
-                    <div class="pass-title">BOARDING PASS</div>
+<!-- <footer class="footer">
+
+    <div class="footer-top-area">
+        <div class="box">
+            <h2>Let’s get started.</h2>
+            <p>We want to hear from you to get an awesome project started!</p>
+        </div>
+    </div>
+
+    <div class="footer-main">
+        <div class="footer-inner container">
+            <div class="footer-left">
+                <span class="footer-logo">Brightwyn</span>
+
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Service</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+
+                <div class="social-icons">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
                 </div>
 
-                <!-- Flight Path -->
-                <div class="flight-path">
-                    <div class="airport-code">
-                        <div class="airport-label">From</div>
-                        <div class="airport-name">YOUR</div>
-                        <div class="airport-city">Idea</div>
-                    </div>
 
-                    <svg class="plane-icon" viewBox="0 0 24 24" fill="none">
-                        <path d="M20 15.5V14L13 9.5V4C13 3.17 12.33 2.5 11.5 2.5C10.67 2.5 10 3.17 10 4V9.5L3 14V15.5L10 13.25V18.5L8 20V21.5L11.5 20.5L15 21.5V20L13 18.5V13.25L20 15.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-
-                    <div class="arrow-line"></div>
-
-                    <div class="airport-code">
-                        <div class="airport-label">To</div>
-                        <div class="airport-name">LIVE</div>
-                        <div class="airport-city">Reality</div>
-                    </div>
-                </div>
-
-                <!-- Info Grid -->
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-label">Services</div>
-                        <div class="info-value">Full Stack</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Terminal</div>
-                        <div class="info-value">Digital</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Gate</div>
-                        <div class="info-value">Innovation</div>
-                    </div>
-                    <div class="info-item">
-                        <div class="info-label">Status</div>
-                        <div class="info-value">Ready</div>
-                    </div>
-                </div>
-
-                <!-- Links Section -->
-                <div class="links-section">
-                    <div class="links-row">
-                        <div class="link-item">
-                            <a href="#home">Home</a>
-                        </div>
-                        <div class="link-separator"></div>
-                        <div class="link-item">
-                            <a href="#about">About Us</a>
-                        </div>
-                        <div class="link-separator"></div>
-                        <div class="link-item">
-                            <a href="#services">Services</a>
-                        </div>
-                        <div class="link-separator"></div>
-                        <div class="link-item">
-                            <a href="#portfolio">Portfolio</a>
-                        </div>
-                        <div class="link-separator"></div>
-                        <div class="link-item">
-                            <a href="#contact">Contact</a>
-                        </div>
-                        <div class="link-separator"></div>
-                        <!-- <div class="link-item">
-                            <a href="#blog">Blog</a>
-                        </div>
-                        <div class="link-separator"></div>
-                        <div class="link-item">
-                            <a href="#careers">Careers</a>
-                        </div> -->
-                    </div>
-                    
-                    <!-- Social Links -->
-                    <div class="social-links">
-                      <a href="#" class="social-link instagram" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="none" style="background-image: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF); background-clip: text;">
-                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link twitter" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link github" aria-label="GitHub">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link linkedin" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/>
-                            </svg>
-                        </a>
-                        
-                    </div>
-                </div>
+                <p class="copy">© Copyright 2025 Brightwyn</p>
             </div>
+        </div>
+    </div>
 
+</footer> -->
+
+
+<footer class="bw-footer">
+
+  <div class="bw-footer-top">
+    <div class="bw-footer-brand">
+      <h2>Brightwyn</h2>
+      <p>Your Digital Journey Takes Flight.</p>
+    </div>
+
+    <div class="bw-footer-links">
+      <div class="column">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="column">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">UI/UX Design</a></li>
+          <li><a href="#">Mobile App</a></li>
+          <li><a href="#">AI Automation</a></li>
+        </ul>
+      </div>
+
+      <div class="column">
+        <h3>Contact</h3>
+        <ul>
+          <li><span>Email:</span> hello@brightwyn.com</li>
+          <li><span>Phone:</span> +91 98765 43210</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider line -->
+  <div class="bw-footer-divider"></div>
+
+  <!-- Bottom -->
+  <div class="bw-footer-bottom">
+    <p>© 2025 Brightwyn. All rights reserved.</p>
+  </div>
+
+</footer>
+
+
+<!-- Success Popup  -->
+<div id="successPopup" class="success-popup">
+    <div class="success-box">
+        <h3>Message Sent Successfully!</h3>
+        <p>Our team will contact you shortly.</p>
+        <button onclick="closeSuccess()">OK</button>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    
+    <script>
+        // Portfolio Data
+        const portfolioData = [
+            {
+                title: "E-Commerce Platform",
+                category: "UI/UX Design",
+                description: "A modern e-commerce platform with seamless checkout experience and intuitive product discovery. Built with scalability and user engagement in mind.",
+                role: "Lead Designer & Developer",
+                tech: "React, Node.js, MongoDB",
+                year: "2024",
+                client: "Fashion Retail Co.",
+                link: "#",
+                image: "" // Add your image path
+            },
+            {
+                title: "Fitness Tracker App",
+                category: "Mobile Development",
+                description: "Cross-platform mobile app for tracking workouts, nutrition, and health metrics. Features AI-powered workout recommendations and progress analytics.",
+                role: "Mobile Developer",
+                tech: "React Native, Firebase",
+                year: "2024",
+                client: "HealthTech Startup",
+                link: "#",
+                image: ""
+            },
+            {
+                title: "Smart Analytics Dashboard",
+                category: "AI/SaaS Platform",
+                description: "Enterprise analytics platform powered by machine learning for predictive insights. Real-time data visualization and automated reporting.",
+                role: "Full Stack Developer",
+                tech: "Python, TensorFlow, Vue.js",
+                year: "2023",
+                client: "Analytics Corp.",
+                link: "#",
+                image: ""
+            },
+            {
+                title: "Coffee Co. Rebrand",
+                category: "Brand Identity",
+                description: "Complete brand refresh including logo design, packaging, and digital presence. Created a warm, artisanal identity that connects with coffee lovers.",
+                role: "Brand Designer",
+                tech: "Adobe CC, Figma",
+                year: "2024",
+                client: "Local Coffee Shop",
+                link: "#",
+                image: ""
+            },
+            {
+                title: "Creative Portfolio Site",
+                category: "Web Development",
+                description: "Award-winning portfolio website with unique interactions and animations. Showcases creative work through an immersive storytelling experience.",
+                role: "Web Developer & Designer",
+                tech: "HTML, CSS, GSAP",
+                year: "2024",
+                client: "Personal Project",
+                link: "#",
+                image: ""
+            },
+            {
+                title: "DevOps Monitoring Dashboard",
+                category: "Cloud Technology",
+                description: "Cloud-based monitoring solution for DevOps teams. Real-time metrics, alerts, and deployment tracking with beautiful visualizations.",
+                role: "Cloud Engineer",
+                tech: "AWS, Docker, Kubernetes",
+                year: "2023",
+                client: "Tech Enterprise",
+                link: "#",
+                image: ""
+            }
+        ];
+
+        // GSAP Animation Setup
+        const luggageContainer = document.querySelector('.luggage-container');
+        let allLuggage = document.querySelectorAll('.luggage');
+        const overlay = document.getElementById('overlay');
+        const projectDetails = document.getElementById('projectDetails');
+        const closeBtn = document.getElementById('closeBtn');
+
+        // Guard: ensure all elements exist before proceeding
+        if (!luggageContainer || !overlay || !projectDetails || !closeBtn) {
+            console.error('Missing required DOM elements for carousel');
+            throw new Error('Carousel initialization failed - missing DOM elements');
+        }
+
+        // Clone luggage items multiple times for true seamless infinite loop
+        const originalLuggage = Array.from(allLuggage);
+        
+        // Clone the set 2 more times to ensure seamless loop (so we have [1..6][1..6][1..6])
+        for (let i = 0; i < 2; i++) {
+            originalLuggage.forEach(item => {
+                const clone = item.cloneNode(true);
+                luggageContainer.appendChild(clone);
+            });
+        }
+
+        // Re-query all luggage after cloning
+        allLuggage = document.querySelectorAll('.luggage');
+
+        // Wait for browser to layout and get widths (use requestAnimationFrame to ensure layout)
+        requestAnimationFrame(() => {
+            // Calculate the width of one complete set (sum of widths + gaps)
+            let singleSetWidth = 0;
+            const gap = parseFloat(getComputedStyle(luggageContainer).gap) || 0;
+
+            originalLuggage.forEach((item, idx) => {
+                // Use offsetWidth as the rendered width
+                singleSetWidth += item.offsetWidth;
+                // add gap between items except after last (we want total length of one set as rendered)
+                if (idx !== originalLuggage.length - 1) {
+                    singleSetWidth += gap;
+                }
+            });
+
+            // If the container's gap is large or items have margins, ensure we add final gap between sets as they sit inline
+            // Add the gap after the last item so that when concatenated sets, spacing matches
+            singleSetWidth += gap;
+
+            // Create infinite continuous animation using modifiers wrap so there's no visual reset/jump.
+            // gsap.utils.wrap(min, max, value) keeps the value within [min, max).
+            // The modifiers plugin style function is used inline here (available in GSAP core).
+            const speedSeconds = 10; // change this to control the loop speed (larger = slower)
+            const conveyorAnimation = gsap.to(luggageContainer, {
+                x: -singleSetWidth,
+                duration: speedSeconds,
+                ease: 'none',
+                repeat: -1,
+                modifiers: {
+                    x: function(value) {
+                        // value comes in as like "123.45px" or "-10px"
+                        const num = parseFloat(value) || 0;
+                        const wrapped = gsap.utils.wrap(-singleSetWidth, 0, num);
+                        return wrapped + "px";
+                    }
+                }
+            });
+
+            // Hover Interactions
+            allLuggage.forEach((bag) => {
+                bag.addEventListener('mouseenter', () => {
+                    // Pause conveyor smoothly
+                    gsap.to(conveyorAnimation, { timeScale: 0, duration: 0.4 });
+
+                    // Bounce luggage
+                    gsap.to(bag, {
+                        y: -15,
+                        duration: 0.4,
+                        ease: 'back.out(1.7)'
+                    });
+                });
+
+                bag.addEventListener('mouseleave', () => {
+                    // Resume conveyor
+                    gsap.to(conveyorAnimation, { timeScale: 1, duration: 0.4 });
+
+                    // Reset luggage position
+                    gsap.to(bag, {
+                        y: 0,
+                        duration: 0.3,
+                        ease: 'power2.out'
+                    });
+                });
+
+                // Click to Open
+                bag.addEventListener('click', () => {
+                    // data-project attribute exists on the original items and the clones (cloneNode(true) copies attributes)
+                    const projectIndex = bag.getAttribute('data-project');
+                    openProjectDetails(parseInt(projectIndex, 10));
+                });
+            });
+
+            // Make the conveyorAnimation accessible outside if needed
+            window._conveyorAnimation = conveyorAnimation;
+        });
+
+        // Open Project Details
+        function openProjectDetails(index) {
+            if (index === undefined || !portfolioData[index]) {
+                console.warn('Invalid project index:', index);
+                return;
+            }
             
+            const project = portfolioData[index];
 
-            <!-- Stub Section -->
-            <div class="stub-section">
-                <div class="stub-header">
-                    <div class="stub-title">BOARDING PASS</div>
-                    <div class="stub-route">
-                        <div class="stub-airport">
-                            <div class="stub-code">YOUR</div>
-                            <div class="stub-city">Idea</div>
-                        </div>
-                        <div class="stub-arrow"></div>
-                        <div class="stub-airport">
-                            <div class="stub-code">LIVE</div>
-                            <div class="stub-city">Reality</div>
-                        </div>
-                    </div>
-                </div>
+            // Populate modal
+            document.getElementById('projectTitle').textContent = project.title;
+            document.getElementById('projectCategory').textContent = project.category;
+            document.getElementById('projectDescription').textContent = project.description;
+            document.getElementById('projectRole').textContent = project.role;
+            document.getElementById('projectTech').textContent = project.tech;
+            document.getElementById('projectYear').textContent = project.year;
+            document.getElementById('projectClient').textContent = project.client;
+            document.getElementById('projectLink').href = project.link;
 
-                <!-- Contact Info -->
-                <div class="stub-contact">
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
-                            <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        <span>brightwyn@gmail.in</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        <span>+1 (234) 567-8900</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        <span>Pondichery, India</span>
-                    </div>
-                </div>
+            // Show overlay
+            overlay.classList.add('active');
+            projectDetails.classList.add('active');
 
-                <!-- Barcode -->
-                <div class="barcode">
-                    <div class="barcode-lines">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                    <div class="barcode-text">BRIGHTWYN</div>
-                </div>
+            // Pause conveyor
+            if (window._conveyorAnimation) gsap.to(window._conveyorAnimation, { timeScale: 0, duration: 0.3 });
 
-                <!-- Company Info -->
-                <div class="company-info">
-                    <div class="company-logo">BRIGHTWYN</div>
-                    <div class="company-tagline">Your Digital Journey Takes Flight</div>
-                </div>
-            </div>
-        </div>
+            // Animate modal open (Suitcase opening effect)
+            gsap.fromTo(projectDetails,
+                {
+                    scale: 0,
+                    rotationY: -90,
+                    opacity: 0
+                },
+                {
+                    scale: 1,
+                    rotationY: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: 'back.out(1.4)'
+                }
+            );
+        }
 
-        <!-- Copyright -->
-        <div class="copyright">
-            © 2025 Brightwyn. All rights reserved. Your journey to digital excellence starts here.
-        </div>
-    </footer>
+        // Close Modal
+        function closeProjectDetails() {
+            overlay.classList.remove('active');
+            projectDetails.classList.remove('active');
 
+            // Resume conveyor
+            if (window._conveyorAnimation) gsap.to(window._conveyorAnimation, { timeScale: 1, duration: 0.5 });
+
+            // Animate modal close
+            gsap.to(projectDetails, {
+                scale: 0,
+                rotationY: 90,
+                opacity: 0,
+                duration: 0.5,
+                ease: 'back.in(1.4)'
+            });
+        }
+
+        closeBtn.addEventListener('click', closeProjectDetails);
+        overlay.addEventListener('click', closeProjectDetails);
+
+        // Keyboard ESC to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeProjectDetails();
+            }
+        });
+    </script>
 
   
+<!-- menu links  -->
+<script>
+    
+window.addEventListener("load", () => {
+
+    const nav = document.querySelector(".hero-flight-nav");
+    const route = nav.querySelector(".flight-route");
+    const plane = nav.querySelector(".plane-icon");
+    const links = nav.querySelectorAll(".flight-route a");
+
+    const isMobile = window.innerWidth < 700;
+
+    /* -----------------------------------------------------------
+       DESKTOP PAGE LOAD EXPAND
+    ----------------------------------------------------------- */
+    if (!isMobile) {
+        setTimeout(() => {
+            route.style.maxWidth = "600px";
+            route.style.opacity = "1";
+            plane.style.transform = "rotate(180deg) translateX(-8px)";
+            links.forEach(link => link.style.opacity = "1");
+        }, 300);
+
+        setTimeout(() => {
+            route.style.maxWidth = "0";
+            route.style.opacity = "0";
+            plane.style.transform = "rotate(180deg)";
+            links.forEach(link => link.style.opacity = "0");
+        }, 1800);
+
+        setTimeout(() => {
+            route.style.maxWidth = null;
+            route.style.opacity = null;
+            plane.style.transform = null;
+            links.forEach(link => link.style.opacity = null);
+        }, 2400);
+    }
+
+});
 
 
+<!-- ===== MOBILE TAP-TO-TOGGLE SCRIPT ===== -->
+
+document.addEventListener("DOMContentLoaded", () => {
   
 
+    const nav = document.querySelector(".hero-flight-nav");
+    const plane = nav.querySelector(".plane-icon");
+    const route = nav.querySelector(".flight-route");
+    const links = nav.querySelectorAll(".flight-route a");
+    
+
+    const isMobile = window.innerWidth < 700;
+    if (!isMobile) return;
+
+    let menuOpen = false;
+
+    function openMenu() {
+    nav.classList.add("open"); // ⭐ IMPORTANT
+    route.style.maxHeight = "260px";
+    route.style.opacity = "1";
+    plane.style.transform = "rotate(90deg) translateY(6px)";
+    links.forEach(link => link.style.opacity = "1");
+    menuOpen = true;
+}
+
+function closeMenu() {
+    nav.classList.remove("open"); // ⭐ IMPORTANT
+    route.style.maxHeight = "0";
+    route.style.opacity = "0";
+    plane.style.transform = "rotate(90deg)";
+    links.forEach(link => link.style.opacity = "0");
+    menuOpen = false;
+}
+    // Toggle
+    plane.addEventListener("click", (e) => {
+        e.stopPropagation();
+        menuOpen ? closeMenu() : openMenu();
+    });
+
+    // Link click
+    links.forEach(link => link.addEventListener("click", closeMenu));
+
+    // Click outside
+    document.addEventListener("click", closeMenu);
+
+    route.addEventListener("click", e => e.stopPropagation());
+
+    // Scroll closes
+    window.addEventListener("scroll", () => {
+        if (menuOpen) closeMenu();
+    });
+    
+
+});
+
+  </script>
+
   
-
-
 
 
 
@@ -688,16 +1098,264 @@
     ];
 
     const board = document.querySelector('.board');
-    const rows = board.querySelectorAll('.row span:first-child');
+    const rows = board.querySelectorAll('.row span:first-of-type'); // Get first span, not arrow SVG
     let index = 0;
+    let isBoardScaled = false; // Track if board is scaled
+    let textUpdateInterval = null; // Store interval reference
 
-    setInterval(() => {
+    // Typewriter reveal effect function - displays text once
+    function typewriterText(row, newText) {
+      const timeline = gsap.timeline();
+      timeline
+        .to(row, {
+          opacity: 0.5,
+          duration: 0.1
+        })
+        .call(() => {
+          row.textContent = '';
+          let charIndex = 0;
+          const typeInterval = setInterval(() => {
+            if (charIndex < newText.length) {
+              row.textContent += newText[charIndex];
+              charIndex++;
+            } else {
+              clearInterval(typeInterval);
+            }
+          }, 40);
+        })
+        .to(row, {
+          opacity: 1,
+          duration: 0.2,
+          delay: newText.length * 0.04
+        });
+    }
+
+    // Display static service list
+    function displayStaticServices() {
+      rows.forEach((row, i) => {
+        const staticText = services[i % services.length];
+        row.textContent = staticText;
+        gsap.set(row, { opacity: 1 });
+      });
+    }
+
+    // Start with typewriter effect
+    textUpdateInterval = setInterval(() => {
         rows.forEach((row, i) => {
-        const nextService = services[(index + i) % services.length];
-        row.textContent = nextService;
+          const newText = services[(index + i) % services.length];
+          
+          // Only use typewriter if board is NOT scaled
+          if (!isBoardScaled) {
+            typewriterText(row, newText);
+          }
         });
         index++;
     }, 4000);
+    // ===================================
+    // DISPLAY BOARD SCROLL ANIMATION
+    // ===================================
+    
+    // Wait for GSAP and ScrollTrigger to be loaded
+    window.addEventListener('load', () => {
+      gsap.registerPlugin(ScrollTrigger);
+      
+      const airportContainer = document.querySelector('.airport-container');
+      const departureBoard = document.querySelector('.departure-board');
+      const overlayMask = document.querySelector('.overlay-mask');
+      const serviceCards = document.querySelectorAll('.service-detail-card');
+      const isMobile = window.innerWidth <= 768;
+      
+      // Track board scaling state for click interactions
+      let isBoardFullyScaled = false;
+      
+      // Pin the section and animate the board
+      const boardTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: airportContainer,
+          start: 'top top',
+          end: isMobile ? '+=100%' : '+=150%',
+          pin: true,
+          scrub: 1,
+          anticipatePin: 1,
+          markers: false,
+          onUpdate: (self) => {
+            // Update board scaling state for click interactions
+            isBoardFullyScaled = self.progress > 0.6;
+            
+            // Show arrows only after board is fully scaled (progress > 0.6)
+            if (self.progress > 0.6) {
+              // Add 'scaled' class to show arrows
+              departureBoard.classList.add('scaled');
+              isBoardScaled = true; // Stop text updates and show static display
+              
+              // Stop the text update interval when scaled
+              if (textUpdateInterval) {
+                clearInterval(textUpdateInterval);
+                textUpdateInterval = null;
+              }
+              
+              // Display all services statically
+              displayStaticServices();
+            } else {
+              // Remove 'scaled' class to hide arrows
+              departureBoard.classList.remove('scaled');
+              isBoardScaled = false; // Resume typewriter effect
+              
+              // Restart text update interval when not scaled
+              if (!textUpdateInterval) {
+                textUpdateInterval = setInterval(() => {
+                    rows.forEach((row, i) => {
+                      const newText = services[(index + i) % services.length];
+                      if (!isBoardScaled) {
+                        typewriterText(row, newText);
+                      }
+                    });
+                    index++;
+                }, 4000);
+              }
+            }
+          }
+        }
+      });
+      
+      // Animate board to center
+      boardTimeline
+        .to([departureBoard, overlayMask], {
+          scale: isMobile ? 1.4 : 1.8,
+          left: '50%',
+          top: '50%',
+          x: '-50%',
+          y: '-50%',
+          rotateY: 0,
+          rotateX: 0,
+          rotateZ: 0,
+          duration: 1,
+          ease: 'power2.inOut'
+        })
+        .to(overlayMask, {
+          opacity: 0,
+          duration: 0.3
+        }, '-=0.5')
+        .to(departureBoard, {
+          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4)',
+          duration: 0.3
+        }, '-=0.3');
+      
+      // Animate background
+      gsap.to('.bg-image', {
+        scrollTrigger: {
+          trigger: airportContainer,
+          start: 'top top',
+          end: '+=150%',
+          scrub: 1
+        },
+        scale: 1.15,
+        opacity: 0.6,
+        filter: 'blur(5px)',
+        ease: 'none'
+      });
+      
+      // Service row click interactions - only when board is fully scaled
+      const serviceRows = document.querySelectorAll('.service-row');
+      
+      serviceRows.forEach(row => {
+        const serviceKey = row.getAttribute('data-service');
+        const correspondingCard = document.querySelector(`.service-detail-card[data-service="${serviceKey}"]`);
+        
+        row.addEventListener('click', () => {
+          // Only allow clicks when board is fully scaled
+          if (!isBoardFullyScaled) {
+            console.log('Board not fully scaled, ignoring click');
+            return;
+          }
+          
+          console.log('Clicked service row:', serviceKey);
+          
+          // Hide all cards
+          serviceCards.forEach(card => {
+            card.classList.remove('active');
+            gsap.to(card, {
+              opacity: 0,
+              scale: 0.9,
+              duration: 0.3,
+              ease: 'power2.out'
+            });
+          });
+          
+          // Show only the matching card
+          if (correspondingCard) {
+            console.log('Found matching card:', correspondingCard);
+            correspondingCard.classList.add('active');
+            gsap.to(correspondingCard, {
+              opacity: 1,
+              scale: 1,
+              duration: 0.4,
+              ease: 'back.out(1.7)'
+            });
+            hasOpenCard = true; // Set flag when card is opened
+          } else {
+            console.log('No matching card found for service:', serviceKey);
+          }
+        });
+        
+        // Add hover effect to show this is clickable when board is scaled
+        row.addEventListener('mouseenter', function() {
+          if (isBoardFullyScaled) {
+            gsap.to(this, {
+              scale: 1.03,
+              duration: 0.2,
+              ease: 'power2.out'
+            });
+          }
+        });
+        
+        row.addEventListener('mouseleave', function() {
+          gsap.to(this, {
+            scale: 1,
+            duration: 0.2,
+            ease: 'power2.out'
+          });
+        });
+      });
+
+      // Function to close service detail cards
+      function closeServiceDetailCards() {
+        serviceCards.forEach(card => {
+          card.classList.remove('active');
+          gsap.to(card, {
+            opacity: 0,
+            scale: 0.9,
+            duration: 0.3,
+            ease: 'power2.out'
+          });
+        });
+      }
+
+      // Close service cards when user scrolls using native wheel and touch events
+      let lastScrollTime = 0;
+      const scrollCloseServiceListener = () => {
+        const now = Date.now();
+        // Debounce to prevent firing too frequently (100ms)
+        if (now - lastScrollTime < 100) return;
+        lastScrollTime = now;
+        
+        // Check if any card is currently active
+        const hasActiveCard = Array.from(serviceCards).some(card => card.classList.contains('active'));
+        
+        if (hasActiveCard) {
+          closeServiceDetailCards();
+        }
+      };
+
+      // Listen to wheel event (desktop scroll)
+      window.addEventListener('wheel', scrollCloseServiceListener, { passive: true });
+      
+      // Listen to touch move event (mobile scroll)
+      window.addEventListener('touchmove', scrollCloseServiceListener, { passive: true });
+      
+      // Also listen to scroll event as backup
+      window.addEventListener('scroll', scrollCloseServiceListener, { passive: true });
+    });
     
      // ===================================
     // HERO TEXT ANIMATIONS WITH GSAP
@@ -995,7 +1653,6 @@ requestAnimationFrame(raf);
     // Open overlay with GSAP animations
     openAboutBtn.addEventListener('click', () => {
       aboutOverlay.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
       
       // Timeline for coordinated animations
       const openTimeline = gsap.timeline();
@@ -1007,11 +1664,11 @@ requestAnimationFrame(raf);
         ease: 'power2.out'
       });
       
-      // 2. Slide up content with elastic bounce
+      // 2. Slide in from left with elastic bounce
       openTimeline.fromTo('.about-overlay-content', 
-        { y: '100%', rotation: 2 },
+        { x: '-100%', rotation: 0 },
         { 
-          y: 0, 
+          x: 0, 
           rotation: 0,
           duration: 0.8, 
           ease: 'elastic.out(1, 0.75)'
@@ -1167,7 +1824,6 @@ requestAnimationFrame(raf);
         onComplete: () => {
           aboutOverlay.style.display = 'none';
           aboutOverlay.classList.remove('active');
-          document.body.style.overflow = 'auto';
         }
       });
       
@@ -1192,7 +1848,7 @@ requestAnimationFrame(raf);
       }, '-=0.2');
       
       closeTimeline.to('.about-overlay-content', {
-        y: '100%',
+        x: '-100%',
         duration: 0.5,
         ease: 'power3.in'
       }, '-=0.1');
@@ -1204,6 +1860,18 @@ requestAnimationFrame(raf);
     }
 
     closeAboutBtn.addEventListener('click', closeOverlay);
+
+    // Close modal when user scrolls the page
+    let isScrollListenerActive = false;
+    const scrollCloseListener = () => {
+      if (aboutOverlay.style.display === 'flex' && aboutOverlay.classList.contains('active')) {
+        closeOverlay();
+        isScrollListenerActive = false;
+      }
+    };
+    
+    // Listen to Lenis scroll events to auto-close modal
+    lenis.on('scroll', scrollCloseListener);
 
     // Close on overlay background click
     aboutOverlay.addEventListener('click', (e) => {
@@ -1473,5 +2141,174 @@ requestAnimationFrame(raf);
     <script src="assets/js/menu-animate.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/script.js"></script>
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+      <div class="boarding-pass-icon">
+        <svg class="plane-up" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 4L12 20M12 4L6 10M12 4L18 10" stroke="#252525" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="scroll-text">TOP</span>
+      </div>
+    </button>
+
+    <script>
+      // Scroll to Top Button
+      const scrollToTopBtn = document.getElementById('scrollToTop');
+      
+      // Show/hide button on scroll
+      window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      });
+      
+      // Scroll to top on click
+      scrollToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    </script>
+
+
+
+
+
+
+
+
+<!-- Form Validation & AJAX Handler -->
+<script>
+    // Phone input - allow only digits
+    const phoneInput = document.getElementById("phone");
+    if (phoneInput) {
+        phoneInput.addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, ""); // Allow only digits
+        });
+    }
+
+    // Form validation & submission
+    const gform = document.getElementById("gform");
+    
+    gform.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name");
+        const email = document.getElementById("email");
+        const phone = document.getElementById("phone");
+        const message = document.getElementById("message");
+
+        let isValid = true;
+
+        // Clear previous errors
+        document.querySelectorAll(".error-text").forEach(el => el.remove());
+        document.querySelectorAll(".error").forEach(el => el.classList.remove("error"));
+
+        // NAME VALIDATION (letters only)
+        if (!/^[A-Za-z ]+$/.test(name.value.trim())) {
+            showError(name, "Name should contain only letters.");
+            isValid = false;
+        }
+
+        // EMAIL VALIDATION
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
+            showError(email, "Enter a valid email address.");
+            isValid = false;
+        }
+
+        // PHONE VALIDATION
+        if (phone.value.trim().length < 8) {
+            showError(phone, "Phone number is too short.");
+            isValid = false;
+        }
+
+        // MESSAGE VALIDATION
+        if (message.value.trim().length < 5) {
+            showError(message, "Please enter more details.");
+            isValid = false;
+        }
+
+        // STOP IF ANY ERROR - don't submit
+        if (!isValid) return;
+
+        // All validation passed - proceed with AJAX submission
+        submitForm();
+    });
+
+    // Submit form via AJAX
+    function submitForm() {
+        const submitAlert = document.getElementById("submit-alert");
+        
+        // Show submitting message
+        submitAlert.innerHTML = "Submitting...Please wait!";
+        submitAlert.style.display = "block";
+        submitAlert.style.color = "#020263";
+        submitAlert.style.fontWeight = "900";
+
+        // AJAX request to Google Sheets
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbz_aPz0JAZpcwq-R93tJq8-vv8fyYu4VqtEuwK2FpyuIHDtbgE2832LCBp2deVG4FOILA/exec",
+            data: $("#gform").serialize(),
+            method: "post",
+            success: function(response) {
+                // Hide the alert message
+                submitAlert.style.display = "none";
+                submitAlert.textContent = "";
+
+                // Show success popup modal
+                const successPopup = document.getElementById("successPopup");
+                if (successPopup) {
+                    successPopup.classList.add("show");
+                }
+
+                // Reset form and hide popup after 5 seconds
+                setTimeout(function() {
+                    gform.reset();
+                    
+                    // Hide popup
+                    if (successPopup) {
+                        successPopup.classList.remove("show");
+                    }
+                }, 5000);
+            },
+            error: function(err) {
+                // Show error message
+                submitAlert.textContent = "Something Went Wrong!..Check filled details are correct and Submit again or Please try Contacting through WhatsApp or Mobile Number";
+                submitAlert.style.display = "block";
+                submitAlert.style.color = "red";
+                submitAlert.style.fontWeight = "900";
+            }
+        });
+    }
+
+    // Show error message
+    function showError(input, msg) {
+        input.classList.add("error");
+        const error = document.createElement("div");
+        error.className = "error-text";
+        error.style.color = "red";
+        error.style.fontSize = "0.8rem";
+        error.style.marginTop = "4px";
+        error.textContent = msg;
+        input.parentNode.appendChild(error);
+    }
+
+    // Close popup manually
+    function closeSuccess() {
+        const successPopup = document.getElementById("successPopup");
+        if (successPopup) {
+            successPopup.classList.remove("show");
+        }
+    }
+</script>
+
+
+
+
+
+
 </body>
 </html>
