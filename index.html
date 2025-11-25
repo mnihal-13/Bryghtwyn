@@ -27,10 +27,10 @@
       <!-- Contact Info -->
     <div class="nav-contact-info">
         <a href="tel:+919876543210" class="nav-phone">
-            <span>+91 98765 43210</span>
+            <span>Contact</span>
         </a>
         <a href="mailto:hello@brightwyn.com" class="nav-email">
-            <span>hello@brightwyn.com</span>
+            <span>Email</span>
         </a>
     </div>
       <div class="plane-icon">✈</div>
@@ -1050,6 +1050,11 @@ if (!isMobile) {
             desktopExpandAnimation();
         }
     });
+
+    /* -----------------------------------------------------------
+       AUTO EXPAND/COLLAPSE EVERY 7 SECONDS
+    ----------------------------------------------------------- */
+    setInterval(desktopExpandAnimation, 7000);
 }
 
 });
