@@ -5013,6 +5013,14 @@ section {
             overflow: hidden;
         }
 
+        /* Suitcase colors - use data-project attribute for reliable coloring of clones */
+.luggage[data-project="0"] .suitcase { background: #FFE66D; }
+.luggage[data-project="1"] .suitcase { background: #FF6B6B; }
+.luggage[data-project="2"] .suitcase { background: #4ECDC4; }
+.luggage[data-project="3"] .suitcase { background: #95E1D3; }
+.luggage[data-project="4"] .suitcase { background: #A8DADC; }
+.luggage[data-project="5"] .suitcase { background: #FFB6C1; }
+
         /* Suitcase colors */
         .luggage:nth-child(1) .suitcase { background: #FFE66D; }
         .luggage:nth-child(2) .suitcase { background: #FF6B6B; }
