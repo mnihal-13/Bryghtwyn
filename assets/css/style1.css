@@ -1521,261 +1521,123 @@ section {
     }
     
 /* Mobile screens */
-@media (max-width: 768px) {
+
+@media (max-width: 700px) {
+
+  .yellow-board-label{
+    display: none;
+  }
+
   .bg-image {
+    content: url('/assets/img/servicemobile.png');
     object-fit: cover;
     width: 100%;
     height: 100%;
-    transform: scale(1.0);
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
   }
-  .yellow-board-label {
-    top: 31%;
+
+  .overlay-mask {
+    display: none !important;
+  }
+
+  /* FIXED — Wider board for proper row + text space */
+  .departure-board {
+    position: absolute;
+    top: 17vh;
     left: 50%;
-    transform: rotate(-5deg) scale(0.5);
+    transform: translateX(-50%);
+    width: 260px !important;     /* increased from 220 → perfect fit */
+    height: 240px !important;     
+    padding: 12px;
+    background: rgba(199,198,198,0.95);
+    border: 3px solid #000;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    overflow: hidden;
   }
 
-  .airport-container {
-    align-items: flex-start;
-    justify-content: center;
-    height: auto;
-    min-height: 100vh;
+  /* Header fixes — prevent two-line break */
+  .departure-board .board-header {
+    font-size: 0.95rem !important;
+    letter-spacing: 0.5px;
+    white-space: nowrap;              /* 🔥 prevents wrapping */
+    transform: scale(0.90);
+    transform-origin: top center;
+    margin-bottom: 6px !important;
   }
 
-  .overlay-mask,
-  .departure-board {
-    top: 25%;              
-    left: 4%;             
-    width: 290px;
-    height: 210px;
-    transform: perspective(1300px)
-               rotateY(36deg)
-               rotateX(6deg)
-               rotateZ(6deg)
-               scale(0.6)
-               translateZ(-150px);
+  /* Perfectly scaled rows */
+  .departure-board .board {
+    width: 100% !important;
+    transform: scale(0.82);
+    transform-origin: top center;
   }
 
-  .board-header {
-    font-size: 0.9rem;
-    padding-bottom: 6px;
-  }
-
-  .row {
-    font-size: 0.75rem;
-    padding: 4px 10px;
-  }
-
-  .board {
-    gap: 6px;
-  }
-  
-  /* Service Detail Cards Mobile */
-  .service-details-container {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    width: 100%;
-    height: auto;
+  .departure-board .row {
+    width: 100% !important;        /* 🔥 row fills board width */
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    padding: 30px 15px;
-    gap: 15px;
-    grid-template-columns: none;
-    grid-template-rows: none;
-    pointer-events: none;
-    margin-top: 40px;
+    box-sizing: border-box;        /* ensures proper width */
   }
-  
-  .service-detail-card {
-    padding: 10px;
-    max-height: 200px;
-    box-shadow: 3px 3px 0px #252525;
-    width: 85%;
-    max-width: 280px;
-    pointer-events: none;
+
+  .service-row:hover {
+    transform: none !important;
   }
-  
-  .service-detail-card.active {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
-  }
-  
-  .service-card-header h3 {
-    font-size: 0.75rem;
-  }
-  
-  .service-card-header svg {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .service-detail-card p {
-    font-size: 0.7rem;
-    line-height: 1.3;
-  }
-  
-  /* Service Panel Mobile */
+
+  .service-details-container,
+  .service-detail-card,
   .service-description-panel {
-    width: 100vw;
-    max-width: 100vw;
-    padding: 70px 25px 30px;
-  }
-  
-  .service-description-panel::after {
-    font-size: 6rem;
-    top: 20px;
-    left: 20px;
-  }
-  
-  .close-description-btn {
-    width: 42px;
-    height: 42px;
-    font-size: 1.5rem;
-    top: 20px;
-    right: 20px;
-    box-shadow: 3px 3px 0px #252525;
-  }
-  
-  .service-description-title {
-    font-size: 1.8rem;
-    margin-bottom: 25px;
-  }
-  
-  .service-description-text {
-    font-size: 1.05rem;
-    padding: 20px;
-    line-height: 1.85;
-  }
-  
-  .service-description-text::before {
-    font-size: 4rem;
-    top: -10px;
+    display: none !important;
   }
 }
 
+
+
+/* ----------------------------------------------------
+   SMALL MOBILE VIEW — BELOW 480px
+-----------------------------------------------------*/
 @media (max-width: 480px) {
-  
+
   .bg-image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    transform: scale(0.9);
+    content: url('/assets/img/servicemobile.png');
   }
-  .yellow-board-label {
-    top: 33%;
-    left: 57%;
-    transform: rotate(-5deg) scale(0.6);
-  }
-  .overlay-mask,
+
+  /* Slightly wider for spacing */
   .departure-board {
-    top: 28%;
-    left: 2%;
-    width: 320px;
-    height: 200px;
-    transform: perspective(1300px)
-               rotateY(36deg)
-               rotateX(6deg)
-               rotateZ(6deg)
-               scale(0.55)
-               translateZ(-180px);
+    top: 15vh;
+    width: 300px !important;      /* wider so text fits */
+    height: 180px !important;
+    padding: 10px;
   }
 
-  .board-header {
-    font-size: 1rem;
+  /* Prevent header breaking again */
+  .departure-board .board-header {
+    font-size: 0.85rem !important;
+    white-space: nowrap;           /* 🔥 keeps header single line */
+    transform: scale(0.80);
+    transform-origin: top center;
   }
 
-  .row {
-    font-size: 1rem;
+  /* Rows scaling */
+  .departure-board .board {
+    transform: scale(0.70);
+    transform-origin: top center;
   }
-  
-  .service-details-container {
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    padding: 25px 15px;
-    gap: 8px;
-    grid-template-columns: none;
-    grid-template-rows: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: auto;
-    margin-top: 30px;
-    pointer-events: none;
-  }
-  
-  .service-detail-card {
-    padding: 8px;
-    max-height: 150px;
-    width: 90%;
-    max-width: 260px;
-    pointer-events: none;
-  }
-  
-  .service-detail-card.active {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
-  }
-  
-  .service-card-header {
-    gap: 6px;
-    margin-bottom: 6px;
-    padding-bottom: 6px;
-  }
-  
-  .service-card-header h3 {
-    font-size: 0.7rem;
-  }
-  
-  .service-card-header svg {
-    width: 14px;
-    height: 14px;
-  }
-  
-  .service-detail-card p {
-    font-size: 0.65rem;
-    line-height: 1.2;
-  }
-  
-  .service-description-panel {
-    padding: 60px 20px 25px;
-  }
-  
-  .service-description-panel::after {
-    font-size: 5rem;
-    opacity: 0.03;
-  }
-  
-  .close-description-btn {
-    width: 38px;
-    height: 38px;
-    font-size: 1.3rem;
-  }
-  
-  .service-description-title {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .service-description-text {
-    font-size: 0.95rem;
-    padding: 18px;
-    line-height: 1.8;
-  }
-  
-  .service-description-text::before {
-    font-size: 3.5rem;
+
+  .departure-board .row {
+    width: 100% !important;
+    padding: 5px 21px !important;
+    font-size: 0.65rem !important;
+    box-sizing: border-box;
   }
 }
-    
+
+ 
 /* ============================================ */
 /* FLIGHT CHAT SECTION */
 /* ============================================ */
@@ -4158,7 +4020,6 @@ section {
 @media (max-width: 968px) {
     .about-overlay-content {
         padding: 60px 15px 40px;
-        height: -webkit-fill-available;
     }
 
     .close-overlay-btn {
