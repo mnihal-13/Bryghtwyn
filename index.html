@@ -1392,7 +1392,22 @@ function closeMenu() {
       // Also listen to scroll event as backup
       window.addEventListener('scroll', scrollCloseServiceListener, { passive: true });
     });
-    
+
+
+
+
+    // mobileadjustments 
+   if (window.innerWidth < 700) {
+  window.addEventListener("load", () => {
+    ScrollTrigger.getAll().forEach(st => st.kill());
+  });
+
+  // Allow typewriter animation on mobile
+  isBoardScaled = false;
+
+  // Force arrow visibility without scroll
+  document.querySelector(".departure-board").classList.add("scaled");
+}
      // ===================================
     // HERO TEXT ANIMATIONS WITH GSAP
     // ===================================
