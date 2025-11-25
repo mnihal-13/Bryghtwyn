@@ -24,6 +24,12 @@
       <span>Brightwyn</span>
     </div>
     <div class="hero-flight-nav">
+     <div class="plane-icon">
+    <img src="\assets\img\plane.svg" alt="plane" />
+</div>
+
+
+    <div class="flight-route">
       <!-- Contact Info -->
     <div class="nav-contact-info">
         <a href="tel:+919876543210" class="nav-phone">
@@ -997,31 +1003,62 @@ window.addEventListener("load", () => {
     /* -----------------------------------------------------------
        DESKTOP PAGE LOAD EXPAND
     ----------------------------------------------------------- */
-    if (!isMobile) {
+        if (!isMobile) {
+        desktopExpandAnimation();
+    }
+
+    function desktopExpandAnimation() {
+        // Expand
         setTimeout(() => {
             route.style.maxWidth = "600px";
             route.style.opacity = "1";
-            plane.style.transform = "rotate(180deg) translateX(-8px)";
+            plane.style.transform = " translateX(-8px)";
             links.forEach(link => link.style.opacity = "1");
-        }, 300);
+        }, 200);
 
+        // Collapse
         setTimeout(() => {
             route.style.maxWidth = "0";
             route.style.opacity = "0";
-            plane.style.transform = "rotate(180deg)";
+            plane.style.transform = "";
             links.forEach(link => link.style.opacity = "0");
-        }, 1800);
+        }, 1400);
 
-        setTimeout(() => {
-            route.style.maxWidth = null;
-            route.style.opacity = null;
-            plane.style.transform = null;
-            links.forEach(link => link.style.opacity = null);
-        }, 2400);
-    }
+        // Reset
+           setTimeout(() => {
+        route.style.maxWidth = "0";
+        route.style.opacity = "0";
+        plane.style.transform = "";
+        links.forEach(link => link.style.opacity = "0");
+    }, 1800);
+
+    // Reset back to CSS defaults
+    setTimeout(() => {
+        route.style.maxWidth = null;
+        route.style.opacity = null;
+        plane.style.transform = null;
+        links.forEach(link => link.style.opacity = null);
+    }, 2800);
+}
+
+
+    /* -----------------------------------------------------------
+       DESKTOP SCROLL EXPAND ANIMATION
+    ----------------------------------------------------------- */
+if (!isMobile) {
+    let playedOnce = false;
+
+    window.addEventListener("scroll", () => {
+        if (playedOnce) return; // stop forever
+
+        if (window.scrollY > 150) {
+            playedOnce = true;
+            desktopExpandAnimation();
+        }
+    });
+}
 
 });
-
 
 <!-- ===== MOBILE TAP-TO-TOGGLE SCRIPT ===== -->
 
@@ -1356,7 +1393,22 @@ function closeMenu() {
       // Also listen to scroll event as backup
       window.addEventListener('scroll', scrollCloseServiceListener, { passive: true });
     });
-    
+
+
+
+
+    // mobileadjustments 
+   if (window.innerWidth < 700) {
+  window.addEventListener("load", () => {
+    ScrollTrigger.getAll().forEach(st => st.kill());
+  });
+
+  // Allow typewriter animation on mobile
+  isBoardScaled = false;
+
+  // Force arrow visibility without scroll
+  document.querySelector(".departure-board").classList.add("scaled");
+}
      // ===================================
     // HERO TEXT ANIMATIONS WITH GSAP
     // ===================================
