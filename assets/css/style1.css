@@ -1792,7 +1792,6 @@ section {
 /* Right plane */
 .plane-right {
   right: -120px;
-  /* Removed transform: scaleX(-1); because the animation handles it now */
   transform: scaleX(1); 
   animation: planeRightMove 4s infinite ease-in-out;
 }
@@ -1812,10 +1811,7 @@ section {
 
 /* ================= FIXED ANIMATIONS ================= */
 
-/* Left plane animation - Flipped to face Right */
-/* ================= TIGHTER COLLISION ANIMATIONS ================= */
 
-/* Left plane - Moves further right to hit center */
 @keyframes planeLeftMove {
   /* 0% - Start off screen */
   0% { 
@@ -1828,8 +1824,7 @@ section {
     transform: translateX(calc(40vw + 90px)) scaleX(-1); 
   }
 
-  /* 50% - HARD IMPACT 
-     We push it to 50vw + 90px to bridge the gap from left: -120px */
+  /* 50% - HARD IMPACT  */
   50% {
     transform: translateX(calc(50vw + 90px)) rotate(-15deg) scale(1.05) scaleX(-1);
     animation-timing-function: cubic-bezier(.1, .8, .3, 1.4);
@@ -1855,7 +1850,7 @@ section {
 }
 
 
-/* Right plane - Moves further left to hit center */
+/* Right plane */
 @keyframes planeRightMove {
   /* 0% - Start off screen */
   0% { 
