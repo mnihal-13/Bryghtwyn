@@ -210,12 +210,12 @@ body {
 @media (max-width: 700px) {
 
     /* Plane faces DOWN */
-    .plane-icon {
+    /* .plane-icon {
         transform: rotate(90deg);
-    }
-    .plane-icon img {
+    } */
+    /* .plane-icon img {
         transform: rotate(180deg);
-    }
+    } */
 
     .hero-flight-nav {
         top: 30px;
@@ -257,7 +257,7 @@ body {
 
    .hero-flight-nav.open .plane-icon,
     .hero-flight-nav.open:hover .plane-icon {
-        transform: rotate(90deg) translateY(6px) !important;
+        transform:  translateY(6px) !important;
 }
 }
 
@@ -271,9 +271,9 @@ body {
         align-items: flex-end;
         gap: 1px;
     }
-    .plane-icon img {
+    /* .plane-icon img {
         transform: rotate(180deg);
-    }
+    } */
 
     /* Vertical route */
     .flight-route {
@@ -293,7 +293,7 @@ body {
     }
     .hero-flight-nav.open .plane-icon,
     .hero-flight-nav.open:hover .plane-icon {
-        transform: rotate(90deg) translateY(6px) !important;
+        transform:  translateY(6px) !important;
 }
 }
 
@@ -754,13 +754,13 @@ section {
     
   .yellow-board-label {
   position: absolute;
-  top: 30%;         
+  top: 25%;        
   left: 57%;        
   z-index: 1;
   display: flex;
   gap: 5px;
   align-items: center;
-  transform: rotate(-7deg);  
+  transform: rotate(-5deg);  
   transform-style: preserve-3d;
 }
 
@@ -840,7 +840,7 @@ section {
       padding: 6px 15px;
       border-radius: 5px;
       color: rgb(228, 255, 54);
-      text-shadow: 0 0 3px rgb(228, 255, 54);
+      /* text-shadow: 0 0 3px rgb(228, 255, 54); */
       box-shadow: inset 0 -1px 0 #050;
       transition: all 0.3s ease;
       will-change: transform, background-color;
@@ -1585,58 +1585,70 @@ section {
     display: none !important;
   }
 
-  /* FIXED — Wider board for proper row + text space */
+   
   .departure-board {
     position: absolute;
     top: 17vh;
     left: 50%;
     transform: translateX(-50%);
-    width: 260px !important;     /* increased from 220 → perfect fit */
+    width: 260px !important;    
     height: 240px !important;     
     padding: 12px;
     background: rgba(199,198,198,0.95);
     border: 3px solid #000;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+    transform: translateX(-50%) perspective(1500px) rotateX(4deg);
     overflow: hidden;
   }
 
-  /* Header fixes — prevent two-line break */
+ 
   .departure-board .board-header {
     font-size: 0.95rem !important;
     letter-spacing: 0.5px;
-    white-space: nowrap;              /* 🔥 prevents wrapping */
+    white-space: nowrap;
     transform: scale(0.90);
     transform-origin: top center;
-    margin-bottom: 6px !important;
+    margin-bottom: 2px !important;
   }
 
-  /* Perfectly scaled rows */
+  
   .departure-board .board {
-    width: 100% !important;
-    transform: scale(0.82);
+     width: 100% !important;
+  transform: scale(0.92);
     transform-origin: top center;
   }
 
   .departure-board .row {
-    width: 100% !important;        /* 🔥 row fills board width */
-    padding: 6px 12px !important;
+    width: 100% !important;
+    padding: 2px 4px !important;    
     font-size: 0.75rem !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;        /* ensures proper width */
+    box-sizing: border-box; 
+    transform:  rotateY(-1deg);
   }
 
   .service-row:hover {
     transform: none !important;
   }
 
-  .service-details-container,
+  /* .service-details-container,
   .service-detail-card,
   .service-description-panel {
     display: none !important;
-  }
+  } */
+   .service-details-container {
+  display: grid;
+}
+
+.service-detail-card {
+  display: block;
+}
+.service-detail-card {
+  z-index: 2000;
+}
 }
 
 
@@ -1653,30 +1665,293 @@ section {
   /* Slightly wider for spacing */
   .departure-board {
     top: 15vh;
-    width: 300px !important;      /* wider so text fits */
+    width: 300px !important;     
     height: 180px !important;
     padding: 10px;
+    left: 50%;
+    transform: translateX(-50%) perspective(1500px) rotateX(4deg);
+    transform-origin: top center;
+    
+    
+    
   }
 
   /* Prevent header breaking again */
   .departure-board .board-header {
-    font-size: 0.85rem !important;
-    white-space: nowrap;           /* 🔥 keeps header single line */
-    transform: scale(0.80);
+    font-size: 0.95rem !important;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transform: scale(0.90);
     transform-origin: top center;
+    margin-bottom: 2px !important;   /
   }
 
   /* Rows scaling */
   .departure-board .board {
-    transform: scale(0.70);
+    width: 100% !important;
+  transform: scale(0.92);
     transform-origin: top center;
   }
 
   .departure-board .row {
-    width: 100% !important;
-    padding: 5px 21px !important;
-    font-size: 0.65rem !important;
+     width: 100% !important;
+    padding: 2px 4px !important;     /* 🔥 row fills more width */
+    font-size: 0.75rem !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-sizing: border-box;
+  }
+  .service-details-container {
+  display: grid;
+}
+
+.service-detail-card {
+  display: block;
+}
+.service-detail-card {
+  z-index: 2000;
+}
+}
+
+
+
+/* ================= ABOUT INTRO ================= */
+.about-intro {
+  width: 100%;
+  text-align: center;
+  padding: 140px 20px 40px;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 5;
+  animation: fadeSlide 1.4s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.intro-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #252525;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.intro-text {
+  max-width: 750px;
+  margin: 0 auto;
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.intro-text-2 {
+  opacity: 0.85;
+  font-size: 1rem;
+}
+
+
+/* ================= FUNNY PLANE COLLISION ================= */
+
+.funny-plane-collision {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  margin: 20px 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Plane base */
+.funny-plane-collision .plane {
+  width: 60px;
+  height: 60px;
+  background-image: url('/assets/img/plane.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 35px;
+  opacity: 1;
+  
+  
+}
+
+
+/* Left plane */
+.plane-left {
+  left: -120px;
+  animation: planeLeftMove 4s infinite ease-in-out;
+}
+
+/* Right plane */
+.plane-right {
+  right: -120px;
+  /* Removed transform: scaleX(-1); because the animation handles it now */
+  transform: scaleX(1); 
+  animation: planeRightMove 4s infinite ease-in-out;
+}
+
+/* Smoke Puff */
+.smoke {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #333333;
+  border-radius: 50%;
+  opacity: 0;
+  top: 45px;
+  filter: blur(2px);
+  animation: smokePop 4s infinite ease-in-out;
+}
+
+/* ================= FIXED ANIMATIONS ================= */
+
+/* Left plane animation - Flipped to face Right */
+/* ================= TIGHTER COLLISION ANIMATIONS ================= */
+
+/* Left plane - Moves further right to hit center */
+@keyframes planeLeftMove {
+  /* 0% - Start off screen */
+  0% { 
+    transform: translateX(0) scaleX(-1); 
+    opacity: 1; 
+  }
+
+  /* 45% - Fly fast towards center (Straight, no shake yet) */
+  45% { 
+    transform: translateX(calc(40vw + 90px)) scaleX(-1); 
+  }
+
+  /* 50% - HARD IMPACT 
+     We push it to 50vw + 90px to bridge the gap from left: -120px */
+  50% {
+    transform: translateX(calc(50vw + 90px)) rotate(-15deg) scale(1.05) scaleX(-1);
+    animation-timing-function: cubic-bezier(.1, .8, .3, 1.4);
+  }
+
+  /* 52% - Recoil/Bounce back slightly */
+  52% {
+    transform: translateX(calc(48vw + 90px)) rotate(8deg) scale(0.95) scaleX(-1);
+    opacity: 0.6;
+  }
+
+  /* 60% - Fade out */
+  60% { 
+    opacity: 0; 
+    transform: translateX(calc(48vw + 90px)) scaleX(-1); 
+  }
+
+  /* 100% - Reset */
+  100% { 
+    opacity: 0; 
+    transform: translateX(0) scaleX(-1); 
+  }
+}
+
+
+/* Right plane - Moves further left to hit center */
+@keyframes planeRightMove {
+  /* 0% - Start off screen */
+  0% { 
+    transform: translateX(0) scaleX(1); 
+    opacity: 1; 
+  }
+
+  /* 45% - Fly fast towards center */
+  45% { 
+    transform: translateX(calc(-40vw - 90px)) scaleX(1); 
+  }
+
+  /* 50% - HARD IMPACT */
+  50% {
+    transform: translateX(calc(-50vw - 90px)) rotate(15deg) scale(1.05) scaleX(1);
+    animation-timing-function: cubic-bezier(.1, .8, .3, 1.4);
+  }
+
+  /* 52% - Recoil/Bounce back slightly */
+  52% {
+    transform: translateX(calc(-48vw - 90px)) rotate(-8deg) scale(0.95) scaleX(1);
+    opacity: 0.6;
+  }
+
+  /* 60% - Fade out */
+  60% { 
+    opacity: 0; 
+    transform: translateX(calc(-48vw - 90px)) scaleX(1); 
+  }
+
+  /* 100% - Reset */
+  100% { 
+    opacity: 0; 
+    transform: translateX(0) scaleX(1); 
+  }
+}
+
+/* Smoke animation */
+@keyframes smokePop {
+  0%, 45% { opacity: 0; transform: scale(0.2); }
+
+  /* Impact burst */
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+    filter: blur(1px);
+  }
+
+  /* Expand + disperse */
+  60% {
+    opacity: 0.5;
+    transform: scale(1.8);
+  }
+
+  70% {
+    opacity: 0.2;
+    transform: scale(2.3);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+
+/* ================= MOBILE ================= */
+@media(max-width: 480px) {
+  .about-intro {
+    padding: 90px 20px 10px;
+    margin-bottom: 20px;
+  }
+
+  .intro-title {
+    font-size: 1.6rem;
+  }
+
+  .intro-text {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .funny-plane-collision {
+    height: 100px;
+  }
+
+  .funny-plane-collision .plane {
+    width: 40px;
+    height: 40px;
+    top: 28px;
+  }
+
+  .smoke {
+    width: 14px;
+    height: 14px;
+    top: 33px;
   }
 }
 
@@ -5231,6 +5506,9 @@ section {
 .success-box button:hover {
     opacity: 0.85;
 }
+
+
+
 
 
 /* ======================== */

@@ -23,27 +23,28 @@
       <div class="logo-icon"></div>
       <span>Brightwyn</span>
     </div>
-    <div class="hero-flight-nav">
-      <!-- Contact Info -->
-    <div class="nav-contact-info">
-        <a href="tel:+919876543210" class="nav-phone">
-            <span>Contact</span>
-        </a>
-        <a href="mailto:hello@brightwyn.com" class="nav-email">
-            <span>Email</span>
-        </a>
-    </div>
-      <div class="plane-icon">✈</div>
-      
+     <div class="hero-flight-nav">
+       <div class="plane-icon">
+    <img src="\assets\img\plane.svg" alt="plane" />
+</div>
       <div class="flight-route">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </div>
-      
-    
-</div>
+      <!-- Contact Info -->
+
+      <!-- <div class="nav-contact-info">
+        <a href="tel:+919876543210" class="nav-phone">
+            <span>Contact</span>
+        </a>
+        <a href="mailto:hello@brightwyn.com" class="nav-email">
+            <span>Email</span>
+        </a>
+    </div> -->
+   
+</div>  
     
   </header>
 
@@ -64,7 +65,31 @@
     </a>
   </div>
 </section>
-  
+<!-- ABOUT INTRO SECTION -->
+<div class="about-intro">
+
+    <!-- FUNNY PLANE COLLISION ANIMATION -->
+    <div class="funny-plane-collision">
+        <div class="plane plane-left"></div>
+        <div class="plane plane-right"></div>
+        <div class="smoke"></div>
+    </div>
+
+    <h2 class="intro-title">
+       Your Vision. Our Runway.
+    </h2>
+
+    <p class="intro-text">
+       Brightwyn brings ideas to life through thoughtful design, smart development, and seamless digital experiences.
+We guide your vision from the runway to the sky — with precision, clarity, and creativity leading the way.
+    </p>
+
+    
+
+</div>
+
+ 
+
 <!-- Flight Chat Section -->
   <section class="flight-chat-section" id="about">
     <div class="chat-container">
@@ -711,6 +736,9 @@
     </div>
   </div>
 
+  
+  
+
   <!-- Divider line -->
   <div class="bw-footer-divider"></div>
 
@@ -1079,7 +1107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.classList.add("open"); // ⭐ IMPORTANT
     route.style.maxHeight = "260px";
     route.style.opacity = "1";
-    plane.style.transform = "rotate(90deg) translateY(6px)";
+    plane.style.transform = " translateY(6px)";
     links.forEach(link => link.style.opacity = "1");
     menuOpen = true;
 }
@@ -1088,7 +1116,7 @@ function closeMenu() {
     nav.classList.remove("open"); // ⭐ IMPORTANT
     route.style.maxHeight = "0";
     route.style.opacity = "0";
-    plane.style.transform = "rotate(90deg)";
+    plane.style.transform = "";
     links.forEach(link => link.style.opacity = "0");
     menuOpen = false;
 }
@@ -1299,13 +1327,14 @@ function closeMenu() {
         const correspondingCard = document.querySelector(`.service-detail-card[data-service="${serviceKey}"]`);
         
         row.addEventListener('click', () => {
-          // Only allow clicks when board is fully scaled
-          if (!isBoardFullyScaled) {
-            console.log('Board not fully scaled, ignoring click');
-            return;
-          }
-          
-          console.log('Clicked service row:', serviceKey);
+
+  // On desktop → only allow click after board is scaled
+  if (!isMobile && !isBoardFullyScaled) {
+    return;
+  }
+
+  // On mobile → always allow card opening
+  console.log('Clicked service row:', serviceKey);
           
           // Hide all cards
           serviceCards.forEach(card => {
