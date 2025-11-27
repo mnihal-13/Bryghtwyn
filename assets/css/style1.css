@@ -1953,7 +1953,7 @@ section {
 .funny-plane-collision .plane {
   width: 60px;
   height: 60px;
-  background-image: url('/assets/img/flight.png');
+  background-image: url('../img/flight.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
