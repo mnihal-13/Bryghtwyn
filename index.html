@@ -83,12 +83,7 @@
        Brightwyn brings ideas to life through thoughtful design, smart development, and seamless digital experiences.
 We guide your vision from the runway to the sky — with precision, clarity, and creativity leading the way.
     </p>
-
-    
-
 </div>
-
- 
 
 <!-- Flight Chat Section -->
   <section class="flight-chat-section" id="about">
@@ -1395,6 +1390,20 @@ function closeMenu() {
           });
         });
       }
+      // 🚀 NEW: Close cards when user clicks outside the card or the row 🚀
+   document.addEventListener('click', (e) => {
+       // Check if the click target is NOT inside a service row AND NOT inside a service card
+       const isClickOnRow = e.target.closest('.service-row');
+       const isClickOnCard = e.target.closest('.service-detail-card');
+       
+       if (!isClickOnRow && !isClickOnCard) {
+           // Check if any card is currently active before closing
+           const hasActiveCard = Array.from(serviceCards).some(card => card.classList.contains('active'));
+           if (hasActiveCard) {
+               closeServiceDetailCards();
+           }
+       }
+   });
 
       // Close service cards when user scrolls using native wheel and touch events
       let lastScrollTime = 0;
@@ -1425,18 +1434,90 @@ function closeMenu() {
 
 
 
-    // mobileadjustments 
-   if (window.innerWidth < 700) {
+
+// MOBILE ADJUSTMENTS
+if (window.innerWidth < 768) {
+
+  // 1. Kill Desktop Animations
   window.addEventListener("load", () => {
     ScrollTrigger.getAll().forEach(st => st.kill());
   });
 
-  // Allow typewriter animation on mobile
-  isBoardScaled = false;
+  // 2. STOP rotation completely
+  if (textUpdateInterval) {
+    clearInterval(textUpdateInterval);
+    textUpdateInterval = null;
+  }
 
-  // Force arrow visibility without scroll
-  document.querySelector(".departure-board").classList.add("scaled");
+  // 3. Keep board static & visible
+  isBoardScaled = true; 
+  const departureBoard = document.querySelector(".departure-board");
+  if(departureBoard) departureBoard.classList.add("scaled");
+
+  // Show static service list immediately
+  displayStaticServices();
+
+  // 4. Mobile Click Behavior (Popup Effect)
+  const serviceRows = document.querySelectorAll(".service-row");
+  const serviceCards = document.querySelectorAll(".service-detail-card");
+
+  serviceRows.forEach(row => {
+    // Clone node to remove desktop event listeners to prevent conflicts
+    // (Optional, but safer if desktop logic interferes)
+    const newRow = row.cloneNode(true);
+    row.parentNode.replaceChild(newRow, row);
+
+    newRow.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent click from bubbling to background
+      
+      const key = newRow.getAttribute("data-service");
+      const selected = document.querySelector(`.service-detail-card[data-service="${key}"]`);
+
+      // A. Animate ALL cards out (Close others)
+      serviceCards.forEach(c => {
+        c.classList.remove("active");
+        gsap.to(c, { 
+          opacity: 0, 
+          scale: 0.8, 
+          duration: 0.2,
+          overwrite: true 
+        });
+      });
+
+      // B. Animate SELECTED card in (Pop up)
+      if (selected) {
+        selected.classList.add("active");
+        // Force GSAP to animate from slightly smaller to full size
+        gsap.fromTo(selected, 
+          { opacity: 0, scale: 0.8 },
+          { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.7)" }
+        );
+      }
+    });
+  });
+
+  // 5. Close cards when clicking the "Background" or Scrolling
+  const closeAllCards = () => {
+     serviceCards.forEach(c => {
+        if(c.classList.contains("active")) {
+            c.classList.remove("active");
+            gsap.to(c, { opacity: 0, scale: 0.8, duration: 0.2 });
+        }
+     });
+  };
+
+  // Close on Scroll
+  window.addEventListener("scroll", closeAllCards, { passive: true });
+  
+  // Close on Background Click
+  document.addEventListener("click", (e) => {
+      // If click is NOT on a card and NOT on a row, close everything
+      if (!e.target.closest('.service-detail-card') && !e.target.closest('.service-row')) {
+          closeAllCards();
+      }
+  });
 }
+
      // ===================================
     // HERO TEXT ANIMATIONS WITH GSAP
     // ===================================
