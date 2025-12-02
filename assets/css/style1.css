@@ -597,7 +597,50 @@ body {
   }
 
   .hero-content {
-    margin-top: 1.5rem; 
+    margin-top: 9vh; 
+  }
+
+  .hero-title {
+    font-size: clamp(1.4rem, 7vw, 2rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+  }
+  .btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .plane-takeoff {
+    width: 60px;
+    bottom: 18%;
+    right: 8%;
+  }
+
+  /* SERVICE SECTION */
+  .service {
+    padding: 2rem 0.8rem;
+  }
+
+  .service::before {
+    height: 60px;
+  }
+}
+
+
+@media (max-width: 375px) {
+ .hero {
+    flex-direction: column;
+    background-position: center bottom;
+    background-size: 120%;
+    padding: 2rem 1.5rem 2rem;
+    justify-content: flex-start;
+  }
+
+  .hero-content {
+    margin-top: 10vh; 
   }
 
   .hero-title {
@@ -1666,8 +1709,10 @@ section {
     }
     
 /* Mobile screens */
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
+  .airport-container{
+    margin-top: 80px;
+  }
 
   .yellow-board-label{
     display: none;
@@ -1694,7 +1739,7 @@ section {
     height: 190px !important;
     padding: 10px;
     left: 50%;
-    transform: translateX(-50%) perspective(1500px) rotateX(4deg);
+    transform: translateX(-50%) perspective(1500px) rotateX(4deg) rotateY(4deg);
     transform-origin: top center;
   }
 
@@ -1752,10 +1797,10 @@ section {
   }
 
   .service-detail-card {
-        position: absolute; /* Stack them on top of each other */
+        position: absolute; 
         width: 85%;
         max-width: 320px;
-        max-height: 250px; /* Ensure they fit on small screens */
+        max-height: 250px; 
         grid-column: auto !important;
         grid-row: auto !important;
         box-shadow: 0 20px 50px rgba(0,0,0,0.8);
@@ -1788,20 +1833,142 @@ section {
 
 
 
-/* ----------------------------------------------------
-   SMALL MOBILE VIEW — BELOW 480px
------------------------------------------------------*/
-@media (max-width: 480px) {
+
+
+
+@media (max-width: 768px) {
+  .airport-container{
+    margin-top: 80px;
+    padding-top: 40px;
+  }
+
+  .yellow-board-label{
+    display: none;
+  }
 
   .bg-image {
     content: url('../img/servicemobile.png');
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    object-position: top center !important;
+  }
 
-  top: 0; /* Starts image at the very top edge */
-  left: 0;
-  width: 100%;
-  height: 100vh !important; /* Use Viewport Height */
+  .overlay-mask {
+    display: none !important;
+  }
+
+   
+  .departure-board {
+  top: 15vh;
+    width: 320px !important;     
+    height: 190px !important;
+    padding: 10px;
+    left: 50%;
+    transform: translateX(-50%) perspective(1500px) rotateX(4deg) rotateY(4deg);
+    transform-origin: top center;
+  }
+
+ 
+  .departure-board .board-header {
+    font-size: 0.95rem !important;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    transform: scale(0.90);
+    transform-origin: top center;
+    margin-bottom: 2px !important;
+  }
 
   
+  .departure-board .board {
+     width: 100% !important;
+  transform: scale(0.92);
+    transform-origin: top center;
+  }
+
+  .departure-board .row {
+    width: 100% !important;
+    padding: 2px 4px !important;    
+    font-size: 0.75rem !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; 
+    transform:  rotateY(-1deg);
+  }
+
+  .service-row:hover {
+    transform: none !important;
+  }
+
+  /* .service-details-container,
+  .service-detail-card,
+  .service-description-panel {
+    display: none !important;
+  } */
+  .service-details-container {
+        position: absolute;
+    top: calc(15vh + 200px); /* board height + spacing */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0 8px;
+    pointer-events: auto;
+    z-index: 9999;
+  }
+
+  .service-detail-card {
+        position: absolute; 
+        width: 85%;
+        max-width: 320px;
+        max-height: 250px; 
+        grid-column: auto !important;
+        grid-row: auto !important;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        top: 70px;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.9) !important; 
+        opacity: 0 !important;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* When active → visible */
+  .service-detail-card.active {
+   opacity: 1 !important;
+        transform: translate(-50%, -50%) scale(0.8) !important;
+        pointer-events: auto;
+        z-index: 100;
+  }
+
+ 
+ .service-detail-card h3 {
+        font-size: 1rem;
+    }
+    .service-detail-card p {
+        font-size: 0.8rem;
+    }
+}
+
+
+@media (max-width: 576px) {
+  .airport-container{
+    margin-top: 70px;
+  }
+
+  .bg-image {
+    content: url('../img/servicemobile.png');
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh !important; 
   object-fit: cover;
   opacity: 1 !important;
   filter: none !important;
@@ -1812,17 +1979,14 @@ section {
   .departure-board {
     top: 16vh;
     width: 300px !important;     
-    height: 180px !important;
+    height: 190px !important;
     padding: 10px;
     left: 50%;
-    transform: translateX(-50%) perspective(1500px) rotateX(4deg);
+    transform: translateX(-50%) perspective(1500px) rotateX(4deg) rotateY(4deg);
     transform-origin: top center;
-    
-    
-    
   }
 
-  /* Prevent header breaking again */
+
   .departure-board .board-header {
     font-size: 0.95rem !important;
     letter-spacing: 0.5px;
@@ -1835,13 +1999,13 @@ section {
   /* Rows scaling */
   .departure-board .board {
     width: 100% !important;
-  transform: scale(0.92);
+    transform: scale(0.92);
     transform-origin: top center;
   }
 
   .departure-board .row {
      width: 100% !important;
-    padding: 2px 4px !important;     /* 🔥 row fills more width */
+    padding: 2px 4px !important;    
     font-size: 0.75rem !important;
     display: flex;
     justify-content: space-between;
@@ -1866,24 +2030,21 @@ section {
 
   /* MOBILE POPUP CARD STYLE */
   .service-detail-card {
-     position: absolute; /* Stack them on top of each other */
+     position: absolute; 
         width: 85%;
         max-width: 320px;
-        max-height: 250px; /* Ensure they fit on small screens */
+        max-height: 250px; 
         grid-column: auto !important;
         grid-row: auto !important;
         box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-        
-        /* Center logic */
         top:90px;
         left: 50%;
-        /* Use !important to override GSAP inline styles if they leak */
         transform: translate(-50%, -50%) scale(0.9) !important; 
         opacity: 0 !important;
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  /* Active (visible) state */
+
   .service-detail-card.active {
      opacity: 1 !important;
         transform: translate(-50%, -50%) scale(0.8) !important;
@@ -1891,13 +2052,32 @@ section {
         z-index: 100;
   }
 
-  /* Remove grid layout from desktop */
+
  .service-detail-card h3 {
         font-size: 1rem;
     }
     .service-detail-card p {
         font-size: 0.8rem;
     }
+}
+
+@media (min-width: 410px) and (max-width: 500px) {
+  
+  .airport-container {
+    min-height: 850px; 
+    height: auto;
+  }
+
+  .departure-board {
+    top: 140px !important; 
+    width: 340px !important; 
+    height: 190px !important;
+    transform: translateX(-50%) perspective(1500px) rotateX(4deg) rotateY(4deg);
+  }
+  
+  .service-details-container {
+    top: 380px !important; 
+  }
 }
 
 
@@ -3055,6 +3235,138 @@ section {
 
 }
 
+@media(max-width: 575px) {
+
+  .flight-chat-section {
+    padding-top: 10px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: -110px !important;
+  }
+
+  .flight-chat-section::after{
+    height: 100px;
+  }
+  
+
+  /* MAIN CONTAINER */
+  .chat-container {
+    
+    max-width: 100%;
+    margin: 20px auto;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
+    transform: scale(0.75);   
+    transform-origin: right;
+  }
+
+  /* CHAT BUBBLES */
+  .chat-bubbles {
+    gap: 12px;
+  }
+
+  .bubble-icon {
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+  }
+
+  .bubble-content {
+    max-width: 220px;
+    padding: 10px 14px;
+    border-radius: 14px;
+  }
+
+  .bubble-text {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .bubble-label {
+    font-size: 0.55rem;
+    margin-bottom: 3px;
+  }
+
+  .bubble-tail {
+    width: 10px;
+    height: 10px;
+    bottom: -4px;
+  }
+
+  /* TOWER IMAGE */
+  .tower-illustration {
+    width: 60%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  /* SIGNAL WAVES */
+  .signal-waves-from-tower {
+            width: 80px;
+        height: 90px;
+        top: 114px;
+        left: -155px;
+  }
+
+  /* TRANSMITTING INDICATOR */
+  .transmitting-indicator {
+    top: 10px !important;
+    right: 5px !important;
+    padding: 4px 10px;
+    gap: 4px;
+    transform: scale(0.75);
+    transform-origin: top right;
+    position: absolute !important;
+  }
+
+  .transmit-text {
+    font-size: 0.55rem;
+  }
+
+  .signal-icon {
+    font-size: 0.9rem;
+  }
+
+  .signal-waves .wave {
+    width: 2px;
+    height: 10px;
+  }
+
+  .takeoff-button-container {
+   position: relative;
+    top: -40px;    /* adjust this value */
+    transform: scale(0.8);
+    transform-origin: top center;
+  }
+
+  .takeoff-button {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    gap: 10px;
+    border-width: 2px;
+    box-shadow: 3px 3px 0px #252525;
+  }
+
+  .takeoff-button .plane-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .takeoff-button .arrow-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .button-text {
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+  }
+  
+  
+
+}
+
+
 @media(max-width: 480px) {
 
   .flight-chat-section {
@@ -3520,8 +3832,8 @@ section {
     }
     .enquiry-sign {
         top: 9.3%;
-        left: 20%;
-        transform: rotate(10deg) scale(0.7);
+        left: 16%;
+        transform: rotate(11deg) scale(0.6);
     }
 
     .enquiry-text {
