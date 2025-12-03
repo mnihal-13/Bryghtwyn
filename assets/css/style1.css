@@ -6418,6 +6418,107 @@ section {
 
 
 
+/* footer aniamtion  */
+.footer-runway-section {
+  position: relative;  
+  width: 100%;
+  height: 550px; 
+  padding: 0;
+  text-align: center;
+  background: #fff;
+}
+
+.runway-image {
+  width: 100%;
+  max-width: 1700px;
+  height: 600px;
+  z-index: 1;
+}
+/* Plane Animation */
+.plane-landing {
+  position: absolute;
+  z-index: 50;
+  left: -250px;
+  top: 20px;               
+  width: 225px;
+  transform: rotate(20deg);
+  animation: planeLanding 5s cubic-bezier(.22,.61,.36,1) infinite;
+}
+
+/* landing */
+@keyframes planeLanding {
+
+
+  0% {
+    left: -250px;
+    top: 20px;             
+    transform: rotate(20deg);
+  }
+
+  
+  40% {
+    top: 310px;            
+    transform: rotate(10deg);
+  }
+
+  70% {
+    top: 350px;           
+    transform: rotate(2deg);
+  }
+
+  /* Flare */
+  85% {
+    top: 370px;
+    transform: rotate(0deg);
+  }
+
+
+  95% {
+    left: 40%;
+    top: 370px;            
+    transform: rotate(0deg);
+  }
+
+  96%{
+     left: 41%;
+    top: 370px;             
+    transform: rotate(0deg);
+  }
+   97%{
+     left: 42%;
+    top: 370px;            
+    transform: rotate(0deg);
+  }
+  98%{
+     left: 44%;
+    top: 370px;            
+    transform: rotate(0deg);
+  }
+
+  99%{
+     left: 46%;
+    top: 370px;             
+    transform: rotate(0deg);
+  }
+
+
+  100% {
+    left: 50%;
+    top: 370px;            
+    transform: rotate(0deg);
+  }
+/* reset  */
+  101% {
+    left: -250px;     
+    top: 20px;
+    transform: rotate(20deg);
+    opacity: 0;      
+  }
+
+  102% {
+    opacity: 1;       
+  }
+}
 
 
 /* ======================== */
@@ -6426,7 +6527,7 @@ section {
 
 .bw-footer {
   background: #fff;
-  border-top: 3px solid #252525;
+  /* border-top: 3px dashed #252525; */
   padding: 70px 8% 40px;
   font-family: "Inter", sans-serif;
 }
@@ -6514,4 +6615,62 @@ section {
   .bw-footer-brand h2 {
     font-size: 1.6rem;
   }
+  .footer-runway-section {
+    height: 350px;
+  }
+
+  .runway-image {
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .plane-landing {
+    width: 140px;
+    top: 20px;
+    animation: planeLanding768 6s cubic-bezier(.22,.61,.36,1) infinite;
+  }
+
+  @keyframes planeLanding768 {
+    0%   { left: -150px; top: 10px; transform: rotate(20deg); }
+    40%  { top: 120px; transform: rotate(10deg); }
+    70%  { top: 150px; transform: rotate(2deg); }
+    96% { left: 46%; top: 163px; transform: rotate(0deg);}
+    97% { left: 47%; top: 163px;transform: rotate(0deg); }
+    98% { left: 49%; top: 163px; transform: rotate(0deg);}
+    99% { left: 51%; top: 163px; transform: rotate(0deg);}
+    100% { left: 55%; top: 163px; rotate:(0deg); transform: rotate(0deg);}
+    101%{ left:-150px; top:10px; transform: rotate(20deg); opacity: 0;}
+    102%{ opacity: 1;}
+  }
 }
+@media (max-width: 480px) {
+
+  .footer-runway-section {
+    height: 250px;      
+  }
+
+  .runway-image {
+    height: 250px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .plane-landing {
+    width: 90px;     
+    top: 10px;
+  }
+
+  @keyframes planeLanding {
+    0%   { left: -150px; top: 10px; transform: rotate(20deg); }
+    40%  { top: 120px; transform: rotate(10deg); }
+    70%  { top: 150px; transform: rotate(2deg); }
+    96% { left: 46%; top: 160px; transform: rotate(0deg);}
+    97% { left: 47%; top: 160px;transform: rotate(0deg); }
+    98% { left: 49%; top: 160px; transform: rotate(0deg);}
+    99% { left: 51%; top: 160px; transform: rotate(0deg);}
+    100% { left: 55%; top: 160px; rotate:(0deg); transform: rotate(0deg);}
+    101%{ left:-150px; top:10px; transform: rotate(20deg); opacity: 0;}
+    102%{ opacity: 1;}
+  }
+}
+
