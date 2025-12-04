@@ -2233,9 +2233,9 @@ section {
 
 /* Plane base */
 .funny-plane-collision .plane {
-  width: 60px;
-  height: 60px;
-  background-image: url('../img/flight.png');
+  width: 120px;
+  height: 120px;
+  background-image: url('../img/plane.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
@@ -2278,37 +2278,37 @@ section {
 @keyframes planeLeftMove {
   /* 0% - Start off screen */
   0% { 
-    transform: translateX(0) scaleX(-1); 
+    transform: translateX(0); 
     opacity: 1; 
   }
 
   /* 45% - Fly fast towards center (Straight, no shake yet) */
   45% { 
-    transform: translateX(calc(40vw + 90px)) scaleX(-1); 
+    transform: translateX(calc(40vw + 90px)); 
   }
 
   /* 50% - HARD IMPACT  */
   50% {
-    transform: translateX(calc(50vw + 90px)) rotate(-15deg) scale(1.05) scaleX(-1);
+    transform: translateX(calc(50vw + 90px)) rotate(-15deg) scale(1.05) ;
     animation-timing-function: cubic-bezier(.1, .8, .3, 1.4);
   }
 
   /* 52% - Recoil/Bounce back slightly */
   52% {
-    transform: translateX(calc(48vw + 90px)) rotate(8deg) scale(0.95) scaleX(-1);
+    transform: translateX(calc(48vw + 90px)) rotate(8deg) scale(0.95) ;
     opacity: 0.6;
   }
 
   /* 60% - Fade out */
   60% { 
     opacity: 0; 
-    transform: translateX(calc(48vw + 90px)) scaleX(-1); 
+    transform: translateX(calc(48vw + 90px)) ; 
   }
 
   /* 100% - Reset */
   100% { 
     opacity: 0; 
-    transform: translateX(0) scaleX(-1); 
+    transform: translateX(0); 
   }
 }
 
@@ -2317,37 +2317,37 @@ section {
 @keyframes planeRightMove {
   /* 0% - Start off screen */
   0% { 
-    transform: translateX(0) scaleX(1); 
+    transform: translateX(0) scaleX(-1); 
     opacity: 1; 
   }
 
   /* 45% - Fly fast towards center */
   45% { 
-    transform: translateX(calc(-40vw - 90px)) scaleX(1); 
+    transform: translateX(calc(-40vw - 90px)) scaleX(-1); 
   }
 
   /* 50% - HARD IMPACT */
   50% {
-    transform: translateX(calc(-50vw - 90px)) rotate(15deg) scale(1.05) scaleX(1);
+    transform: translateX(calc(-50vw - 90px)) rotate(15deg) scale(1.05) scaleX(-1);
     animation-timing-function: cubic-bezier(.1, .8, .3, 1.4);
   }
 
   /* 52% - Recoil/Bounce back slightly */
   52% {
-    transform: translateX(calc(-48vw - 90px)) rotate(-8deg) scale(0.95) scaleX(1);
+    transform: translateX(calc(-48vw - 90px)) rotate(-8deg) scale(0.95) scaleX(-1);
     opacity: 0.6;
   }
 
   /* 60% - Fade out */
   60% { 
     opacity: 0; 
-    transform: translateX(calc(-48vw - 90px)) scaleX(1); 
+    transform: translateX(calc(-48vw - 90px)) scaleX(-1); 
   }
 
   /* 100% - Reset */
   100% { 
     opacity: 0; 
-    transform: translateX(0) scaleX(1); 
+    transform: translateX(0) scaleX(-1); 
   }
 }
 

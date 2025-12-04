@@ -57,7 +57,7 @@
     <p class="hero-subtitle">
       Transforming ideas into exceptional digital experiences with cutting-edge technology and innovative design.
     </p>
-    <a href="#contact" class="btn btn-outline takeoff-button">
+    <a href="#services" class="btn btn-outline takeoff-button">
       <span>Get Onboard</span>
       <svg viewBox="0 0 24 24" fill="none">
         <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -1087,7 +1087,7 @@ if (!isMobile) {
     /* -----------------------------------------------------------
        AUTO EXPAND/COLLAPSE EVERY 7 SECONDS
     ----------------------------------------------------------- */
-    setInterval(desktopExpandAnimation, 7000);
+    setInterval(desktopExpandAnimation, 6000);
 }
 
 });
@@ -1323,6 +1323,40 @@ function closeMenu() {
         filter: 'blur(5px)',
         ease: 'none'
       });
+
+      // cta click handler 
+      const ctaButton = document.querySelector('.takeoff-button');
+      
+      if (ctaButton) {
+        ctaButton.addEventListener('click', (e) => {
+          e.preventDefault(); // Stop standard anchor jump
+
+          // Get the ScrollTrigger instance associated with the board
+          const st = boardTimeline.scrollTrigger;
+
+          // Calculate the target scroll position
+          // We target 75% (0.75) down the animation timeline to ensure 
+          // the board is fully scaled and arrows are visible.
+          // (Your code triggers scaling at > 0.6, so 0.75 is a safe "sweet spot")
+          const targetScrollPosition = st.start + (st.end - st.start) * 0.95;
+
+          // Check if GSAP ScrollToPlugin is loaded
+          if (gsap.plugins.scrollTo) {
+            gsap.to(window, {
+              scrollTo: targetScrollPosition,
+              duration: 1.5,
+              ease: "power2.inOut"
+            });
+          } else {
+            // Fallback if you don't have ScrollToPlugin
+            window.scrollTo({
+              top: targetScrollPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      }
+
       
       // Service row click interactions - only when board is fully scaled
       const serviceRows = document.querySelectorAll('.service-row');
@@ -1447,29 +1481,51 @@ function closeMenu() {
 
 // MOBILE ADJUSTMENTS
 if (window.innerWidth < 768) {
+ const ctaButton = document.querySelector('.takeoff-button');
+    if (ctaButton) {
+        const targetId = ctaButton.getAttribute('href'); 
+        const targetElement = document.querySelector(targetId);
 
-  // 1. Kill Desktop Animations
-  window.addEventListener("load", () => {
-    ScrollTrigger.getAll().forEach(st => st.kill());
-  });
+        if (targetElement) {
+            ctaButton.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        }
+    }
 
-  // 2. STOP rotation completely
-  if (textUpdateInterval) {
-    clearInterval(textUpdateInterval);
-    textUpdateInterval = null;
-  }
 
-  // 3. Keep board static & visible
-  isBoardScaled = true; 
-  const departureBoard = document.querySelector(".departure-board");
-  if(departureBoard) departureBoard.classList.add("scaled");
+    // 1. Kill Desktop Animations
+    window.addEventListener("load", () => {
+      // Ensure ScrollTrigger is registered before calling getAll/kill
+      if (typeof ScrollTrigger !== 'undefined') {
+          ScrollTrigger.getAll().forEach(st => st.kill());
+      }
+    });
 
-  // Show static service list immediately
-  displayStaticServices();
+    // 2. STOP rotation completely
+    if (textUpdateInterval) {
+      clearInterval(textUpdateInterval);
+      textUpdateInterval = null;
+    }
 
-  // 4. Mobile Click Behavior (Popup Effect)
-  const serviceRows = document.querySelectorAll(".service-row");
-  const serviceCards = document.querySelectorAll(".service-detail-card");
+    // 3. Keep board static & visible
+    isBoardScaled = true; 
+    const departureBoard = document.querySelector(".departure-board");
+    if(departureBoard) departureBoard.classList.add("scaled");
+
+    // Assuming displayStaticServices is defined in the global scope
+    if (typeof displayStaticServices === 'function') {
+        displayStaticServices();
+    }
+
+    // 4. Mobile Click Behavior (Popup Effect)
+    const serviceRows = document.querySelectorAll(".service-row");
+    const serviceCards = document.querySelectorAll(".service-detail-card");
 
   serviceRows.forEach(row => {
     // Clone node to remove desktop event listeners to prevent conflicts
