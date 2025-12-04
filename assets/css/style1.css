@@ -5714,10 +5714,10 @@ section {
 
 .scroll-to-top {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 60px;
-  height: 60px;
+  bottom: 10px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
   background: white;
   border: 3px solid #252525;
   border-radius: 10px;
