@@ -68,7 +68,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 8%;
+  padding: 1.5rem 4%;
   display: flex;
   align-items: center;
   z-index: 10;
@@ -103,10 +103,24 @@ body {
     gap: 15px;
     z-index: 999;
 }
+.contact-links {
+    display: flex;
+    align-items: center; /* Ensures links inside are vertically centered */
+    gap: 15px;
+    /* Optional: If misalignment persists, adding a small margin-bottom might help offset the padding/border from flight-route */
+    margin-bottom: 8px;
+}
+.contact-links a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px 4px;
+    
+}
 
 /* Plane icon - desktop = left facing */
 .plane-icon {
-    font-size: 28px;
     cursor: pointer;
     /* transform: rotate(180deg); */
     transition: transform 0.4s ease;
@@ -162,32 +176,7 @@ body {
     100% { transform: rotate(90deg) translateY(0); }
 }
 
-/* Contact Info in Navbar */
-.nav-contact-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    /* max-width: 0; */
-    /* overflow: hidden; */
-    white-space: nowrap;
-    /* opacity: 0; */
-    border-right: 2px dashed #fccd05;
-    padding-right: 20px;
-    transition: max-width 1s ease, opacity 0.8s ease;
-}
 
-.nav-contact-info a {
-    /* opacity: 0; */
-    color: #252525;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    transition: opacity 0.6s ease 0.4s, color 0.3s ease;
-}
-
-.nav-contact-info a:hover {
-    color: #fccd05;
-}
 
 /* Show contact info on nav hover */
 .hero-flight-nav:hover .nav-contact-info {
@@ -215,6 +204,19 @@ body {
         flex-direction: column;
         align-items: flex-end;
         gap: 0;
+        order: 2;
+    }
+    .contact-links {
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start; /* align like logo */
+        margin-bottom: 6px;
+    }
+
+    .contact-links a {
+        font-size: 13px; /* smaller font for mobile */
+        padding: 4px 2px;
     }
 
      .flight-route {
@@ -260,11 +262,26 @@ body {
 
 @media (max-width: 480px) {
     .hero-flight-nav {
-        top: 5px;
+        top: 14px;
         right: 20px;
         flex-direction: column;
         align-items: flex-end;
         gap: 0;
+        order: 2;
+    }
+    .contact-links {
+        order: 1;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start; /* align like logo */
+        margin-bottom: 6px;
+    }
+
+    .contact-links a {
+        font-size: 9px; /* smaller font for mobile */
+        gap:1px;
+        padding: 1px 1px;
+        
     }
   
     .flight-route {
@@ -317,7 +334,7 @@ body {
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  padding: 0 8% 120px; /* Added bottom padding for consistency */
+  padding: 0 5% 120px; 
   overflow: hidden;
 }
 
@@ -352,7 +369,7 @@ body {
 .hero-title {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-size: clamp(1.6rem, 5vw, 3rem);
   margin-bottom: 1.5rem;
   margin-top: 50px;
   line-height: 1.15;
@@ -370,6 +387,9 @@ body {
 }
 .hero-title .line:nth-child(2) {
   animation-delay: 0.6s;
+}
+.hero-title .line:nth-child(3) {
+  animation-delay: 0.9s;
 }
 
 @keyframes slideIn {
@@ -588,6 +608,7 @@ body {
 }
 
 @media (max-width: 480px) {
+  
  .hero {
     flex-direction: column;
     background-position: center bottom;
@@ -2262,94 +2283,77 @@ section {
 /* Smoke Puff */
 .smoke {
   position: absolute;
-  width: 25px;
-  height: 25px;
+  width: 28px;
+  height: 28px;
   background: #333333;
   border-radius: 50%;
   opacity: 0;
-  top: 45px;
+  top: 65px;
   filter: blur(2px);
   animation: smokePop 4s infinite ease-in-out;
 }
 
 /* ================= FIXED ANIMATIONS ================= */
 
-
 @keyframes planeLeftMove {
-  /* 0% - Start off screen */
   0% { 
-    transform: translateX(0); 
+    transform: translateX(0);
     opacity: 1; 
   }
 
-  /* 45% - Fly fast towards center (Straight, no shake yet) */
+  /* Approach */
   45% { 
-    transform: translateX(calc(40vw + 90px)); 
+    transform: translateX(calc(40vw + 120px)); 
+    opacity: 1;
   }
 
-  /* 50% - HARD IMPACT  */
+  /* Stop at impact */
   50% {
-    transform: translateX(calc(50vw + 90px)) rotate(-15deg) scale(1.05) ;
-    animation-timing-function: cubic-bezier(.1, .8, .3, 1.4);
+    
+    opacity: 0;
   }
 
-  /* 52% - Recoil/Bounce back slightly */
-  52% {
-    transform: translateX(calc(48vw + 90px)) rotate(8deg) scale(0.95) ;
-    opacity: 0.6;
-  }
-
-  /* 60% - Fade out */
-  60% { 
+  /* Fade */
+  70% { 
     opacity: 0; 
-    transform: translateX(calc(48vw + 90px)) ; 
+    transform: translateX(calc(50vw + 110px)); 
   }
 
-  /* 100% - Reset */
   100% { 
     opacity: 0; 
     transform: translateX(0); 
   }
 }
 
-
-/* Right plane */
 @keyframes planeRightMove {
-  /* 0% - Start off screen */
   0% { 
-    transform: translateX(0) scaleX(-1); 
+    transform: translateX(0) scaleX(-1);
     opacity: 1; 
   }
 
-  /* 45% - Fly fast towards center */
+  /* Approach */
   45% { 
-    transform: translateX(calc(-40vw - 90px)) scaleX(-1); 
+    transform: translateX(calc(-40vw - 120px)) scaleX(-1); 
+    opacity: 1;
   }
 
-  /* 50% - HARD IMPACT */
+  /* Stop at impact */
   50% {
-    transform: translateX(calc(-50vw - 90px)) rotate(15deg) scale(1.05) scaleX(-1);
-    animation-timing-function: cubic-bezier(.1, .8, .3, 1.4);
+    opacity: 0;
   }
 
-  /* 52% - Recoil/Bounce back slightly */
-  52% {
-    transform: translateX(calc(-48vw - 90px)) rotate(-8deg) scale(0.95) scaleX(-1);
-    opacity: 0.6;
-  }
-
-  /* 60% - Fade out */
-  60% { 
+  /* Fade */
+  70% { 
     opacity: 0; 
-    transform: translateX(calc(-48vw - 90px)) scaleX(-1); 
+    transform: translateX(calc(-50vw - 120px)) scaleX(-1); 
   }
 
-  /* 100% - Reset */
   100% { 
     opacity: 0; 
-    transform: translateX(0) scaleX(-1); 
+    transform: translateX(0) scaleX(-1);  
   }
 }
+
 
 /* Smoke animation */
 @keyframes smokePop {
@@ -2411,6 +2415,67 @@ section {
     height: 14px;
     top: 33px;
   }
+
+  
+@keyframes planeLeftMove {
+  0% { 
+    transform: translateX(0);
+    opacity: 1; 
+  }
+
+  /* Approach */
+  45% { 
+    transform: translateX(calc(40vw + 100px)); 
+    opacity: 1;
+  }
+
+  /* Stop at impact */
+  50% {
+    opacity: 0;
+  }
+
+  /* Fade */
+  60% { 
+    opacity: 0; 
+    transform: translateX(calc(50vw + 100px)); 
+  }
+
+  100% { 
+    opacity: 0; 
+    transform: translateX(0); 
+  }
+}
+
+@keyframes planeRightMove {
+  0% { 
+    transform: translateX(0) scaleX(-1);
+    opacity: 1; 
+  }
+
+  /* Approach */
+  45% { 
+    transform: translateX(calc(-40vw - 100px)) scaleX(-1); 
+    opacity: 1;
+  }
+
+  /* Stop at impact */
+  50% {
+    opacity: 0;
+  }
+
+  /* Fade */
+  60% { 
+    opacity: 0; 
+    transform: translateX(calc(-50vw - 100px)) scaleX(-1); 
+  }
+
+  100% { 
+    opacity: 0; 
+    transform: translateX(0) scaleX(-1);  
+  }
+}
+
+
 }
 
  
@@ -2444,7 +2509,7 @@ section {
 }
 
 .chat-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
   display: flex;
@@ -2512,8 +2577,8 @@ section {
 /* Animated signal waves from tower */
 .signal-waves-from-tower {
   position: absolute;
-  top: -314px;
-  left: 16%;
+  top: -330px;
+  left: 31%;
   width: 120px;
   height: 120px;
   pointer-events: none;
@@ -3126,7 +3191,7 @@ section {
     flex-direction: column;
     gap: 15px;
     padding: 0 10px;
-    transform: scale(0.75);   
+    transform: scale(0.85);   
     transform-origin: right;
   }
 
@@ -3388,7 +3453,7 @@ section {
     flex-direction: column;
     gap: 15px;
     padding: 0 10px;
-    transform: scale(0.75);   
+    transform: scale(0.65);   
     transform-origin: right;
   }
 
@@ -6442,7 +6507,7 @@ section {
   top: 20px;               
   width: 225px;
   transform: rotate(20deg);
-  animation: planeLanding 5s cubic-bezier(.22,.61,.36,1) infinite;
+  animation: planeLanding 6s cubic-bezier(.22,.61,.36,1) infinite;
 }
 
 /* landing */
@@ -6461,49 +6526,31 @@ section {
     transform: rotate(10deg);
   }
 
-  70% {
+  /* 70% {
     top: 350px;           
     transform: rotate(2deg);
-  }
+  } */
 
   /* Flare */
   85% {
     top: 370px;
     transform: rotate(0deg);
   }
-
-
-  95% {
-    left: 40%;
-    top: 370px;            
+   90%{
+    left:43%;
+    top:370px;
     transform: rotate(0deg);
-  }
+   }
 
-  96%{
-     left: 41%;
-    top: 370px;             
+    91%{
+    left:45%;
+    top:370px;
     transform: rotate(0deg);
-  }
-   97%{
-     left: 42%;
-    top: 370px;            
-    transform: rotate(0deg);
-  }
-  98%{
-     left: 44%;
-    top: 370px;            
-    transform: rotate(0deg);
-  }
-
-  99%{
-     left: 46%;
-    top: 370px;             
-    transform: rotate(0deg);
-  }
-
+   }
+  
 
   100% {
-    left: 50%;
+    left: 100%;
     top: 370px;            
     transform: rotate(0deg);
   }
@@ -6633,12 +6680,9 @@ section {
   @keyframes planeLanding768 {
     0%   { left: -150px; top: 10px; transform: rotate(20deg); }
     40%  { top: 120px; transform: rotate(10deg); }
-    70%  { top: 150px; transform: rotate(2deg); }
-    96% { left: 46%; top: 163px; transform: rotate(0deg);}
-    97% { left: 47%; top: 163px;transform: rotate(0deg); }
-    98% { left: 49%; top: 163px; transform: rotate(0deg);}
-    99% { left: 51%; top: 163px; transform: rotate(0deg);}
-    100% { left: 55%; top: 163px; rotate:(0deg); transform: rotate(0deg);}
+    85%  { top: 163px; transform: rotate(0deg); }
+    90% { left:40%; top: 163px; transform: rotate(0deg);}
+    100% { left: 100%; top: 163px;  transform: rotate(0deg);}
     101%{ left:-150px; top:10px; transform: rotate(20deg); opacity: 0;}
     102%{ opacity: 1;}
   }
@@ -6661,14 +6705,11 @@ section {
   }
 
   @keyframes planeLanding {
-    0%   { left: -150px; top: 10px; transform: rotate(20deg); }
+   0%   { left: -150px; top: 10px; transform: rotate(20deg); }
     40%  { top: 120px; transform: rotate(10deg); }
-    70%  { top: 150px; transform: rotate(2deg); }
-    96% { left: 46%; top: 160px; transform: rotate(0deg);}
-    97% { left: 47%; top: 160px;transform: rotate(0deg); }
-    98% { left: 49%; top: 160px; transform: rotate(0deg);}
-    99% { left: 51%; top: 160px; transform: rotate(0deg);}
-    100% { left: 55%; top: 160px; rotate:(0deg); transform: rotate(0deg);}
+    85%  { top: 163px; transform: rotate(0deg); }
+    90% { left:40%; top: 163px; transform: rotate(0deg);}
+    100% { left: 100%; top: 163px;  transform: rotate(0deg);}
     101%{ left:-150px; top:10px; transform: rotate(20deg); opacity: 0;}
     102%{ opacity: 1;}
   }
